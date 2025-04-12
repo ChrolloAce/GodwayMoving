@@ -47,13 +47,12 @@ const Navbar = () => {
 
   // Service items for Godway Moving
   const serviceItems = [
-    { id: 'residential-moving', name: 'Residential Moving' },
-    { id: 'commercial-moving', name: 'Commercial Moving' },
-    { id: 'packing-services', name: 'Packing Services' },
-    { id: 'loading-unloading', name: 'Loading & Unloading' },
-    { id: 'furniture-assembly', name: 'Furniture Assembly' },
-    { id: 'storage-solutions', name: 'Storage Solutions' },
-    { id: 'moving-supplies', name: 'Moving Supplies' }
+    { id: 'all-hours-moving', name: '24/7/365 Moving Services' },
+    { id: 'residential-moving', name: 'Local Residential Moving' },
+    { id: 'long-distance', name: 'Long Distance Moving' },
+    { id: 'commercial-moving', name: 'Office & Commercial Moves' },
+    { id: 'small-moves', name: 'Small Moves' },
+    { id: 'last-minute', name: 'Last Minute Moves' }
   ];
 
   const resourceLinks = [

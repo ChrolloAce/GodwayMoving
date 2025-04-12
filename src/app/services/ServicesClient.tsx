@@ -14,42 +14,42 @@ const ServicesClient = () => {
     {
       title: "24/7/365 Moving Services",
       description: "The only moving company that offers any day and time moving services. No matter how big or small your move is we will move it.",
-      image: "https://images.pexels.com/photos/5622870/pexels-photo-5622870.jpeg",
+      image: "https://i.ibb.co/DDZT8qsm/15-C40-AB1-EF46-45-E3-8-AFE-7-BFFD535054-A.jpg",
       category: "Premium Services",
       id: "all-hours-moving"
     },
     {
       title: "Local Residential Moving",
       description: "We specialize in local residential moves across Florida. We can move you between any Florida cities with care and efficiency, whether planned or last-minute.",
-      image: "https://images.pexels.com/photos/7706425/pexels-photo-7706425.jpeg",
+      image: "https://i.ibb.co/cXYdSC0j/IMG-0713.jpg",
       category: "Core Services",
       id: "residential-moving"
     },
     {
       title: "Long Distance Moving",
       description: "From coast to coast, we can move you to any state in the USA. With on time long distance delivery dates and safe packing we will get you settled into your new home quickly.",
-      image: "https://images.pexels.com/photos/2052970/pexels-photo-2052970.jpeg",
+      image: "https://i.ibb.co/XfDrGtZN/IMG-0718.jpg",
       category: "Core Services",
       id: "long-distance"
     },
     {
       title: "Office & Commercial Moves",
       description: "We can move your office overnight, on the weekend and during holidays to minimize your downtime. With full office packing and unpacking, your staff will be up and running the next morning.",
-      image: "https://images.pexels.com/photos/5693661/pexels-photo-5693661.jpeg",
+      image: "https://i.ibb.co/whdn6mFS/IMG-1682.jpg",
       category: "Premium Services",
       id: "commercial-moving"
     },
     {
       title: "Small Moves",
       description: "Need to move a few small items or moving out of a studio in Florida? Our small move service is perfect for apartments, dorms, and partial relocations throughout Florida.",
-      image: "https://images.pexels.com/photos/5622974/pexels-photo-5622974.jpeg",
+      image: "https://i.ibb.co/XrX5kdM7/IMG-1736.jpg",
       category: "Specialized Services",
       id: "small-moves"
     },
     {
       title: "Last Minute Moves",
       description: "Need to move urgently in Florida? Our last minute moving service will save the day. We'll get you into your new address ASAP with same-day service available throughout South Florida.",
-      image: "https://images.pexels.com/photos/4246060/pexels-photo-4246060.jpeg",
+      image: "https://i.ibb.co/kRD39Rv/IMG-0719.jpg",
       category: "Specialized Services",
       id: "last-minute"
     }

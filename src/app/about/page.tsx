@@ -67,7 +67,7 @@ const AboutPage = () => {
         <section className="relative min-h-[60vh] flex items-center bg-godway-green1">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://images.pexels.com/photos/8961251/pexels-photo-8961251.jpeg"
+              src="https://i.ibb.co/CwgG4tL/team.jpg"
               alt="About Godway Moving"
               fill
               className="object-cover opacity-30"
