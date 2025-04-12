@@ -29,7 +29,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Flexible scheduling to accommodate your exact timeline",
       "Specialized equipment for expedited moves"
     ],
-    image: "https://i.ibb.co/CsMQJ6b/night-moving.jpg",
+    image: "https://images.pexels.com/photos/5622870/pexels-photo-5622870.jpeg",
     features: [
       "24-hour customer service hotline",
       "Emergency packing services",
@@ -99,7 +99,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Minimal disruption to your schedule",
       "Reduces physical strain and stress"
     ],
-    image: "https://i.ibb.co/cXYdSC0/IMG-0713.jpg",
+    image: "https://images.pexels.com/photos/7706425/pexels-photo-7706425.jpeg",
     features: [
       "Full packing and unpacking services",
       "Disassembly and reassembly of furniture",
@@ -163,7 +163,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Interstate moving expertise",
       "Streamlined cross-country transitions"
     ],
-    image: "https://i.ibb.co/XfDrGtZ/IMG-0718.jpg",
+    image: "https://images.pexels.com/photos/2052970/pexels-photo-2052970.jpeg",
     features: [
       "Custom packing for long-distance transport",
       "Climate-controlled vehicles",
@@ -225,7 +225,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "After-hours and weekend service",
       "Rapid setup at new location"
     ],
-    image: "https://i.ibb.co/whdn6mF/IMG-1682.jpg",
+    image: "https://images.pexels.com/photos/5693661/pexels-photo-5693661.jpeg",
     features: [
       "Comprehensive move planning",
       "Workstation disassembly and reassembly",
@@ -289,7 +289,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Same professional standards as larger moves",
       "Eliminates need for truck rental"
     ],
-    image: "https://i.ibb.co/XrX5kdM/IMG-1736.jpg",
+    image: "https://images.pexels.com/photos/5622974/pexels-photo-5622974.jpeg",
     features: [
       "Appropriately sized vehicles",
       "Professional moving personnel",
@@ -353,7 +353,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Professional service despite tight timeline",
       "Complete solution for emergency relocations"
     ],
-    image: "https://i.ibb.co/kRD39Rv/IMG-0719.jpg",
+    image: "https://images.pexels.com/photos/4246060/pexels-photo-4246060.jpeg",
     features: [
       "Expedited packing services",
       "Priority scheduling",
@@ -485,7 +485,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Eco-friendly and recyclable options",
       "Custom supply kits based on home size"
     ],
-    image: "https://i.ibb.co/YcGfCSm/packing-supplies.jpg",
+    image: "https://images.pexels.com/photos/4201806/pexels-photo-4201806.jpeg",
     features: [
       "Various box sizes for different items",
       "Specialized boxes for fragile items",
