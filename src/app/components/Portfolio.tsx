@@ -19,88 +19,88 @@ const Portfolio = () => {
 
   const projects: Project[] = [
     {
-      title: "Elegant Kitchen Transformation",
-      location: "Louisville, KY",
-      category: "Kitchen Remodeling",
-      image: "https://i.ibb.co/V09Qdzyx/IMG-20161215-142946.jpg",
-      description: "Complete kitchen renovation featuring custom cabinetry, quartz countertops, and modern appliances. This stunning transformation creates a perfect blend of functionality and luxury."
+      title: "Luxury Condo Relocation",
+      location: "Miami Beach, FL",
+      category: "Residential Moving",
+      image: "https://i.ibb.co/5xBSjyB8/IMG-3761.jpg",
+      description: "Complete relocation of a luxury beachfront condo featuring careful handling of high-end furniture, artwork, and fragile items. Our military-precision approach ensured a smooth transition for this upscale Miami residence."
     },
     {
-      title: "Modern Bathroom Remodel",
-      location: "Louisville, KY",
-      category: "Bathroom Remodeling",
-      image: "https://i.ibb.co/4gDk22LG/IMG-20230329-WA0020.jpg",
-      description: "Elegant master bathroom renovation with premium fixtures, custom tile work, and a spacious walk-in shower. The design creates a spa-like atmosphere for ultimate relaxation."
+      title: "Office Building Transition",
+      location: "Downtown Miami, FL",
+      category: "Commercial Moving",
+      image: "https://i.ibb.co/ynJB2Pvj/IMG-6826.jpg",
+      description: "Major commercial relocation for a financial firm with minimal downtime. Our team coordinated the move of sensitive equipment, documents, and office furniture over a weekend for seamless Monday operations."
     },
     {
-      title: "Premium Hardwood Flooring",
-      location: "Louisville, KY",
-      category: "Flooring",
-      image: "https://i.ibb.co/S4d2b6p4/IMG-20230329-WA0021.jpg",
-      description: "Luxurious hardwood flooring installation featuring premium oak with custom staining and finishing. The result is a timeless, elegant foundation for any space."
+      title: "Executive Home Relocation",
+      location: "Orlando, FL",
+      category: "Residential Moving",
+      image: "https://i.ibb.co/B5HmQcc7/IMG-0727.jpg",
+      description: "Full-service relocation of an executive family home including professional packing, furniture disassembly, transport, and setup in the new residence. Special care was taken with antique and valuable items."
     },
     {
-      title: "Luxury Bathroom Suite",
-      location: "Louisville, KY",
-      category: "Bathroom Remodeling",
-      image: "https://i.ibb.co/bM53fcYb/IMG-20230329-WA0022.jpg",
-      description: "Luxurious bathroom suite with designer fixtures, custom vanity, and elegant tile patterns. This renovation brings modern luxury to everyday living."
+      title: "Retail Store Expansion",
+      location: "Tampa Bay, FL",
+      category: "Commercial Moving",
+      image: "https://i.ibb.co/T66jm8t/15-C40-AB1-EF46-45-E3-8-AFE-7-BFFD535054-A.jpg",
+      description: "Coordinated moving services for a retail business expanding to a larger location. Our team handled the logistics of moving inventory, displays, and store fixtures with efficiency and organization."
     },
     {
-      title: "Contemporary Kitchen Design",
-      location: "Louisville, KY",
-      category: "Kitchen Remodeling",
-      image: "https://i.ibb.co/HL3fjWQT/IMG-20230329-WA0023.jpg",
-      description: "Modern kitchen design with sleek finishes, custom storage solutions, and premium appliances. The design maximizes space while maintaining elegance."
+      title: "Waterfront Property Relocation",
+      location: "Fort Lauderdale, FL",
+      category: "Residential Moving",
+      image: "https://i.ibb.co/MxxJ8zy9/IMG-5189.jpg",
+      description: "Luxury home relocation for a waterfront property requiring special equipment and careful handling of high-value items. Our experienced team ensured a smooth transition to the new home."
     },
     {
-      title: "Elegant Tile Installation",
-      location: "Louisville, KY",
-      category: "Flooring",
-      image: "https://i.ibb.co/S7MWq12T/IMG-20230329-WA0089.jpg",
-      description: "Premium luxury tile installation with intricate patterns and professional grouting. Perfect for high-traffic areas while maintaining elegance."
+      title: "Corporate Headquarters Relocation",
+      location: "Boca Raton, FL",
+      category: "Commercial Moving",
+      image: "https://i.ibb.co/GfVY1p4B/IMG-6831.jpg",
+      description: "Major commercial relocation of a company headquarters involving IT infrastructure, executive offices, and staff workspace. Our comprehensive planning resulted in zero downtime during the transition."
     },
     {
-      title: "Custom Cabinetry Design",
-      location: "Louisville, KY",
-      category: "Kitchen Remodeling",
-      image: "https://i.ibb.co/7tXLCRbF/IMG-20230329-WA0092.jpg",
-      description: "Gourmet kitchen featuring custom cabinetry, premium countertops, and professional-grade appliances. Perfect for both cooking and entertaining."
+      title: "Long-Distance Family Move",
+      location: "Naples to Orlando, FL",
+      category: "Residential Moving",
+      image: "https://i.ibb.co/rGh3vXm5/IMG-5185.jpg",
+      description: "Complete long-distance family relocation across Florida. Our team provided comprehensive packing, transportation, and setup services to ensure a stress-free move for this growing family."
     },
     {
-      title: "Modern Shower Installation",
-      location: "Louisville, KY",
-      category: "Bathroom Remodeling",
-      image: "https://i.ibb.co/SXVY1qY9/IMG-20240405-WA0016.jpg",
-      description: "Luxurious shower installation with custom tile work, designer fixtures, and a spacious layout. The renovation creates a perfect balance of style and comfort."
+      title: "Medical Office Relocation",
+      location: "Jacksonville, FL",
+      category: "Commercial Moving",
+      image: "https://i.ibb.co/qFm7pvjd/IMG-5246.jpg",
+      description: "Specialized moving services for a medical practice requiring careful handling of sensitive equipment and patient records. Our team maintained HIPAA compliance throughout the relocation process."
     },
     {
-      title: "Open Concept Kitchen",
-      location: "Louisville, KY",
-      category: "Kitchen Remodeling",
-      image: "https://i.ibb.co/VcPHNHBV/20240601-195820.jpg",
-      description: "Contemporary kitchen renovation featuring open concept design, custom storage solutions, and a perfect blend of style and functionality."
+      title: "Penthouse Apartment Move",
+      location: "Miami, FL",
+      category: "Residential Moving",
+      image: "https://i.ibb.co/chLgrmKh/IMG-5188.jpg",
+      description: "High-rise penthouse relocation requiring specialized equipment and protocols. Our team expertly navigated the challenges of moving luxury furniture and artwork to the new residence."
     },
     {
-      title: "Designer Bathroom Vanity",
-      location: "Louisville, KY",
-      category: "Bathroom Remodeling",
-      image: "https://i.ibb.co/7xZKR9zd/IMG-20230329-WA0005.jpg",
-      description: "Sophisticated bathroom design with custom vanity, modern fixtures, and a luxurious layout. The renovation creates a perfect balance of elegance and practicality."
+      title: "Restaurant Relocation",
+      location: "West Palm Beach, FL",
+      category: "Commercial Moving",
+      image: "https://i.ibb.co/84LxMQ0N/IMG-3643.jpg",
+      description: "Comprehensive moving services for a restaurant business including industrial kitchen equipment, dining furniture, and decor. Our team completed the move over two nights to minimize business disruption."
     },
     {
-      title: "Premium Countertop Installation",
-      location: "Louisville, KY",
-      category: "Kitchen Remodeling",
-      image: "https://i.ibb.co/q3XH1pDJ/IMG-20230329-WA0052.jpg",
-      description: "High-end kitchen update featuring premium countertops, custom backsplash, and state-of-the-art appliances. The design maximizes both style and functionality."
+      title: "Storage & Inventory Management",
+      location: "Miami, FL",
+      category: "Storage Solutions",
+      image: "https://i.ibb.co/fVSxn9dF/IMG-5323.jpg",
+      description: "Climate-controlled storage solutions for a family during their home renovation. Our team cataloged and stored belongings in our secure facility protected from Florida's heat and humidity."
     },
     {
-      title: "Luxury Master Bathroom",
-      location: "Louisville, KY",
-      category: "Bathroom Remodeling",
-      image: "https://i.ibb.co/B5XqLmjd/IMG-20230329-WA0078.jpg",
-      description: "Luxury bathroom renovation with custom tile work, designer fixtures, and a spacious layout. The design creates a perfect sanctuary for relaxation."
+      title: "Specialized Furniture Assembly",
+      location: "Orlando, FL",
+      category: "Furniture Assembly",
+      image: "https://i.ibb.co/5W1Cy02S/IMG-2368.jpg",
+      description: "Professional furniture disassembly and reassembly services for a complex move involving custom and antique pieces. Our skilled technicians ensured every piece was properly handled and reconstructed."
     }
   ];
 
@@ -136,12 +136,12 @@ const Portfolio = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="h-1 w-24 bg-gold-gradient mx-auto mb-8 rounded-full"></div>
+          <div className="h-1 w-24 bg-military-gradient mx-auto mb-8 rounded-full"></div>
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 tracking-tight">
             Our Portfolio
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Explore our recent remodeling projects across Louisville
+            Explore our recent moving projects across South Florida
           </p>
         </motion.div>
 
@@ -162,7 +162,7 @@ const Portfolio = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative bg-white rounded-3xl shadow-xl overflow-hidden group cursor-pointer transform hover:-translate-y-1 transition-all duration-300"
+                  className="relative bg-white rounded-md shadow-xl overflow-hidden group cursor-pointer transform hover:-translate-y-1 transition-all duration-300 border border-military-khaki/30"
                   onClick={() => openModal(project)}
                 >
                   <div className="relative h-[400px] overflow-hidden">
@@ -176,11 +176,11 @@ const Portfolio = () => {
                       priority={index === 0}
                       unoptimized={true}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-military-navy/90 via-military-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                     <div className="flex items-center space-x-4 mb-3">
-                      <span className="px-4 py-1.5 bg-gold-500 text-black rounded-full text-sm font-semibold tracking-wide">
+                      <span className="px-4 py-1.5 bg-military-olive text-white rounded-md text-sm font-semibold tracking-wide">
                         {project.category}
                       </span>
                       <span className="text-sm opacity-90">
@@ -226,7 +226,7 @@ const Portfolio = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-3 rounded-full transition-all duration-500 ${
-                  index === currentIndex ? 'bg-gold-500 w-8' : 'bg-gray-300 w-3 hover:bg-gray-400'
+                  index === currentIndex ? 'bg-military-olive w-8' : 'bg-gray-300 w-3 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to projects ${index + 1}-${index + 3}`}
               />
@@ -251,7 +251,7 @@ const Portfolio = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl"
+              className="relative max-w-5xl w-full bg-white rounded-md overflow-hidden shadow-2xl border border-military-khaki/30"
               onClick={e => e.stopPropagation()}
             >
               <button
@@ -276,7 +276,7 @@ const Portfolio = () => {
               </div>
               <div className="p-8">
                 <div className="flex items-center space-x-4 mb-6">
-                  <span className="px-4 py-1.5 bg-gold-500 text-black rounded-full text-sm font-semibold tracking-wide">
+                  <span className="px-4 py-1.5 bg-military-olive text-white rounded-md text-sm font-semibold tracking-wide">
                     {selectedProject.category}
                   </span>
                   <span className="text-sm text-gray-600">

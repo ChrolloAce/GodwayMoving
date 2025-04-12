@@ -11,9 +11,9 @@ import Footer from './components/Footer';
 import React from 'react';
 
 export const metadata = {
-  title: 'Deco Moderna | Premium Renovation Services in Orlando, FL',
-  description: 'Transform your home with Orlando\'s leading luxury remodeling company. Specializing in premium kitchen and bathroom renovations, custom cabinetry, and high-end flooring installation.',
-  keywords: 'Deco Moderna Orlando, kitchen renovation Orlando FL, bathroom remodeling Orlando, custom cabinetry Orlando, premium renovation services, home improvement Orlando, Orlando contractors, high-end home renovation'
+  title: 'Godway Moving | Professional Moving Services in Miami, FL',
+  description: 'Transform your moving experience with Miami\'s leading military-grade moving company. Specializing in residential and commercial relocations, packing services, and careful handling of your belongings throughout South Florida.',
+  keywords: 'Godway Moving Miami, residential moving Florida, commercial moving Tampa, packing services Orlando, professional moving services, relocation South Florida, Miami moving company, military-grade moving service'
 };
 
 export default function Home() {

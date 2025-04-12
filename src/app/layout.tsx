@@ -26,7 +26,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://www.decomodernaremodeling.com'),
+  metadataBase: new URL('https://www.godwaymoving.com'),
   title: SiteMetadata.home.title,
   description: SiteMetadata.home.description,
   keywords: SiteMetadata.home.keywords,
@@ -43,7 +43,7 @@ export const metadata = {
   openGraph: {
     title: SiteMetadata.home.title,
     description: SiteMetadata.home.description,
-    url: 'https://www.decomodernaremodeling.com',
+    url: 'https://www.godwaymoving.com',
     siteName: COMPANY_NAME,
     locale: 'en_US',
     type: 'website',
@@ -52,7 +52,7 @@ export const metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: `${COMPANY_NAME} - Premium remodeling services in Louisville, KY`
+        alt: `${COMPANY_NAME} - Professional moving services in Miami, FL`
       }
     ],
   },
@@ -74,7 +74,7 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.decomodernaremodeling.com',
+    canonical: 'https://www.godwaymoving.com',
   },
   verification: {
     google: 'verification_token', // Replace with your verification token when available
@@ -95,7 +95,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-icon.png" sizes="180x180" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-        <meta name="theme-color" content="#000000" />
+        <meta name="theme-color" content="#4B5320" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <script

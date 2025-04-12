@@ -7,8 +7,7 @@ import Script from 'next/script';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/navigation';
-import Head from 'next/head';
-import { SiteMetadata } from '../data/site-metadata';
+import BusinessInfo from '../data/business-info';
 
 const ContactPage = () => {
   const router = useRouter();
@@ -18,7 +17,7 @@ const ContactPage = () => {
     email: '',
     phone: '',
     message: '',
-    service: 'Kitchen Remodeling',
+    service: 'South Florida Residential Moving',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
@@ -98,30 +97,30 @@ const ContactPage = () => {
   // Contact information
   const contactInfo = [
     {
-      icon: <FaPhone className="text-gold-500" />,
+      icon: <FaPhone className="text-military-khaki" />,
       title: 'Phone',
-      details: '(909) 645-3373',
-      action: 'tel:+19096453373',
+      details: BusinessInfo.contact.phone.display,
+      action: `tel:+1${BusinessInfo.contact.phone.link}`,
       actionText: 'Call Now',
     },
     {
-      icon: <FaEnvelope className="text-gold-500" />,
+      icon: <FaEnvelope className="text-military-khaki" />,
       title: 'Email',
-      details: 'Savemoneyremodeling@gmail.com',
-      action: 'mailto:Savemoneyremodeling@gmail.com',
+      details: BusinessInfo.contact.email,
+      action: `mailto:${BusinessInfo.contact.email}`,
       actionText: 'Send Email',
     },
     {
-      icon: <FaMapMarkerAlt className="text-gold-500" />,
+      icon: <FaMapMarkerAlt className="text-military-khaki" />,
       title: 'Address',
-      details: 'Louisville, KY',
-      action: 'https://maps.google.com/?q=Louisville,KY',
+      details: `${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state}`,
+      action: `https://maps.google.com/?q=${BusinessInfo.contact.address.city},${BusinessInfo.contact.address.state}`,
       actionText: 'Get Directions',
     },
     {
-      icon: <FaClock className="text-gold-500" />,
+      icon: <FaClock className="text-military-khaki" />,
       title: 'Business Hours',
-      details: 'Tue-Sat: 8am-6pm, Mon & Sun: Closed',
+      details: BusinessInfo.hours.display,
       action: '#booking',
       actionText: 'Book Now',
     },
@@ -129,18 +128,12 @@ const ContactPage = () => {
 
   return (
     <>
-      <Head>
-        <title>{SiteMetadata.contact.title}</title>
-        <meta name="description" content={SiteMetadata.contact.description} />
-        <meta name="keywords" content={SiteMetadata.contact.keywords} />
-        <link rel="canonical" href="https://www.decomodernaremodeling.com/contact" />
-      </Head>
       <Navbar />
       <main>
-        <section className="relative pt-32 pb-16 bg-black">
+        <section className="relative pt-32 pb-16 bg-military-olive">
           <div className="absolute inset-0 opacity-20" 
             style={{
-              backgroundImage: 'url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
+              backgroundImage: 'url("https://i.ibb.co/mCVrXF9S/IMG-6835.jpg")',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundBlendMode: 'overlay'
@@ -162,13 +155,13 @@ const ContactPage = () => {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="text-xl text-gray-200 max-w-3xl mx-auto"
               >
-                We're here to answer your questions and provide you with exceptional remodeling services in Louisville, Kentucky.
+                We're here to answer your questions and provide you with exceptional moving services throughout Florida.
               </motion.p>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-cream">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -176,12 +169,12 @@ const ContactPage = () => {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <div className="h-1 w-20 bg-gold-gradient mx-auto mb-6 rounded-full"></div>
-              <h1 className="text-3xl md:text-4xl font-bold text-black mb-4">
+              <div className="h-1 w-20 bg-military-gradient mx-auto mb-6 rounded-full"></div>
+              <h1 className="text-3xl md:text-4xl font-bold text-dark mb-4">
                 Contact Us Today
               </h1>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Get in touch with our Louisville remodeling experts for a free consultation and personalized quote
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                Get in touch with our Florida moving experts for a free consultation and personalized quote
               </p>
             </motion.div>
 
@@ -190,71 +183,71 @@ const ContactPage = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white rounded-2xl shadow-elegant p-8"
+                className="bg-white rounded-md shadow-military p-8 border-2 border-military-olive/20"
               >
-                <h2 className="text-2xl font-bold text-black mb-6">Get in Touch</h2>
+                <h2 className="text-2xl font-bold text-dark mb-6">Get in Touch</h2>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 bg-military-olive/10 rounded-md flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-military-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-black mb-1">Address</h3>
-                      <p className="text-gray-600">
-                        Louisville, KY
+                      <h3 className="text-lg font-semibold text-dark mb-1">Address</h3>
+                      <p className="text-gray-700">
+                        {BusinessInfo.contact.address.city}, {BusinessInfo.contact.address.state}
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 bg-military-olive/10 rounded-md flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-military-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-black mb-1">Phone</h3>
-                      <p className="text-gray-600">
-                        <a href="tel:+19096453373" className="hover:text-gold-500 transition-colors">
-                          (909) 645-3373
+                      <h3 className="text-lg font-semibold text-dark mb-1">Phone</h3>
+                      <p className="text-gray-700">
+                        <a href={`tel:+1${BusinessInfo.contact.phone.link}`} className="hover:text-military-olive transition-colors">
+                          {BusinessInfo.contact.phone.display}
                         </a>
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 bg-military-olive/10 rounded-md flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-military-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-black mb-1">Email</h3>
-                      <p className="text-gray-600">
-                        <a href="mailto:Savemoneyremodeling@gmail.com" className="hover:text-gold-500 transition-colors">
-                          Savemoneyremodeling@gmail.com
+                      <h3 className="text-lg font-semibold text-dark mb-1">Email</h3>
+                      <p className="text-gray-700">
+                        <a href={`mailto:${BusinessInfo.contact.email}`} className="hover:text-military-olive transition-colors">
+                          {BusinessInfo.contact.email}
                         </a>
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gold-500/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-gold-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 bg-military-olive/10 rounded-md flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-military-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-black mb-1">Business Hours</h3>
-                      <p className="text-gray-600">
-                        Monday: Closed<br />
-                        Tuesday - Friday: 8AM - 6PM<br />
-                        Saturday: 8AM - 6PM<br />
-                        Sunday: Closed
+                      <h3 className="text-lg font-semibold text-dark mb-1">Business Hours</h3>
+                      <p className="text-gray-700">
+                        Monday: {BusinessInfo.hours.monday}<br />
+                        Tuesday - Friday: {BusinessInfo.hours.tuesday}<br />
+                        Saturday: {BusinessInfo.hours.saturday}<br />
+                        Sunday: {BusinessInfo.hours.sunday}
                       </p>
                     </div>
                   </div>
@@ -265,9 +258,9 @@ const ContactPage = () => {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white rounded-2xl shadow-elegant p-8"
+                className="bg-white rounded-md shadow-military p-8 border-2 border-military-olive/20"
               >
-                <h2 className="text-2xl font-bold text-black mb-6">Send Us a Message</h2>
+                <h2 className="text-2xl font-bold text-dark mb-6">Send Us a Message</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -280,7 +273,7 @@ const ContactPage = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
                       required
                       aria-required="true"
                     />
@@ -296,7 +289,7 @@ const ContactPage = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
                       required
                       aria-required="true"
                     />
@@ -312,7 +305,7 @@ const ContactPage = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
                       required
                       aria-required="true"
                     />
@@ -327,17 +320,16 @@ const ContactPage = () => {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
                       required
                       aria-required="true"
                     >
                       <option value="">Select a Service</option>
-                      <option value="Kitchen Remodeling">Kitchen Remodeling</option>
-                      <option value="Bathroom Remodeling">Bathroom Remodeling</option>
-                      <option value="Flooring Installation">Flooring Installation</option>
-                      <option value="Painting Services">Painting Services</option>
-                      <option value="Custom Cabinetry">Custom Cabinetry</option>
-                      <option value="Whole Home Remodeling">Whole Home Remodeling</option>
+                      {BusinessInfo.services.primary.map((service) => (
+                        <option key={service} value={service}>
+                          {service}
+                        </option>
+                      ))}
                       <option value="Free Consultation">Free Consultation</option>
                       <option value="Job Application">Job Application</option>
                     </select>
@@ -353,14 +345,14 @@ const ContactPage = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gold-400 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
                       required
                       aria-required="true"
                     ></textarea>
                   </div>
 
                   {submitError && (
-                    <div className="p-3 bg-red-50 text-red-700 rounded-xl text-sm">
+                    <div className="p-3 bg-red-50 text-red-700 rounded-md text-sm">
                       {submitError}
                     </div>
                   )}
@@ -369,7 +361,7 @@ const ContactPage = () => {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full py-3 bg-gold-gradient text-dark font-medium rounded-full hover:bg-gold-400 transition-colors duration-300 shadow-gold"
+                    className="w-full py-3 bg-military-olive text-white font-medium rounded-md hover:bg-military-camo transition-colors duration-300 shadow-military"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -386,31 +378,56 @@ const ContactPage = () => {
 
         <section className="py-20">
           <div className="container-custom">
-            <h2 className="text-3xl font-bold text-center mb-8">Visit Us in Louisville, Kentucky</h2>
-            <div className="aspect-w-16 aspect-h-9 rounded-2xl overflow-hidden shadow-elegant">
+            <h2 className="text-3xl font-bold text-center mb-8">Visit Us in {BusinessInfo.contact.address.city}, {BusinessInfo.contact.address.state}</h2>
+            <div className="aspect-w-16 aspect-h-9 rounded-md overflow-hidden shadow-military border-2 border-military-olive/20">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199423.98264335608!2d-85.83031998916017!3d38.17753842511534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88690b1ab35bd511%3A0xd4d3b4282071fd32!2sLouisville%2C%20KY!5e0!3m2!1sen!2sus!4v1649126436889!5m2!1sen!2sus"
+                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.53925916665!2d-80.29949920266949!3d25.782390733064336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL!5e0!3m2!1sen!2sus!4v1649126436889!5m2!1sen!2sus`}
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Deco Moderna location in Louisville, Kentucky"
-                aria-label="Google Maps showing Deco Moderna's location in Louisville, Kentucky"
+                title={`Godway Moving location in ${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state}`}
+                aria-label={`Google Maps showing Godway Moving's location in ${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state}`}
               ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section id="booking" className="py-20 bg-cream">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <div className="h-1 w-20 bg-military-gradient mx-auto mb-6 rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
+                Schedule Your Move
+              </h2>
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                Use our convenient online booking system to schedule your move with military precision
+              </p>
+            </motion.div>
+
+            <div className="bg-white shadow-military rounded-md overflow-hidden border-2 border-military-olive/20 relative" style={{ height: `${iframeHeight}px` }}>
+              <Script src={BusinessInfo.externalResources.bookingScript} />
+              <iframe 
+                src={BusinessInfo.externalResources.bookingWidget}
+                width="100%" 
+                height="100%" 
+                frameBorder="0"
+                title="Booking Calendar"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              />
             </div>
           </div>
         </section>
       </main>
       <Footer />
-      <Script
-        id="lead-connector-chat-widget"
-        src="https://widgets.leadconnectorhq.com/loader.js"
-        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-        data-widget-id="67e6db460d93973719f6b3dc"
-        strategy="afterInteractive"
-      />
     </>
   );
 };

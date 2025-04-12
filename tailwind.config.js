@@ -15,16 +15,27 @@ module.exports = {
       },
       colors: {
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          50: '#f5f7f1',
+          100: '#e8ecde',
+          200: '#d1dbbe',
+          300: '#b2c494',
+          400: '#94ad70',
+          500: '#768c52', // Olive drab
+          600: '#5c6e41',
+          700: '#4c5937',
+          800: '#3a4429',
+          900: '#343e25',
+        },
+        military: {
+          olive: '#4B5320', // Olive green
+          drab: '#6B8E23', // Olive drab
+          khaki: '#BDB76B', // Dark khaki
+          tan: '#D2B48C', // Tan
+          camo: '#606c38', // Camouflage green
+          navy: '#1D2D44', // Navy blue
+          black: '#0B0B0B', // Almost black
+          sand: '#C9B18A', // Desert sand
+          brown: '#5F4B32', // Military brown
         },
         gold: {
           100: '#FEF9E7',
@@ -37,19 +48,19 @@ module.exports = {
           800: '#A67C00',
           900: '#95710A',
         },
-        dark: '#191919',
-        navy: '#19283E',
-        cream: '#FFFBF0',
+        dark: '#1D1D1D',
+        navy: '#1D2D44',
+        cream: '#F2EBDC',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gold-gradient': 'linear-gradient(to right, #D4AF37, #F9E79F)',
-        'navy-gradient': 'linear-gradient(to right, #19283E, #2C3E50)',
+        'military-gradient': 'linear-gradient(to right, #4B5320, #BDB76B)',
+        'navy-gradient': 'linear-gradient(to right, #1D2D44, #395066)',
       },
       boxShadow: {
         'elegant': '0 10px 30px -10px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-        'gold': '0 10px 20px -5px rgba(212, 175, 55, 0.3)',
+        'military': '0 10px 20px -5px rgba(75, 83, 32, 0.3)',
         'card': '0 22px 40px rgba(0, 0, 0, 0.1)',
         'soft': '0 15px 35px rgba(0, 0, 0, 0.08)',
       },
@@ -78,9 +89,9 @@ module.exports = {
             maxWidth: '65ch',
             color: 'inherit',
             a: {
-              color: '#0284c7',
+              color: '#5c6e41',
               '&:hover': {
-                color: '#0369a1',
+                color: '#4c5937',
               },
             },
             h1: {

@@ -1,17 +1,17 @@
 /**
- * Deco Moderna Business Information
+ * Godway Moving Business Information
  * 
- * This file contains all the business information for Deco Moderna.
+ * This file contains all the business information for Godway Moving.
  * Use this as a central reference for consistent data across the website.
  */
 
 export const BusinessInfo = {
   // Company Information
   company: {
-    name: "Deco Moderna",
-    legalName: "Deco Moderna LLC",
-    tagline: "Transform Your Home with Deco Moderna in Louisville, KY",
-    description: "Specializing in high-end kitchen remodeling, elegant bathroom renovations, and premium flooring installations in Louisville, Kentucky. Our expert team delivers exceptional craftsmanship and sophisticated designs to transform your space.",
+    name: "Godway Moving",
+    legalName: "Godway Moving LLC",
+    tagline: "Reliable, Military-Grade Moving Services in Miami, FL",
+    description: "Specializing in residential and commercial moving services throughout Florida. Our expert team delivers military-grade precision and careful handling to relocate your belongings safely and efficiently across Miami, Orlando, Tampa, and all of South Florida.",
     yearFounded: 2020,
   },
 
@@ -24,57 +24,58 @@ export const BusinessInfo = {
     email: "Savemoneyremodeling@gmail.com",
     address: {
       street: "", 
-      city: "Louisville",
-      state: "Kentucky",
-      zip: "", 
+      city: "Miami",
+      state: "Florida",
+      zip: "33101", 
       country: "USA",
       coordinates: {
-        lat: 38.2527,
-        lng: -85.7585
+        lat: 25.7617,
+        lng: -80.1918
       }
     }
   },
 
   // Business Hours
   hours: {
-    monday: "Closed",
+    monday: "8:00 AM - 6:00 PM",
     tuesday: "8:00 AM - 6:00 PM",
     wednesday: "8:00 AM - 6:00 PM",
     thursday: "8:00 AM - 6:00 PM",
     friday: "8:00 AM - 6:00 PM",
     saturday: "8:00 AM - 6:00 PM",
     sunday: "Closed",
-    display: "Tue-Sat: 8am-6pm, Mon & Sun: Closed"
+    display: "Mon-Sat: 8am-6pm, Sun: Closed"
   },
 
   // Services Offered
   services: {
     primary: [
-      "Kitchen Remodeling",
-      "Bathroom Remodeling",
-      "Premium Flooring Installation",
-      "Custom Cabinetry",
-      "Designer Tile Work"
+      "South Florida Residential Moving",
+      "Florida Commercial Relocations",
+      "Professional Packing Services",
+      "Loading & Unloading",
+      "Furniture Assembly & Disassembly",
+      "Climate-Controlled Storage Solutions"
     ],
-    description: "From custom cabinetry to designer tile and luxury flooring, trust our experienced Louisville renovation team to bring your vision to life with unmatched precision and style. Your Kentucky dream home awaits!"
+    description: "From expert packing to efficient transportation and setup, trust our experienced Florida moving team to relocate your belongings with military precision across Miami, Orlando, Tampa, and the entire Sunshine State. Your stress-free Florida move awaits!"
   },
 
   // Social Media Links
   socialMedia: {
-    facebook: "https://facebook.com/decomoderna",
-    instagram: "https://instagram.com/decomoderna",
-    twitter: "https://twitter.com/decomoderna",
+    facebook: "https://facebook.com/godwaymoving",
+    instagram: "https://instagram.com/godwaymoving",
+    twitter: "https://twitter.com/godwaymoving",
   },
 
   // Areas Served
-  areasServed: "Louisville and nearby Kentucky areas",
+  areasServed: "Miami, Orlando, Tampa, and all of South Florida",
 
   // Reviews
   reviews: {
     platform: "Google",
     rating: 4.9,
-    count: 28,
-    url: "https://g.page/decomoderna"
+    count: 45,
+    url: "https://g.page/godwaymoving"
   },
 
   // External Resource URLs

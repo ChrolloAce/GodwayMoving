@@ -44,14 +44,14 @@ const Navbar = () => {
     };
   }, []);
 
-  // Fix: Correctly access the primary services from BusinessInfo
+  // Service items for Godway Moving
   const serviceItems = [
-    { id: 'kitchen-remodeling', name: 'Kitchen Remodeling' },
-    { id: 'bathroom-remodeling', name: 'Bathroom Remodeling' },
-    { id: 'whole-home-remodeling', name: 'Whole Home Remodeling' },
-    { id: 'custom-cabinetry', name: 'Custom Cabinetry' },
-    { id: 'flooring', name: 'Flooring' },
-    { id: 'painting', name: 'Painting' }
+    { id: 'residential-moving', name: 'Residential Moving' },
+    { id: 'commercial-moving', name: 'Commercial Moving' },
+    { id: 'packing-services', name: 'Packing Services' },
+    { id: 'loading-unloading', name: 'Loading & Unloading' },
+    { id: 'furniture-assembly', name: 'Furniture Assembly' },
+    { id: 'storage-solutions', name: 'Storage Solutions' }
   ];
 
   const resourceLinks = [
@@ -79,7 +79,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/90 backdrop-blur-sm py-2 shadow-lg' : 'bg-transparent py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-military-olive/95 backdrop-blur-sm py-2 shadow-lg' : 'bg-military-olive/90 py-4'}`}>
       <div className="container-custom">
         <div className="flex justify-between items-center">
           <motion.div
@@ -88,7 +88,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-white">Deco Moderna</span>
+              <span className="text-2xl font-bold text-white">Godway Moving</span>
             </Link>
           </motion.div>
 
@@ -113,20 +113,20 @@ const Navbar = () => {
                           setServicesDropdownOpen(false);
                         }
                       }}
-                      className="font-serif text-white hover:text-gold-300 transition-colors relative group flex items-center"
+                      className="font-serif text-white hover:text-military-khaki transition-colors relative group flex items-center"
                     >
                       {link.name}
                       <FaChevronDown className="ml-1 text-xs" />
-                      <span className="absolute bottom-0 left-0 w-0 h-px bg-gold-400 transition-all duration-300 group-hover:w-full"></span>
+                      <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full"></span>
                     </button>
                     
                     {/* Services Dropdown */}
                     {link.dropdownType === 'services' && servicesDropdownOpen && (
-                      <div className="services-dropdown absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
-                        <div className="absolute -top-2 left-4 w-4 h-4 bg-white transform rotate-45 border-t border-l border-gray-100"></div>
+                      <div className="services-dropdown absolute left-0 mt-2 w-64 bg-white rounded-md shadow-xl py-2 z-50 border border-military-olive/30">
+                        <div className="absolute -top-2 left-4 w-4 h-4 bg-white transform rotate-45 border-t border-l border-military-olive/30"></div>
                         <Link 
                           href="/services" 
-                          className="block px-4 py-2 text-black hover:bg-gold-50 hover:text-black font-medium border-b border-gray-100"
+                          className="block px-4 py-2 text-military-olive hover:bg-military-olive/10 hover:text-military-olive font-medium border-b border-gray-100"
                         >
                           All Services
                         </Link>
@@ -134,7 +134,7 @@ const Navbar = () => {
                           <Link 
                             key={service.id}
                             href={`/services/${service.id}`} 
-                            className="block px-4 py-2 text-gray-700 hover:bg-gold-50 hover:text-black"
+                            className="block px-4 py-2 text-gray-700 hover:bg-military-olive/10 hover:text-military-olive"
                           >
                             {service.name}
                           </Link>
@@ -144,13 +144,13 @@ const Navbar = () => {
 
                     {/* Resources Dropdown */}
                     {link.dropdownType === 'resources' && resourcesDropdownOpen && (
-                      <div className="resources-dropdown absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
-                        <div className="absolute -top-2 left-4 w-4 h-4 bg-white transform rotate-45 border-t border-l border-gray-100"></div>
+                      <div className="resources-dropdown absolute left-0 mt-2 w-64 bg-white rounded-md shadow-xl py-2 z-50 border border-military-olive/30">
+                        <div className="absolute -top-2 left-4 w-4 h-4 bg-white transform rotate-45 border-t border-l border-military-olive/30"></div>
                         {resourceLinks.map((resource) => (
                           <Link 
                             key={resource.name}
                             href={resource.href} 
-                            className="block px-4 py-2 text-gray-700 hover:bg-gold-50 hover:text-black"
+                            className="block px-4 py-2 text-gray-700 hover:bg-military-olive/10 hover:text-military-olive"
                           >
                             {resource.name}
                           </Link>
@@ -161,10 +161,10 @@ const Navbar = () => {
                 ) : (
                   <Link 
                     href={link.href} 
-                    className="font-serif text-white hover:text-gold-300 transition-colors relative group"
+                    className="font-serif text-white hover:text-military-khaki transition-colors relative group"
                   >
                     {link.name}
-                    <span className="absolute bottom-0 left-0 w-0 h-px bg-gold-400 transition-all duration-300 group-hover:w-full"></span>
+                    <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full"></span>
                   </Link>
                 )}
               </motion.div>
@@ -179,7 +179,7 @@ const Navbar = () => {
           >
             <Link 
               href="/contact#booking" 
-              className="btn-gold"
+              className="bg-white text-military-olive hover:bg-cream px-6 py-3 rounded-md font-medium transition-colors shadow-military"
             >
               Get a Quote
             </Link>
@@ -206,13 +206,13 @@ const Navbar = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <div className="container-custom py-4 bg-black shadow-lg rounded-b-lg">
+        <div className="container-custom py-4 bg-military-olive shadow-lg rounded-b-lg">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               link.hasDropdown ? (
                 <div key={link.name} className="space-y-2">
                   <button 
-                    className="font-serif text-white hover:text-gold-300 py-2 flex items-center justify-between w-full"
+                    className="font-serif text-white hover:text-military-khaki py-2 flex items-center justify-between w-full"
                     onClick={() => {
                       if (link.dropdownType === 'services') {
                         setMobileServicesOpen(!mobileServicesOpen);
@@ -232,10 +232,10 @@ const Navbar = () => {
                   
                   {/* Mobile Services Dropdown */}
                   {link.dropdownType === 'services' && mobileServicesOpen && (
-                    <div className="pl-4 space-y-2 border-l-2 border-gold-400 ml-2">
+                    <div className="pl-4 space-y-2 border-l-2 border-white ml-2">
                       <Link 
                         href="/services" 
-                        className="block py-2 text-white/80 hover:text-gold-300"
+                        className="block py-2 text-white/80 hover:text-white"
                         onClick={() => setIsOpen(false)}
                       >
                         All Services
@@ -244,7 +244,7 @@ const Navbar = () => {
                         <Link 
                           key={service.id}
                           href={`/services/${service.id}`} 
-                          className="block py-2 text-white/80 hover:text-gold-300"
+                          className="block py-2 text-white/80 hover:text-white"
                           onClick={() => setIsOpen(false)}
                         >
                           {service.name}
@@ -255,12 +255,12 @@ const Navbar = () => {
 
                   {/* Mobile Resources Dropdown */}
                   {link.dropdownType === 'resources' && mobileResourcesOpen && (
-                    <div className="pl-4 space-y-2 border-l-2 border-gold-400 ml-2">
+                    <div className="pl-4 space-y-2 border-l-2 border-white ml-2">
                       {resourceLinks.map((resource) => (
                         <Link 
                           key={resource.name}
                           href={resource.href} 
-                          className="block py-2 text-white/80 hover:text-gold-300"
+                          className="block py-2 text-white/80 hover:text-white"
                           onClick={() => setIsOpen(false)}
                         >
                           {resource.name}
@@ -273,7 +273,7 @@ const Navbar = () => {
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className="font-serif text-white hover:text-gold-300 py-2"
+                  className="font-serif text-white hover:text-white py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
@@ -282,7 +282,7 @@ const Navbar = () => {
             ))}
             <Link 
               href="/contact#booking" 
-              className="btn-gold text-center"
+              className="bg-white text-military-olive hover:bg-cream py-3 px-6 rounded-md text-center font-medium transition-colors shadow-military"
               onClick={() => setIsOpen(false)}
             >
               Get a Quote
