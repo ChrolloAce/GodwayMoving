@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { FaCheck, FaUsers, FaLeaf, FaHandHoldingHeart, FaGraduationCap, FaRegCalendarAlt, FaRegSmile } from 'react-icons/fa';
+import { FaCheck, FaUsers, FaTruck, FaHandshake, FaGraduationCap, FaRegCalendarAlt, FaRegSmile } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Head from 'next/head';
@@ -27,76 +27,76 @@ const CareersPage = () => {
   const router = useRouter();
   const [jobPostings, setJobPostings] = useState<JobPosting[]>([
     {
-      id: 'cleaning-specialist',
-      title: 'Cleaning Specialist',
+      id: 'professional-mover',
+      title: 'Professional Mover',
       location: 'Miami, FL',
       type: 'Full-time',
       department: 'Operations',
-      description: 'Join our team of cleaning professionals to deliver exceptional service to our premium clients throughout Miami. You\'ll represent our high standards and attention to detail in every job.',
+      description: 'Join our team of professional movers to provide exceptional moving services throughout South Florida. You\'ll represent our high standards and careful handling in every move.',
       responsibilities: [
-        'Perform detailed cleaning services in residential and commercial properties',
-        'Follow established cleaning protocols and procedures',
-        'Ensure client satisfaction by meeting and exceeding expectations',
-        'Properly handle and care for all equipment and cleaning materials',
-        'Maintain a professional appearance and demeanor at all times',
-        'Report any issues or concerns to your supervisor promptly'
+        'Safely load and unload client belongings with attention to detail',
+        'Properly wrap and protect furniture and fragile items',
+        'Efficiently pack and unpack client possessions when requested',
+        'Operate moving trucks and equipment in a safe manner',
+        'Provide excellent customer service throughout the moving process',
+        'Complete all required paperwork accurately'
       ],
       requirements: [
-        'Previous cleaning experience preferred but not required',
-        'Strong attention to detail and quality standards',
+        'Previous moving experience preferred but not required',
+        'Strong physical stamina and ability to lift 50+ pounds regularly',
+        'Valid driver\'s license with clean driving record',
         'Excellent customer service skills',
-        'Reliable transportation',
-        'Ability to work both independently and in a team',
-        'Flexible schedule including some weekends'
+        'Reliable transportation to work location',
+        'Ability to work flexible hours including weekends'
       ],
       isExpanded: false
     },
     {
-      id: 'team-lead',
-      title: 'Cleaning Team Lead',
+      id: 'moving-team-lead',
+      title: 'Moving Team Lead',
       location: 'Miami, FL',
       type: 'Full-time',
       department: 'Operations',
-      description: 'We\'re looking for experienced team leaders who can manage small teams of cleaning specialists while ensuring our premium standards are upheld. This position combines hands-on cleaning with leadership responsibilities.',
+      description: 'We\'re looking for experienced team leaders who can manage small crews of movers while ensuring our professional standards are upheld. This position combines hands-on moving with leadership responsibilities.',
       responsibilities: [
-        'Lead and coordinate small teams of cleaning specialists',
-        'Train new team members on proper cleaning techniques and protocols',
-        'Conduct quality inspections and ensure all work meets our high standards',
+        'Lead and coordinate teams of 2-4 movers on residential and commercial moves',
+        'Train new team members on proper moving and packing techniques',
+        'Conduct pre-move assessments and plan efficient moving strategies',
         'Communicate effectively with clients and address any concerns',
-        'Manage cleaning supplies and equipment',
-        'Create and adjust cleaning schedules as needed'
+        'Ensure all safety protocols are followed during moves',
+        'Complete and verify all moving documentation'
       ],
       requirements: [
-        'Minimum 2 years of professional cleaning experience',
+        'Minimum 2 years of professional moving experience',
         'Previous supervisory experience preferred',
         'Excellent organizational and time management skills',
         'Strong problem-solving abilities',
-        'Valid driver\'s license and clean driving record',
+        'Valid driver\'s license with clean driving record and ability to drive box trucks',
         'Bilingual (English/Spanish) preferred'
       ],
       isExpanded: false
     },
     {
-      id: 'customer-service',
-      title: 'Customer Service Representative',
+      id: 'moving-consultant',
+      title: 'Moving Consultant',
       location: 'Miami, FL',
       type: 'Full-time',
-      department: 'Customer Support',
-      description: 'Join our customer service team to be the voice of our luxury cleaning brand. You\'ll handle client communications, schedule appointments, and ensure our clients receive the exceptional service they expect.',
+      department: 'Sales',
+      description: 'Join our sales team to help clients plan their perfect move. You\'ll conduct in-home estimates, create customized moving plans, and serve as the first point of contact for our clients.',
       responsibilities: [
-        'Answer incoming calls and respond to client inquiries',
-        'Schedule and confirm cleaning appointments',
-        'Process service changes, upgrades, and special requests',
-        'Resolve client concerns with professionalism and care',
-        'Coordinate with operations team to ensure smooth service delivery',
-        'Maintain accurate client records in our CRM system'
+        'Conduct in-home or virtual assessments of clients\' moving needs',
+        'Provide accurate quotes based on inventory and moving requirements',
+        'Explain our services and answer client questions',
+        'Convert leads into booked moves',
+        'Coordinate with operations team to ensure client needs are communicated',
+        'Follow up with clients after moves to ensure satisfaction'
       ],
       requirements: [
-        'Previous customer service experience, preferably in luxury services',
+        'Previous sales experience, preferably in moving or related service industry',
         'Excellent verbal and written communication skills',
         'Proficiency with CRM software and office applications',
-        'Problem-solving mindset and positive attitude',
-        'Ability to remain calm under pressure',
+        'Valid driver\'s license and reliable transportation',
+        'Strong closing skills and customer service orientation',
         'Bilingual (English/Spanish) preferred'
       ],
       isExpanded: false
@@ -167,32 +167,32 @@ const CareersPage = () => {
   // Benefits of working at the company
   const benefits = [
     { 
-      icon: <FaUsers className="text-gold-500" />, 
+      icon: <FaUsers className="text-godway-green1 w-8 h-8" />, 
       title: "Supportive Team Culture", 
       description: "Join a diverse and inclusive team where your contributions are valued and recognized." 
     },
     { 
-      icon: <FaGraduationCap className="text-gold-500" />, 
+      icon: <FaGraduationCap className="text-godway-green1 w-8 h-8" />, 
       title: "Professional Growth", 
       description: "Access to training programs and clear paths for advancement within our organization." 
     },
     { 
-      icon: <FaHandHoldingHeart className="text-gold-500" />, 
+      icon: <FaTruck className="text-godway-green1 w-8 h-8" />, 
       title: "Competitive Benefits", 
       description: "Health insurance, paid time off, and retirement plans to support your wellbeing." 
     },
     { 
-      icon: <FaRegCalendarAlt className="text-gold-500" />, 
+      icon: <FaRegCalendarAlt className="text-godway-green1 w-8 h-8" />, 
       title: "Flexible Scheduling", 
       description: "We work with you to create schedules that balance work and personal commitments." 
     },
     { 
-      icon: <FaLeaf className="text-gold-500" />, 
-      title: "Eco-Friendly Practices", 
-      description: "Be part of a company committed to sustainable cleaning methods and products." 
+      icon: <FaHandshake className="text-godway-green1 w-8 h-8" />, 
+      title: "Team Bonuses", 
+      description: "Performance-based incentives and team bonuses for exceptional service." 
     },
     { 
-      icon: <FaRegSmile className="text-gold-500" />, 
+      icon: <FaRegSmile className="text-godway-green1 w-8 h-8" />, 
       title: "Employee Recognition", 
       description: "Regular recognition programs that celebrate excellence and dedication." 
     },
@@ -201,39 +201,31 @@ const CareersPage = () => {
   return (
     <>
       <Head>
-        <title>Careers at Luxury Home Remodeling | Jobs in Orlando, FL</title>
-        <meta name="description" content="Join Orlando's premier home remodeling team. Explore rewarding career opportunities with Luxury Home Remodeling, offering competitive benefits and professional growth." />
-        <meta name="keywords" content="remodeling jobs Orlando, home renovation careers, Orlando construction jobs, custom cabinetry jobs, Orlando FL employment, remodeling project manager, cabinet maker jobs, home improvement careers, Orlando remodeling company" />
+        <title>Careers at Godway Moving | Moving Jobs in South Florida</title>
+        <meta name="description" content="Join South Florida's premier moving team. Explore rewarding career opportunities with Godway Moving, offering competitive benefits and professional growth throughout Miami, Orlando, and Tampa." />
+        <meta name="keywords" content="moving jobs Florida, mover careers Miami, Orlando moving jobs, Tampa movers hiring, Florida moving company careers, professional mover positions, moving dispatcher jobs, moving consultant careers, South Florida employment" />
       </Head>
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-16 bg-black">
-          <div className="absolute inset-0 opacity-20" 
-            style={{
-              backgroundImage: 'url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundBlendMode: 'overlay'
-            }}>
-          </div>
+        <section className="relative pt-32 pb-16 bg-godway-green1">
           <div className="container-custom relative z-10">
             <div className="text-center">
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4"
+                className="font-oswald text-4xl md:text-5xl lg:text-6xl text-white mb-4 uppercase"
               >
-                Join Our Team
+                Join Our Moving Team
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-xl text-gray-200 max-w-3xl mx-auto"
+                className="text-xl text-gray-200 max-w-3xl mx-auto font-oswald"
               >
-                Build your career with Orlando's premier remodeling company
+                Build your career with South Florida's premier moving company
               </motion.p>
             </div>
           </div>
@@ -249,58 +241,29 @@ const CareersPage = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="h-1 w-20 bg-gold-gradient mx-auto mb-6 rounded-full"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-                Why Join Luxury Home Remodeling?
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 font-oswald uppercase text-godway-green1">
+                Why Join Godway Moving?
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Be part of a team that's transforming spaces and creating lasting impact
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto font-oswald">
+                Be part of a team that's helping people start new chapters in their lives
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Professional Growth",
-                  description: "Continuous learning opportunities and career advancement paths in the remodeling industry.",
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  )
-                },
-                {
-                  title: "Competitive Benefits",
-                  description: "Comprehensive health insurance, paid time off, and competitive compensation packages.",
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  )
-                },
-                {
-                  title: "Team Culture",
-                  description: "Join a supportive team environment where collaboration and innovation are valued.",
-                  icon: (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  )
-                }
-              ].map((benefit, index) => (
+              {benefits.map((benefit, index) => (
                 <motion.div
                   key={benefit.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gray-50 p-8 rounded-2xl"
+                  className="bg-gray-50 p-8 rounded-xl border border-godway-green1/10 shadow-lg"
                 >
-                  <div className="w-16 h-16 bg-gold-500/10 rounded-full flex items-center justify-center mb-6 text-gold-500">
+                  <div className="w-20 h-20 bg-godway-green1/10 rounded-xl flex items-center justify-center mb-6">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-black mb-4">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.description}</p>
+                  <h3 className="text-xl font-bold text-godway-navy mb-4 font-oswald">{benefit.title}</h3>
+                  <p className="text-gray-700 font-oswald">{benefit.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -308,7 +271,7 @@ const CareersPage = () => {
         </section>
 
         {/* Open Positions Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-cream">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -317,71 +280,93 @@ const CareersPage = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="h-1 w-20 bg-gold-gradient mx-auto mb-6 rounded-full"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 font-oswald uppercase text-godway-green1">
                 Open Positions
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Join our growing team of remodeling professionals
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto font-oswald">
+                Join our growing team of moving professionals across South Florida
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Remodeling Project Manager",
-                  location: "Orlando, FL",
-                  type: "Full-time",
-                  description: "Lead and manage remodeling projects from start to finish, ensuring quality and client satisfaction.",
-                  requirements: [
-                    "5+ years of remodeling project management experience",
-                    "Strong leadership and communication skills",
-                    "Knowledge of building codes and regulations",
-                    "Valid driver's license and clean driving record"
-                  ]
-                },
-                {
-                  title: "Custom Cabinet Maker",
-                  location: "Orlando, FL",
-                  type: "Full-time",
-                  description: "Create custom cabinetry and built-ins for luxury remodeling projects.",
-                  requirements: [
-                    "3+ years of cabinet making experience",
-                    "Proficiency with woodworking tools and machinery",
-                    "Attention to detail and craftsmanship",
-                    "Ability to read and interpret blueprints"
-                  ]
-                }
-              ].map((position, index) => (
+            <div className="space-y-8">
+              {jobPostings.map((job, index) => (
                 <motion.div
-                  key={position.title}
+                  key={job.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-2xl shadow-elegant"
+                  className="bg-white p-8 rounded-xl shadow-lg border border-godway-green1/10"
                 >
-                  <h3 className="text-2xl font-bold text-black mb-2">{position.title}</h3>
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="text-gray-600">{position.location}</span>
-                    <span className="text-gray-600">•</span>
-                    <span className="text-gray-600">{position.type}</span>
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-godway-navy mb-2 font-oswald">{job.title}</h3>
+                      <div className="flex flex-wrap items-center gap-4 mb-4">
+                        <span className="text-gray-700 font-oswald">{job.location}</span>
+                        <span className="text-gray-500">•</span>
+                        <span className="text-gray-700 font-oswald">{job.type}</span>
+                        <span className="text-gray-500">•</span>
+                        <span className="text-gray-700 font-oswald">{job.department}</span>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => toggleJobExpand(job.id)}
+                      className="mt-4 lg:mt-0 px-6 py-3 bg-godway-green1 text-white rounded-full font-oswald uppercase hover:bg-godway-green2 transition shadow-md inline-flex items-center"
+                    >
+                      {job.isExpanded ? 'Show Less' : 'View Details'}
+                      <svg
+                        className={`ml-2 w-5 h-5 transform transition-transform duration-200 ${
+                          job.isExpanded ? 'rotate-180' : ''
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
                   </div>
-                  <p className="text-gray-600 mb-6">{position.description}</p>
-                  <h4 className="font-bold text-black mb-3">Requirements:</h4>
-                  <ul className="space-y-2 mb-6">
-                    {position.requirements.map((req, i) => (
-                      <li key={i} className="flex items-start">
-                        <svg className="w-5 h-5 text-gold-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span className="text-gray-600">{req}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a href="/contact?service=Job%20Application" className="btn-gold w-full text-center">
-                    Apply Now
-                  </a>
+                  
+                  <p className="text-gray-700 mb-6 font-oswald">{job.description}</p>
+                  
+                  {job.isExpanded && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="border-t border-gray-200 pt-6 mt-6"
+                    >
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                          <h4 className="font-bold text-godway-navy mb-4 font-oswald text-lg">Responsibilities:</h4>
+                          <ul className="space-y-3">
+                            {job.responsibilities.map((resp, i) => (
+                              <li key={i} className="flex items-start">
+                                <FaCheck className="text-godway-green1 mr-3 mt-1 flex-shrink-0" />
+                                <span className="text-gray-700 font-oswald">{resp}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-godway-navy mb-4 font-oswald text-lg">Requirements:</h4>
+                          <ul className="space-y-3">
+                            {job.requirements.map((req, i) => (
+                              <li key={i} className="flex items-start">
+                                <FaCheck className="text-godway-green1 mr-3 mt-1 flex-shrink-0" />
+                                <span className="text-gray-700 font-oswald">{req}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="mt-8 text-center">
+                        <Link href="/contact?position=Career%20Inquiry" className="bg-godway-navy text-white hover:bg-godway-navy/90 px-8 py-4 rounded-full font-oswald uppercase shadow-lg inline-block">
+                          Apply for this Position
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -389,44 +374,43 @@ const CareersPage = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-black relative overflow-hidden">
-          <div className="absolute inset-0 opacity-20" 
-            style={{
-              backgroundImage: 'url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundBlendMode: 'overlay'
-            }}>
+        <section className="py-20 relative overflow-hidden bg-godway-khaki/20">
+          <div className="absolute top-0 left-0 w-full h-2 bg-godway-green1/40"></div>
+          <div className="absolute bottom-0 left-0 w-full h-2 bg-godway-green1/40"></div>
+          <div className="absolute left-10 top-10 w-24 h-24 border-4 border-dashed border-godway-green1/20 rounded-md transform rotate-45"></div>
+          <div className="absolute right-10 bottom-10 w-32 h-32 border-4 border-dashed border-godway-green1/20 rounded-md transform -rotate-12"></div>
+          
+          <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-8 bg-godway-green1/30 transform rotate-45 translate-x-16 -translate-y-4"></div>
           </div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 overflow-hidden">
+            <div className="absolute bottom-0 left-0 w-64 h-8 bg-godway-green1/30 transform rotate-45 -translate-x-16 translate-y-4"></div>
+          </div>
+          
           <div className="container-custom relative z-10">
-            <div className="text-center">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-white mb-6"
-              >
-                Ready to Build Your Career?
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto"
-              >
-                Join our team and help us transform spaces across Orlando
-              </motion.p>
+            <div className="max-w-3xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <a href="/contact?service=Job%20Application" className="btn-gold">
-                  Apply Today
-                </a>
+                <h2 className="font-oswald text-3xl md:text-4xl lg:text-5xl text-godway-green1 mb-6 uppercase">
+                  Ready to Build Your <span className="text-godway-navy">Career?</span>
+                </h2>
+                
+                <p className="text-gray-700 text-lg mb-10 font-oswald">
+                  Join our team and help us provide exceptional moving services throughout South Florida. We're always looking for dedicated professionals to grow with us.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                  <Link href="/contact?position=General%20Application" className="bg-godway-green1 text-white hover:bg-godway-green2 px-8 py-4 rounded-full font-oswald text-white uppercase shadow-lg">
+                    Apply Today
+                  </Link>
+                  <Link href="/about" className="bg-godway-navy text-white hover:bg-godway-navy/90 border-2 border-godway-navy px-8 py-4 rounded-full font-oswald uppercase shadow-lg">
+                    Learn About Us
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </div>

@@ -12,6 +12,8 @@ module.exports = {
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
         cormorant: ['var(--font-cormorant)', 'serif'],
         playfair: ['var(--font-playfair)', 'serif'],
+        anton: ['var(--font-anton)', 'sans-serif'],
+        oswald: ['var(--font-oswald)', 'sans-serif'],
       },
       colors: {
         primary: {
@@ -27,15 +29,22 @@ module.exports = {
           900: '#343e25',
         },
         military: {
-          olive: '#4B5320', // Olive green
-          drab: '#6B8E23', // Olive drab
-          khaki: '#BDB76B', // Dark khaki
-          tan: '#D2B48C', // Tan
-          camo: '#606c38', // Camouflage green
-          navy: '#1D2D44', // Navy blue
+          olive: '#4D784E', // Forest green (updated)
+          drab: '#6EA171', // Sage green (updated)
+          khaki: '#E1D798', // Khaki (updated)
+          tan: '#675645', // Brown (updated)
+          camo: '#4D784E', // Same as olive now
+          navy: '#424756', // Navy (updated)
           black: '#0B0B0B', // Almost black
-          sand: '#C9B18A', // Desert sand
-          brown: '#5F4B32', // Military brown
+          sand: '#E1D798', // Same as khaki now
+          brown: '#675645', // Same as tan now
+        },
+        godway: {
+          green1: '#4D784E', // Forest green
+          green2: '#6EA171', // Sage green
+          khaki: '#E1D798', // Khaki
+          brown: '#675645', // Brown
+          navy: '#424756', // Navy
         },
         gold: {
           100: '#FEF9E7',
@@ -49,14 +58,15 @@ module.exports = {
           900: '#95710A',
         },
         dark: '#1D1D1D',
-        navy: '#1D2D44',
+        navy: '#424756', // Updated to match new navy
         cream: '#F2EBDC',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'military-gradient': 'linear-gradient(to right, #4B5320, #BDB76B)',
-        'navy-gradient': 'linear-gradient(to right, #1D2D44, #395066)',
+        'military-gradient': 'linear-gradient(to right, #4D784E, #6EA171)', // Updated gradient
+        'godway-gradient': 'linear-gradient(to right, #4D784E, #6EA171)',
+        'navy-gradient': 'linear-gradient(to right, #424756, #5A6075)', // Updated gradient
       },
       boxShadow: {
         'elegant': '0 10px 30px -10px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',

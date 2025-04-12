@@ -6,16 +6,15 @@
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
   
-  /* Custom color values for military theme */
-  --color-olive-light: 177, 196, 148;
-  --color-olive-medium: 75, 83, 32;  /* #4B5320 - Primary Military Green */
-  --color-olive-dark: 58, 68, 41;    /* #3A4429 - Darker Military Green */
-  --color-khaki: 189, 183, 107;
-  --color-tan: 210, 180, 140;
-  --color-navy: 29, 45, 68;
-  --color-black: 11, 11, 11;
-  --color-white: 255, 255, 255;
-  --color-cream: 242, 235, 220;      /* #F2EBDC - Cream color */
+  /* Custom color values for Godway Moving theme */
+  --color-green1: 77, 120, 78;    /* #4D784E - Forest Green */
+  --color-green2: 110, 161, 113;  /* #6EA171 - Sage Green */
+  --color-khaki: 225, 215, 152;   /* #E1D798 - Khaki */
+  --color-brown: 103, 86, 69;     /* #675645 - Brown */
+  --color-navy: 66, 71, 86;       /* #424756 - Navy */
+  --color-black: 11, 11, 11;      /* #0B0B0B - Black */
+  --color-white: 255, 255, 255;   /* #FFFFFF - White */
+  --color-cream: 242, 235, 220;   /* #F2EBDC - Cream color */
 }
 
 /* Improved responsive base styles */
@@ -32,14 +31,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Fix for Vimeo video background */
+.vimeo-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+  min-height: 100%;
+  min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
 @layer base {
   h1, h2, h3 {
-    @apply font-playfair font-semibold leading-tight tracking-wide;
+    @apply font-oswald leading-tight tracking-wide;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   }
   
   h4, h5, h6 {
-    @apply font-cormorant font-medium tracking-wide;
+    @apply font-oswald font-medium tracking-wide;
   }
   
   p, li, input, textarea, select {
@@ -66,11 +79,12 @@ body {
 
 @layer components {
   .container-custom {
-    @apply container mx-auto px-4 md:px-8 max-w-7xl;
+    @apply container mx-auto px-4 md:px-8;
+    max-width: 1600px;
   }
   
   .btn {
-    @apply inline-block px-6 py-3.5 rounded-md font-montserrat font-medium tracking-wide transition-all duration-300;
+    @apply inline-block px-6 py-3.5 rounded-full font-oswald font-medium tracking-wide transition-all duration-300;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
   }
   
@@ -82,17 +96,22 @@ body {
   }
   
   .btn-primary {
-    @apply btn bg-military-olive text-white hover:bg-military-camo;
-    box-shadow: 0 4px 14px rgba(75, 83, 32, 0.3);
+    @apply btn bg-military-olive text-white hover:bg-military-drab;
+    box-shadow: 0 4px 14px rgba(77, 120, 78, 0.3);
   }
   
   .btn-secondary {
-    @apply btn bg-white text-military-olive hover:bg-cream;
-    box-shadow: 0 4px 14px rgba(75, 83, 32, 0.15);
+    @apply btn bg-white text-military-olive hover:bg-military-khaki/20;
+    box-shadow: 0 4px 14px rgba(77, 120, 78, 0.15);
+  }
+  
+  .btn-gold {
+    @apply btn bg-military-olive text-white hover:bg-military-drab;
+    box-shadow: 0 4px 14px rgba(77, 120, 78, 0.3);
   }
   
   .section-title {
-    @apply font-playfair text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 text-center font-bold;
+    @apply font-oswald text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 text-center font-bold;
     letter-spacing: -0.02em;
   }
   
@@ -105,7 +124,7 @@ body {
   }
   
   .section-subtitle {
-    @apply font-cormorant text-xl md:text-2xl text-center mb-12 max-w-3xl mx-auto font-light;
+    @apply font-oswald text-xl md:text-2xl text-center mb-12 max-w-3xl mx-auto font-light;
     letter-spacing: 0.02em;
   }
   
@@ -116,7 +135,7 @@ body {
   }
   
   .military-card {
-    @apply bg-white rounded-md p-8 transition-all duration-500 border-2 border-military-olive/20;
+    @apply bg-white rounded-3xl p-8 transition-all duration-500 border-2 border-military-olive/20;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
   }
   

@@ -1,9 +1,10 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaCheckCircle, FaAward, FaHandshake, FaStar, FaUsers, FaShieldAlt, FaTruck, FaBoxOpen } from 'react-icons/fa';
+import { FaCheckCircle } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import BusinessInfo from '../data/business-info';
@@ -20,27 +21,27 @@ const AboutPage = () => {
   // Company values
   const values = [
     {
-      icon: <FaShieldAlt className="w-6 h-6 text-military-olive" />,
-      title: 'Military Precision',
-      description: 'We apply military-grade precision and discipline to every move, ensuring your belongings are handled with the utmost care and attention to detail.'
+      icon: <FaCheckCircle className="w-6 h-6 text-godway-green1" />,
+      title: 'Professional Precision',
+      description: 'We approach every move with disciplined planning and meticulous attention to detail, ensuring your belongings are handled with the utmost care.'
     },
     {
-      icon: <FaStar className="w-6 h-6 text-military-olive" />,
+      icon: <FaCheckCircle className="w-6 h-6 text-godway-green1" />,
       title: 'Reliability',
       description: 'Count on our punctual, consistent service with clear communication throughout the entire moving process.'
     },
     {
-      icon: <FaHandshake className="w-6 h-6 text-military-olive" />,
+      icon: <FaCheckCircle className="w-6 h-6 text-godway-green1" />,
       title: 'Integrity',
       description: 'We operate with honesty, transparency, and respect for your property and privacy at all times.'
     },
     {
-      icon: <FaUsers className="w-6 h-6 text-military-olive" />,
+      icon: <FaCheckCircle className="w-6 h-6 text-godway-green1" />,
       title: 'Teamwork',
       description: 'Our well-trained crews work together efficiently to ensure a smooth, coordinated moving experience.'
     },
     {
-      icon: <FaBoxOpen className="w-6 h-6 text-military-olive" />,
+      icon: <FaCheckCircle className="w-6 h-6 text-godway-green1" />,
       title: 'Careful Handling',
       description: 'Every item is treated with professional care to prevent damage during the moving process.'
     }
@@ -49,7 +50,7 @@ const AboutPage = () => {
   // Why choose us points
   const whyChooseUs = [
     'Experienced, background-checked moving professionals',
-    'Military-grade precision in planning and execution',
+    'Precision in planning and execution',
     'Custom moving plans tailored to your specific needs',
     'Climate-controlled storage solutions for Florida\'s weather',
     'Careful handling of fragile and valuable items',
@@ -63,33 +64,21 @@ const AboutPage = () => {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-16 bg-military-olive">
-          <div className="absolute inset-0 opacity-20" 
-            style={{
-              backgroundImage: 'url("https://i.ibb.co/5XtvYCwR/IMG-5288.jpg")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundBlendMode: 'overlay'
-            }}>
+        <section className="relative min-h-[60vh] flex items-center bg-godway-green1">
+          <div className="absolute inset-0 z-0">
+            <Image 
+              src="https://i.ibb.co/CwgG4tL/team.jpg"
+              alt="About Godway Moving"
+              fill
+              className="object-cover opacity-30"
+              priority
+            />
           </div>
-          <div className="container-custom relative z-10">
-            <div className="text-center">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4"
-              >
-                About Godway Moving
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-xl text-gray-200 max-w-3xl mx-auto"
-              >
-                Your trusted partner in military-grade moving services across South Florida
-              </motion.p>
+          
+          <div className="container mx-auto px-4 py-24 relative z-10">
+            <div className="max-w-5xl mx-auto text-center text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-display uppercase">About Our Florida Moving Company</h1>
+              <p className="text-xl max-w-3xl mx-auto">Godway Moving has been providing exceptional moving services to customers across Florida with precision and care.</p>
             </div>
           </div>
         </section>
@@ -97,48 +86,71 @@ const AboutPage = () => {
         {/* Mission Section */}
         <section className="py-20 bg-white">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              {/* Main image with overlayed smaller image */}
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
-                className="relative h-[500px] rounded-md overflow-hidden border border-military-olive/20"
+                className="relative lg:mr-6"
               >
-                <Image
-                  src="https://i.ibb.co/rGws4TV1/IMG-5288.jpg"
-                  alt="Godway Moving Team"
-                  fill
-                  className="object-cover"
-                  unoptimized={true}
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <div className="h-1 w-20 bg-military-gradient mb-6 rounded-full"></div>
-                <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
-                  Our Mission
-                </h2>
-                <p className="text-lg text-gray-700 mb-6">
-                  At Godway Moving, we're dedicated to transforming the moving experience with military-grade precision and exceptional care. Our mission is to make your relocation stress-free by providing reliable, efficient, and careful moving services.
-                </p>
-                <p className="text-lg text-gray-700 mb-8">
-                  Based in Miami, we serve clients throughout South Florida, delivering premium moving services that combine strategic planning with superior execution.
-                </p>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-cream p-6 rounded-md border border-military-olive/20">
-                    <div className="text-3xl font-bold text-military-olive mb-2">5+</div>
-                    <div className="text-gray-700">Years Experience</div>
-                  </div>
-                  <div className="bg-cream p-6 rounded-md border border-military-olive/20">
-                    <div className="text-3xl font-bold text-military-olive mb-2">1,200+</div>
-                    <div className="text-gray-700">Successful Moves</div>
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-godway-green1/20">
+                  <Image
+                    src="https://i.ibb.co/v65KPtGc/IMG-0739.jpg"
+                    alt="Local Florida Moving 1"
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    sizes="(max-width: 768px) 100vw, 500px"
+                    className="rounded-xl"
+                    unoptimized={true}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-godway-navy/40 to-transparent"></div>
+                </div>
+                
+                {/* Overlayed smaller image */}
+                <div className="absolute -bottom-6 -right-6 w-28 h-28 md:w-32 md:h-32">
+                  <div className="relative w-full h-full rounded-xl overflow-hidden shadow-lg border-2 border-white">
+                    <Image
+                      src="https://i.ibb.co/WvBWPXWM/IMG-0731.jpg"
+                      alt="Local Florida Moving 2"
+                      fill
+                      style={{ objectFit: 'cover', objectPosition: 'center' }}
+                      className="rounded-xl"
+                      unoptimized={true}
+                    />
                   </div>
                 </div>
+              </motion.div>
+              
+              {/* Text content */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7 }}
+                viewport={{ once: true }}
+                className="relative lg:ml-6"
+              >
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  viewport={{ once: true }}
+                  className="mb-6"
+                >
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 font-oswald uppercase text-godway-green1">
+                    Our Mission
+                  </h2>
+                  <p className="text-base text-gray-700 mb-4 font-oswald">
+                    At Godway Moving, we're dedicated to transforming the moving experience with professional precision and exceptional care. Our mission is to make your relocation stress-free by providing reliable, efficient, and careful moving services.
+                  </p>
+                  <p className="text-base text-gray-700 mb-4 font-oswald">
+                    Based in Miami, we serve clients throughout South Florida, delivering premium moving services that combine strategic planning with superior execution. We specialize in last-minute moves and small local relocations.
+                  </p>
+                  <p className="text-base text-gray-700 font-oswald">
+                    From Naples to Miami and everywhere in between, our dedicated team ensures your moving experience exceeds expectations with careful handling and efficient service, especially when time is of the essence.
+                  </p>
+                </motion.div>
               </motion.div>
             </div>
           </div>
@@ -154,11 +166,10 @@ const AboutPage = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <div className="h-1 w-20 bg-military-gradient mx-auto mb-6 rounded-full"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 font-oswald uppercase text-godway-green1">
                 Our Core Values
               </h2>
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto font-oswald">
                 The principles that guide our work and set us apart
               </p>
             </motion.div>
@@ -166,7 +177,7 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Military-Grade Precision",
+                  title: "Professional Precision",
                   description: "We approach every move with disciplined planning and meticulous execution, ensuring nothing is left to chance.",
                   icon: (
                     <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,13 +210,13 @@ const AboutPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white p-8 rounded-md shadow-military border border-military-olive/20"
+                  className="bg-white p-8 rounded-xl shadow-lg border border-godway-green1/20"
                 >
-                  <div className="w-16 h-16 bg-military-olive/10 rounded-md flex items-center justify-center mb-6 text-military-olive">
+                  <div className="w-16 h-16 bg-godway-green1/10 rounded-md flex items-center justify-center mb-6 text-godway-green1">
                       {value.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-dark mb-4">{value.title}</h3>
-                  <p className="text-gray-700">{value.description}</p>
+                  <h3 className="text-xl font-bold text-dark mb-4 font-oswald">{value.title}</h3>
+                  <p className="text-gray-700 font-oswald">{value.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -215,87 +226,91 @@ const AboutPage = () => {
         {/* Why Choose Us Section */}
         <section className="py-20 bg-white">
           <div className="container-custom">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
+                className="lg:mr-6"
               >
-                <div className="h-1 w-20 bg-military-gradient mb-6 rounded-full"></div>
-                <h2 className="text-3xl md:text-4xl font-bold text-dark mb-6">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 font-oswald uppercase text-godway-green1">
                   Why Choose Godway Moving
                 </h2>
-                <p className="text-lg text-gray-700 mb-8">
-                  When you choose Godway Moving, you're selecting a team that brings military precision to every aspect of your move:
+                <p className="text-base text-gray-700 mb-6 font-oswald">
+                  When you choose Godway Moving, you're selecting a team that brings professional precision to every aspect of your move:
                 </p>
                 <ul className="space-y-4">
                   {whyChooseUs.map((point, index) => (
                     <li key={index} className="flex items-start">
-                      <FaCheckCircle className="text-military-olive mt-1 flex-shrink-0 mr-3" />
-                      <span className="text-gray-700">{point}</span>
+                      <FaCheckCircle className="text-godway-green1 mt-1 flex-shrink-0 mr-3" />
+                      <span className="text-gray-700 font-oswald">{point}</span>
                     </li>
                   ))}
                 </ul>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
+                initial={{ opacity: 0, x: 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+                transition={{ duration: 0.7 }}
                 viewport={{ once: true }}
-                className="relative h-[500px] rounded-md overflow-hidden border border-military-olive/20"
+                className="relative lg:ml-6"
               >
-                <Image
-                  src="https://i.ibb.co/fG4nktFY/IMG-5246.jpg"
-                  alt="Godway Moving Team at Work"
-                  fill
-                  className="object-cover"
-                  unoptimized={true}
-                />
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-godway-green1/20">
+                  <Image
+                    src="https://i.ibb.co/27xmL2w8/IMG-1632.jpg"
+                    alt="Florida Moving Services"
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    sizes="(max-width: 768px) 100vw, 500px"
+                    className="rounded-xl"
+                    unoptimized={true}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-godway-navy/40 to-transparent"></div>
+                </div>
               </motion.div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-military-olive relative overflow-hidden">
-          <div className="absolute inset-0 opacity-20" 
-            style={{
-              backgroundImage: 'url("https://i.ibb.co/zZb9LTq4/IMG-5297.jpg")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundBlendMode: 'overlay'
-            }}>
+        <section className="py-20 relative overflow-hidden bg-godway-khaki/20">
+          <div className="absolute top-0 left-0 w-full h-2 bg-godway-green1/40"></div>
+          <div className="absolute bottom-0 left-0 w-full h-2 bg-godway-green1/40"></div>
+          <div className="absolute left-10 top-10 w-24 h-24 border-4 border-dashed border-godway-green1/20 rounded-md transform rotate-45"></div>
+          <div className="absolute right-10 bottom-10 w-32 h-32 border-4 border-dashed border-godway-green1/20 rounded-md transform -rotate-12"></div>
+          
+          <div className="absolute top-0 right-0 w-32 h-32 overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-8 bg-godway-green1/30 transform rotate-45 translate-x-16 -translate-y-4"></div>
           </div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 overflow-hidden">
+            <div className="absolute bottom-0 left-0 w-64 h-8 bg-godway-green1/30 transform rotate-45 -translate-x-16 translate-y-4"></div>
+          </div>
+          
           <div className="container-custom relative z-10">
-            <div className="text-center">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="text-3xl md:text-4xl font-bold text-white mb-6"
-              >
-                Ready for a Stress-Free Move?
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto"
-              >
-                Contact us today for a free consultation and let's plan your perfect move.
-              </motion.p>
+            <div className="max-w-3xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <Link href="/contact" className="bg-white text-military-olive hover:bg-cream px-6 py-3 rounded-md font-medium transition-colors shadow-military inline-block">
-                  Get Free Quote
-                </Link>
+                <h2 className="font-oswald text-3xl md:text-4xl lg:text-5xl text-godway-green1 mb-6 uppercase">
+                  Local & Last-Minute <span className="text-godway-navy">Moving</span>
+                </h2>
+                
+                <p className="text-gray-700 text-lg mb-10 font-oswald">
+                  Ready for a seamless moving experience across Florida? We specialize in last-minute moves and small local relocations. Contact us today for a free quote and personalized moving plan tailored to your specific needs.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                  <Link href="/contact" className="bg-godway-green1 text-white hover:bg-godway-green2 px-8 py-4 rounded-full font-oswald text-white uppercase shadow-lg">
+                    Get a Free Quote
+                  </Link>
+                  <Link href="/services" className="bg-godway-navy text-white hover:bg-godway-navy/90 border-2 border-godway-navy px-8 py-4 rounded-full font-oswald uppercase shadow-lg">
+                    View Our Services
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </div>

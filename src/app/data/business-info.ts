@@ -9,24 +9,24 @@ export const BusinessInfo = {
   // Company Information
   company: {
     name: "Godway Moving",
-    legalName: "Godway Moving LLC",
-    tagline: "Reliable, Military-Grade Moving Services in Miami, FL",
-    description: "Specializing in residential and commercial moving services throughout Florida. Our expert team delivers military-grade precision and careful handling to relocate your belongings safely and efficiently across Miami, Orlando, Tampa, and all of South Florida.",
-    yearFounded: 2020,
+    legalName: "Godway, LLC",
+    tagline: "Reliable, Professional Moving Services in Miami, FL",
+    description: "Specializing in last-minute moves and small local relocations throughout Florida. Our expert team delivers precision and careful handling to relocate your belongings safely and efficiently across Miami, Orlando, Tampa, and all of South Florida.",
+    yearFounded: 2022,
   },
 
   // Contact Information
   contact: {
     phone: {
-      display: "(909) 645-3373",
-      link: "9096453373",
+      display: "(305) 409-7671",
+      link: "3054097671",
     },
-    email: "Savemoneyremodeling@gmail.com",
+    email: "godwayllc@gmail.com",
     address: {
-      street: "", 
-      city: "Miami",
-      state: "Florida",
-      zip: "33101", 
+      street: "2101 LUDLAM ROAD APT 642", 
+      city: "MIAMI",
+      state: "FL",
+      zip: "33155", 
       country: "USA",
       coordinates: {
         lat: 25.7617,
@@ -37,34 +37,36 @@ export const BusinessInfo = {
 
   // Business Hours
   hours: {
-    monday: "8:00 AM - 6:00 PM",
-    tuesday: "8:00 AM - 6:00 PM",
-    wednesday: "8:00 AM - 6:00 PM",
-    thursday: "8:00 AM - 6:00 PM",
-    friday: "8:00 AM - 6:00 PM",
-    saturday: "8:00 AM - 6:00 PM",
-    sunday: "Closed",
-    display: "Mon-Sat: 8am-6pm, Sun: Closed"
+    monday: "8:00 AM - 8:00 PM",
+    tuesday: "8:00 AM - 8:00 PM",
+    wednesday: "8:00 AM - 8:00 PM",
+    thursday: "8:00 AM - 8:00 PM",
+    friday: "8:00 AM - 8:00 PM",
+    saturday: "8:00 AM - 8:00 PM",
+    sunday: "3:00 PM - 7:00 PM",
+    display: "Mon-Sat: 8am-8pm, Sun: 3pm-7pm"
   },
 
   // Services Offered
   services: {
     primary: [
-      "South Florida Residential Moving",
-      "Florida Commercial Relocations",
-      "Professional Packing Services",
-      "Loading & Unloading",
-      "Furniture Assembly & Disassembly",
-      "Climate-Controlled Storage Solutions"
+      "24/7/365 Moving Services",
+      "Local Residential Moving",
+      "Long Distance Moving",
+      "Office & Commercial Moves",
+      "Small Moves",
+      "Last Minute Moves",
+      "Installations",
+      "Junk Removal"
     ],
-    description: "From expert packing to efficient transportation and setup, trust our experienced Florida moving team to relocate your belongings with military precision across Miami, Orlando, Tampa, and the entire Sunshine State. Your stress-free Florida move awaits!"
+    description: "From small apartment moves to urgent relocations, trust our experienced Florida moving team to relocate your belongings with care and efficiency across Miami, Orlando, Tampa, and the entire Sunshine State. Your stress-free Florida move awaits!"
   },
 
   // Social Media Links
   socialMedia: {
-    facebook: "https://facebook.com/godwaymoving",
-    instagram: "https://instagram.com/godwaymoving",
-    twitter: "https://twitter.com/godwaymoving",
+    instagram: "https://www.instagram.com/godwayllc/",
+    yelp: "https://www.yelp.com/biz/godway-miami",
+    thumbtack: "https://www.thumbtack.com/fl/miami/movers/godway/service/488253238115549187",
   },
 
   // Areas Served

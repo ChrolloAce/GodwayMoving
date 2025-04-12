@@ -6,101 +6,58 @@ import Image from 'next/image';
 
 interface Project {
   title: string;
-  location: string;
-  category: string;
   image: string;
-  description: string;
 }
 
 const Portfolio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const projects: Project[] = [
     {
-      title: "Luxury Condo Relocation",
-      location: "Miami Beach, FL",
-      category: "Residential Moving",
-      image: "https://i.ibb.co/5xBSjyB8/IMG-3761.jpg",
-      description: "Complete relocation of a luxury beachfront condo featuring careful handling of high-end furniture, artwork, and fragile items. Our military-precision approach ensured a smooth transition for this upscale Miami residence."
+      title: "Moving Project 1",
+      image: "https://i.ibb.co/WvBWPXWM/IMG-0731.jpg"
     },
     {
-      title: "Office Building Transition",
-      location: "Downtown Miami, FL",
-      category: "Commercial Moving",
-      image: "https://i.ibb.co/ynJB2Pvj/IMG-6826.jpg",
-      description: "Major commercial relocation for a financial firm with minimal downtime. Our team coordinated the move of sensitive equipment, documents, and office furniture over a weekend for seamless Monday operations."
+      title: "Moving Project 2",
+      image: "https://i.ibb.co/cXYdSC0j/IMG-0713.jpg"
     },
     {
-      title: "Executive Home Relocation",
-      location: "Orlando, FL",
-      category: "Residential Moving",
-      image: "https://i.ibb.co/B5HmQcc7/IMG-0727.jpg",
-      description: "Full-service relocation of an executive family home including professional packing, furniture disassembly, transport, and setup in the new residence. Special care was taken with antique and valuable items."
+      title: "Moving Project 3",
+      image: "https://i.ibb.co/3YVdYwCd/IMG-2040.jpg"
     },
     {
-      title: "Retail Store Expansion",
-      location: "Tampa Bay, FL",
-      category: "Commercial Moving",
-      image: "https://i.ibb.co/T66jm8t/15-C40-AB1-EF46-45-E3-8-AFE-7-BFFD535054-A.jpg",
-      description: "Coordinated moving services for a retail business expanding to a larger location. Our team handled the logistics of moving inventory, displays, and store fixtures with efficiency and organization."
+      title: "Moving Project 4",
+      image: "https://i.ibb.co/DDZT8qsm/15-C40-AB1-EF46-45-E3-8-AFE-7-BFFD535054-A.jpg"
     },
     {
-      title: "Waterfront Property Relocation",
-      location: "Fort Lauderdale, FL",
-      category: "Residential Moving",
-      image: "https://i.ibb.co/MxxJ8zy9/IMG-5189.jpg",
-      description: "Luxury home relocation for a waterfront property requiring special equipment and careful handling of high-value items. Our experienced team ensured a smooth transition to the new home."
+      title: "Moving Project 5",
+      image: "https://i.ibb.co/mVLnRJHX/IMG-0715.jpg"
     },
     {
-      title: "Corporate Headquarters Relocation",
-      location: "Boca Raton, FL",
-      category: "Commercial Moving",
-      image: "https://i.ibb.co/GfVY1p4B/IMG-6831.jpg",
-      description: "Major commercial relocation of a company headquarters involving IT infrastructure, executive offices, and staff workspace. Our comprehensive planning resulted in zero downtime during the transition."
+      title: "Moving Project 6",
+      image: "https://i.ibb.co/XfDrGtZN/IMG-0718.jpg"
     },
     {
-      title: "Long-Distance Family Move",
-      location: "Naples to Orlando, FL",
-      category: "Residential Moving",
-      image: "https://i.ibb.co/rGh3vXm5/IMG-5185.jpg",
-      description: "Complete long-distance family relocation across Florida. Our team provided comprehensive packing, transportation, and setup services to ensure a stress-free move for this growing family."
+      title: "Moving Project 7",
+      image: "https://i.ibb.co/7T7KvGT/IMG-2041.jpg"
     },
     {
-      title: "Medical Office Relocation",
-      location: "Jacksonville, FL",
-      category: "Commercial Moving",
-      image: "https://i.ibb.co/qFm7pvjd/IMG-5246.jpg",
-      description: "Specialized moving services for a medical practice requiring careful handling of sensitive equipment and patient records. Our team maintained HIPAA compliance throughout the relocation process."
+      title: "Moving Project 8",
+      image: "https://i.ibb.co/JwyyPvSk/IMG-2406.jpg"
     },
     {
-      title: "Penthouse Apartment Move",
-      location: "Miami, FL",
-      category: "Residential Moving",
-      image: "https://i.ibb.co/chLgrmKh/IMG-5188.jpg",
-      description: "High-rise penthouse relocation requiring specialized equipment and protocols. Our team expertly navigated the challenges of moving luxury furniture and artwork to the new residence."
+      title: "Moving Project 9",
+      image: "https://i.ibb.co/XrX5kdM7/IMG-1736.jpg"
     },
     {
-      title: "Restaurant Relocation",
-      location: "West Palm Beach, FL",
-      category: "Commercial Moving",
-      image: "https://i.ibb.co/84LxMQ0N/IMG-3643.jpg",
-      description: "Comprehensive moving services for a restaurant business including industrial kitchen equipment, dining furniture, and decor. Our team completed the move over two nights to minimize business disruption."
+      title: "Moving Project 10",
+      image: "https://i.ibb.co/whdn6mFS/IMG-1682.jpg"
     },
     {
-      title: "Storage & Inventory Management",
-      location: "Miami, FL",
-      category: "Storage Solutions",
-      image: "https://i.ibb.co/fVSxn9dF/IMG-5323.jpg",
-      description: "Climate-controlled storage solutions for a family during their home renovation. Our team cataloged and stored belongings in our secure facility protected from Florida's heat and humidity."
-    },
-    {
-      title: "Specialized Furniture Assembly",
-      location: "Orlando, FL",
-      category: "Furniture Assembly",
-      image: "https://i.ibb.co/5W1Cy02S/IMG-2368.jpg",
-      description: "Professional furniture disassembly and reassembly services for a complex move involving custom and antique pieces. Our skilled technicians ensured every piece was properly handled and reconstructed."
+      title: "Moving Project 11",
+      image: "https://i.ibb.co/kRD39Rv/IMG-0719.jpg"
     }
   ];
 
@@ -116,14 +73,22 @@ const Portfolio = () => {
 
   const visibleProjects = projects.slice(currentIndex, currentIndex + 3);
 
-  const openModal = (project: Project) => {
-    setSelectedProject(project);
+  const openModal = (image: string) => {
+    setSelectedImage(image);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setSelectedProject(null);
+    setSelectedImage(null);
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? projects.length - 3 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev === projects.length - 3 ? 0 : prev + 1));
   };
 
   return (
@@ -136,16 +101,41 @@ const Portfolio = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <div className="h-1 w-24 bg-military-gradient mx-auto mb-8 rounded-full"></div>
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 tracking-tight">
+          <div className="h-1 w-24 bg-godway-gradient mx-auto mb-8 rounded-full"></div>
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 tracking-tight font-oswald uppercase">
             Our Portfolio
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Explore our recent moving projects across South Florida
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-oswald">
+            Experience our quality moving services through these project highlights
           </p>
         </motion.div>
 
         <div className="relative max-w-7xl mx-auto">
+          {/* Mobile Navigation Controls - Only visible on small screens */}
+          <div className="flex items-center justify-between mb-6 md:hidden">
+            <button
+              onClick={goToPrev}
+              className="p-3 bg-godway-green1 rounded-full flex items-center justify-center text-white shadow-md active:scale-95 transition-transform"
+              aria-label="Previous projects"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div className="text-godway-green1 font-medium font-oswald">
+              {currentIndex + 1}-{Math.min(currentIndex + 3, projects.length)} of {projects.length}
+            </div>
+            <button
+              onClick={goToNext}
+              className="p-3 bg-godway-green1 rounded-full flex items-center justify-center text-white shadow-md active:scale-95 transition-transform"
+              aria-label="Next projects"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
@@ -162,10 +152,10 @@ const Portfolio = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative bg-white rounded-md shadow-xl overflow-hidden group cursor-pointer transform hover:-translate-y-1 transition-all duration-300 border border-military-khaki/30"
-                  onClick={() => openModal(project)}
+                  className="relative bg-white rounded-3xl shadow-xl overflow-hidden group cursor-pointer transform hover:-translate-y-1 transition-all duration-300 border border-godway-green1/30 h-[400px]"
+                  onClick={() => openModal(project.image)}
                 >
-                  <div className="relative h-[400px] overflow-hidden">
+                  <div className="relative h-full w-full overflow-hidden rounded-3xl">
                     <Image
                       src={project.image}
                       alt={project.title}
@@ -176,33 +166,17 @@ const Portfolio = () => {
                       priority={index === 0}
                       unoptimized={true}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-military-navy/90 via-military-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    <div className="flex items-center space-x-4 mb-3">
-                      <span className="px-4 py-1.5 bg-military-olive text-white rounded-md text-sm font-semibold tracking-wide">
-                        {project.category}
-                      </span>
-                      <span className="text-sm opacity-90">
-                        {project.location}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-bold mb-3 tracking-tight">
-                      {project.title}
-                    </h3>
-                    <p className="text-base text-gray-200 leading-relaxed">
-                      {project.description}
-                    </p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-godway-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation Arrows */}
+          {/* Desktop Navigation Arrows - Hidden on mobile */}
           <button
-            onClick={() => setCurrentIndex((prev) => (prev === 0 ? projects.length - 3 : prev - 1))}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-x-20"
+            onClick={goToPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-14 h-14 bg-godway-green1 rounded-full hidden md:flex items-center justify-center text-white hover:bg-godway-green2 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-x-20"
             aria-label="Previous projects"
           >
             <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -210,8 +184,8 @@ const Portfolio = () => {
             </svg>
           </button>
           <button
-            onClick={() => setCurrentIndex((prev) => (prev === projects.length - 3 ? 0 : prev + 1))}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-14 h-14 bg-white rounded-full flex items-center justify-center text-black hover:bg-gray-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:translate-x-20"
+            onClick={goToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-14 h-14 bg-godway-green1 rounded-full hidden md:flex items-center justify-center text-white hover:bg-godway-green2 transition-all duration-300 shadow-xl hover:shadow-2xl hover:translate-x-20"
             aria-label="Next projects"
           >
             <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -226,7 +200,7 @@ const Portfolio = () => {
                 key={index}
                 onClick={() => setCurrentIndex(index)}
                 className={`h-3 rounded-full transition-all duration-500 ${
-                  index === currentIndex ? 'bg-military-olive w-8' : 'bg-gray-300 w-3 hover:bg-gray-400'
+                  index === currentIndex ? 'bg-godway-green1 w-8' : 'bg-gray-300 w-3 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to projects ${index + 1}-${index + 3}`}
               />
@@ -235,9 +209,9 @@ const Portfolio = () => {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Image modal */}
       <AnimatePresence>
-        {isModalOpen && selectedProject && (
+        {isModalOpen && selectedImage && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -251,44 +225,28 @@ const Portfolio = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="relative max-w-5xl w-full bg-white rounded-md overflow-hidden shadow-2xl border border-military-khaki/30"
+              className="relative max-w-5xl w-full h-[80vh] rounded-3xl overflow-hidden shadow-2xl"
               onClick={e => e.stopPropagation()}
             >
               <button
                 onClick={closeModal}
-                className="absolute top-6 right-6 z-10 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center text-black hover:bg-white transition-colors shadow-lg hover:shadow-xl"
+                className="absolute top-6 right-6 z-10 w-12 h-12 bg-godway-green1/90 rounded-full flex items-center justify-center text-white hover:bg-godway-green1 transition-colors shadow-lg hover:shadow-xl"
               >
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-              <div className="relative h-[500px]">
+              <div className="relative h-full w-full">
                 <Image
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
+                  src={selectedImage}
+                  alt="Project gallery image"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
-                  className="object-cover"
+                  className="object-contain"
                   quality={95}
                   priority={true}
                   unoptimized={true}
                 />
-              </div>
-              <div className="p-8">
-                <div className="flex items-center space-x-4 mb-6">
-                  <span className="px-4 py-1.5 bg-military-olive text-white rounded-md text-sm font-semibold tracking-wide">
-                    {selectedProject.category}
-                  </span>
-                  <span className="text-sm text-gray-600">
-                    {selectedProject.location}
-                  </span>
-                </div>
-                <h3 className="text-3xl font-bold mb-6 tracking-tight">
-                  {selectedProject.title}
-                </h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  {selectedProject.description}
-                </p>
               </div>
             </motion.div>
           </motion.div>

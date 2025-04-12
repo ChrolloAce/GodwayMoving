@@ -1,17 +1,18 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
-import Script from 'next/script';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaCheckCircle, FaInstagram, FaYelp } from 'react-icons/fa';
+import { SiThumbtack } from 'react-icons/si';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useRouter } from 'next/navigation';
 import BusinessInfo from '../data/business-info';
+import Link from 'next/link';
+import SectionHeader from '../components/SectionHeader';
 
 const ContactPage = () => {
   const router = useRouter();
-  const [iframeHeight, setIframeHeight] = useState(600);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,26 +22,7 @@ const ContactPage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
-
-  useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      if (event.data && event.data.frameHeight) {
-        setIframeHeight(event.data.frameHeight + 50);
-      }
-    };
-
-    // Set service from URL query parameter if available
-    if (typeof window !== 'undefined') {
-      const urlParams = new URLSearchParams(window.location.search);
-      const serviceParam = urlParams.get('service');
-      if (serviceParam) {
-        setFormData(prev => ({ ...prev, service: serviceParam }));
-      }
-    }
-
-    window.addEventListener('message', handleMessage);
-    return () => window.removeEventListener('message', handleMessage);
-  }, []);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -84,8 +66,21 @@ const ContactPage = () => {
         ]));
       }
       
-      // Redirect to thank you page
-      router.push('/thank-you');
+      // Show success message
+      setFormSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        service: 'South Florida Residential Moving',
+      });
+      
+      // Redirect after delay
+      setTimeout(() => {
+        router.push('/thank-you');
+      }, 2000);
+      
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitError('There was an error submitting your form. Please try again or contact us directly by phone.');
@@ -94,335 +89,350 @@ const ContactPage = () => {
     }
   };
 
-  // Contact information
-  const contactInfo = [
+  // Contact information card items
+  const contactCards = [
     {
-      icon: <FaPhone className="text-military-khaki" />,
-      title: 'Phone',
+      icon: <FaPhone className="w-6 h-6 text-godway-green1" />,
+      title: 'Call Us',
       details: BusinessInfo.contact.phone.display,
+      description: "Ready to schedule your move? Call our team directly.",
       action: `tel:+1${BusinessInfo.contact.phone.link}`,
       actionText: 'Call Now',
     },
     {
-      icon: <FaEnvelope className="text-military-khaki" />,
-      title: 'Email',
+      icon: <FaEnvelope className="w-6 h-6 text-godway-green1" />,
+      title: 'Email Us',
       details: BusinessInfo.contact.email,
+      description: "Send us an email with your questions or concerns.",
       action: `mailto:${BusinessInfo.contact.email}`,
       actionText: 'Send Email',
     },
     {
-      icon: <FaMapMarkerAlt className="text-military-khaki" />,
-      title: 'Address',
+      icon: <FaMapMarkerAlt className="w-6 h-6 text-godway-green1" />,
+      title: 'Our Location',
       details: `${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state}`,
-      action: `https://maps.google.com/?q=${BusinessInfo.contact.address.city},${BusinessInfo.contact.address.state}`,
+      description: `${BusinessInfo.contact.address.street}, ${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state} ${BusinessInfo.contact.address.zip}`,
+      action: `https://maps.google.com/?q=${encodeURIComponent(`${BusinessInfo.contact.address.street}, ${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state} ${BusinessInfo.contact.address.zip}`)}`,
       actionText: 'Get Directions',
     },
     {
-      icon: <FaClock className="text-military-khaki" />,
+      icon: <FaClock className="w-6 h-6 text-godway-green1" />,
       title: 'Business Hours',
-      details: BusinessInfo.hours.display,
-      action: '#booking',
-      actionText: 'Book Now',
+      details: "We're available when you need us",
+      description: `Mon-Sat: 8AM-8PM, Sun: 3PM-7PM`,
+      action: '#',
+      actionText: 'Contact Us',
     },
+  ];
+
+  // Social Media Links
+  const socialLinks = [
+    {
+      icon: <FaInstagram className="w-6 h-6" />,
+      name: 'Instagram',
+      url: BusinessInfo.socialMedia.instagram,
+      color: 'bg-gradient-to-r from-purple-500 to-pink-500',
+      textColor: 'text-white'
+    },
+    {
+      icon: <FaYelp className="w-6 h-6" />,
+      name: 'Yelp',
+      url: BusinessInfo.socialMedia.yelp,
+      color: 'bg-red-600',
+      textColor: 'text-white'
+    },
+    {
+      icon: <SiThumbtack className="w-6 h-6" />,
+      name: 'Thumbtack',
+      url: BusinessInfo.socialMedia.thumbtack,
+      color: 'bg-blue-500',
+      textColor: 'text-white'
+    }
   ];
 
   return (
     <>
       <Navbar />
       <main>
-        <section className="relative pt-32 pb-16 bg-military-olive">
-          <div className="absolute inset-0 opacity-20" 
-            style={{
-              backgroundImage: 'url("https://i.ibb.co/mCVrXF9S/IMG-6835.jpg")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundBlendMode: 'overlay'
-            }}>
-          </div>
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-16 bg-godway-green1">
           <div className="container-custom relative z-10">
-            <div className="text-center">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4"
-              >
-                Contact Us
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-xl text-gray-200 max-w-3xl mx-auto"
-              >
-                We're here to answer your questions and provide you with exceptional moving services throughout Florida.
-              </motion.p>
-            </div>
+            <SectionHeader
+              title="Contact Us"
+              subtitle="We're here to answer your questions and provide you with exceptional moving services throughout Florida."
+              light={true}
+            />
           </div>
         </section>
 
-        <section className="py-20 bg-cream">
-          <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-16"
-            >
-              <div className="h-1 w-20 bg-military-gradient mx-auto mb-6 rounded-full"></div>
-              <h1 className="text-3xl md:text-4xl font-bold text-dark mb-4">
-                Contact Us Today
-              </h1>
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                Get in touch with our Florida moving experts for a free consultation and personalized quote
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white rounded-md shadow-military p-8 border-2 border-military-olive/20"
-              >
-                <h2 className="text-2xl font-bold text-dark mb-6">Get in Touch</h2>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-military-olive/10 rounded-md flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-military-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-dark mb-1">Address</h3>
-                      <p className="text-gray-700">
-                        {BusinessInfo.contact.address.city}, {BusinessInfo.contact.address.state}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-military-olive/10 rounded-md flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-military-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-dark mb-1">Phone</h3>
-                      <p className="text-gray-700">
-                        <a href={`tel:+1${BusinessInfo.contact.phone.link}`} className="hover:text-military-olive transition-colors">
-                          {BusinessInfo.contact.phone.display}
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-military-olive/10 rounded-md flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-military-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-dark mb-1">Email</h3>
-                      <p className="text-gray-700">
-                        <a href={`mailto:${BusinessInfo.contact.email}`} className="hover:text-military-olive transition-colors">
-                          {BusinessInfo.contact.email}
-                        </a>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-military-olive/10 rounded-md flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-military-olive" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-dark mb-1">Business Hours</h3>
-                      <p className="text-gray-700">
-                        Monday: {BusinessInfo.hours.monday}<br />
-                        Tuesday - Friday: {BusinessInfo.hours.tuesday}<br />
-                        Saturday: {BusinessInfo.hours.saturday}<br />
-                        Sunday: {BusinessInfo.hours.sunday}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white rounded-md shadow-military p-8 border-2 border-military-olive/20"
-              >
-                <h2 className="text-2xl font-bold text-dark mb-6">Send Us a Message</h2>
-                
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
-                      required
-                      aria-required="true"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
-                      required
-                      aria-required="true"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
-                      required
-                      aria-required="true"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
-                      Service Interest
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
-                      required
-                      aria-required="true"
-                    >
-                      <option value="">Select a Service</option>
-                      {BusinessInfo.services.primary.map((service) => (
-                        <option key={service} value={service}>
-                          {service}
-                        </option>
-                      ))}
-                      <option value="Free Consultation">Free Consultation</option>
-                      <option value="Job Application">Job Application</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent"
-                      required
-                      aria-required="true"
-                    ></textarea>
-                  </div>
-
-                  {submitError && (
-                    <div className="p-3 bg-red-50 text-red-700 rounded-md text-sm">
-                      {submitError}
-                    </div>
-                  )}
-
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    type="submit"
-                    className="w-full py-3 bg-military-olive text-white font-medium rounded-md hover:bg-military-camo transition-colors duration-300 shadow-military"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </motion.button>
-
-                  <p className="text-xs text-gray-500 text-center">
-                    Your information is secure and will never be shared with third parties.
-                  </p>
-                </form>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20">
-          <div className="container-custom">
-            <h2 className="text-3xl font-bold text-center mb-8">Visit Us in {BusinessInfo.contact.address.city}, {BusinessInfo.contact.address.state}</h2>
-            <div className="aspect-w-16 aspect-h-9 rounded-md overflow-hidden shadow-military border-2 border-military-olive/20">
-              <iframe
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114964.53925916665!2d-80.29949920266949!3d25.782390733064336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL!5e0!3m2!1sen!2sus!4v1649126436889!5m2!1sen!2sus`}
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title={`Godway Moving location in ${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state}`}
-                aria-label={`Google Maps showing Godway Moving's location in ${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state}`}
-              ></iframe>
-            </div>
-          </div>
-        </section>
-
-        <section id="booking" className="py-20 bg-cream">
+        {/* Contact Cards Section */}
+        <section className="py-20 bg-white">
           <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="mb-16"
             >
-              <div className="h-1 w-20 bg-military-gradient mx-auto mb-6 rounded-full"></div>
-              <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4">
-                Schedule Your Move
-              </h2>
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                Use our convenient online booking system to schedule your move with military precision
-              </p>
+              <SectionHeader
+                title="Get In Touch"
+                subtitle="Contact our Florida moving experts for your next move"
+              />
             </motion.div>
 
-            <div className="bg-white shadow-military rounded-md overflow-hidden border-2 border-military-olive/20 relative" style={{ height: `${iframeHeight}px` }}>
-              <Script src={BusinessInfo.externalResources.bookingScript} />
-              <iframe 
-                src={BusinessInfo.externalResources.bookingWidget}
-                width="100%" 
-                height="100%" 
-                frameBorder="0"
-                title="Booking Calendar"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-              />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {contactCards.map((card, index) => (
+                <motion.div
+                  key={card.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white rounded-xl shadow-lg overflow-hidden border border-godway-green1/10 hover:shadow-xl transition-shadow duration-300"
+                >
+                  <div className="p-6">
+                    <div className="w-14 h-14 mx-auto bg-godway-green1/10 rounded-xl flex items-center justify-center mb-6">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-center text-godway-navy mb-2 font-oswald">{card.title}</h3>
+                    <p className="text-center text-godway-green1 font-medium mb-4 font-oswald">{card.details}</p>
+                    <p className="text-center text-gray-600 text-sm mb-5 font-oswald">{card.description}</p>
+                    <div className="text-center">
+                      <a 
+                        href={card.action} 
+                        className="inline-block bg-godway-green1 text-white py-2 px-6 rounded-full hover:bg-godway-green2 transition-colors duration-300 font-oswald uppercase text-sm"
+                      >
+                        {card.actionText}
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Form & Map Section */}
+        <section className="py-20 bg-cream">
+          <div className="container-custom">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+              {/* Contact Form */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden border border-godway-green1/10"
+              >
+                <div className="h-3 bg-godway-green1 w-full"></div>
+                <div className="p-8">
+                  <h2 className="text-2xl font-bold text-godway-navy mb-6 font-oswald uppercase">Send Us a Message</h2>
+                  
+                  {formSubmitted ? (
+                    <div className="p-6 bg-godway-green1/10 rounded-xl">
+                      <div className="flex items-center justify-center mb-4">
+                        <FaCheckCircle className="text-godway-green1 w-12 h-12" />
+                      </div>
+                      <h3 className="text-xl font-bold text-center text-godway-navy mb-2 font-oswald">Thank You!</h3>
+                      <p className="text-center text-gray-700 font-oswald">
+                        Your message has been sent successfully. We'll get back to you as soon as possible.
+                      </p>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 font-oswald">
+                          Your Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-godway-green1 focus:border-transparent font-oswald"
+                          required
+                          aria-required="true"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 font-oswald">
+                          Email Address
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-godway-green1 focus:border-transparent font-oswald"
+                          required
+                          aria-required="true"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1 font-oswald">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-godway-green1 focus:border-transparent font-oswald"
+                          required
+                          aria-required="true"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1 font-oswald">
+                          Service Interest
+                        </label>
+                        <select
+                          id="service"
+                          name="service"
+                          value={formData.service}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-godway-green1 focus:border-transparent font-oswald"
+                          required
+                          aria-required="true"
+                        >
+                          <option value="">Select a Service</option>
+                          {BusinessInfo.services.primary.map((service) => (
+                            <option key={service} value={service}>
+                              {service}
+                            </option>
+                          ))}
+                          <option value="Free Consultation">Free Consultation</option>
+                          <option value="Job Application">Job Application</option>
+                        </select>
+                      </div>
+
+                      <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 font-oswald">
+                          Message
+                        </label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          rows={4}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-godway-green1 focus:border-transparent font-oswald"
+                          required
+                          aria-required="true"
+                        ></textarea>
+                      </div>
+
+                      {submitError && (
+                        <div className="p-3 bg-red-50 text-red-700 rounded-xl text-sm font-oswald">
+                          {submitError}
+                        </div>
+                      )}
+
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        type="submit"
+                        className="w-full py-4 bg-godway-green1 text-white font-medium rounded-full hover:bg-godway-green2 transition-colors duration-300 shadow-lg font-oswald uppercase"
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                      </motion.button>
+
+                      <p className="text-xs text-gray-500 text-center font-oswald">
+                        Your information is secure and will never be shared with third parties.
+                      </p>
+                    </form>
+                  )}
+                </div>
+              </motion.div>
+
+              {/* Map & Social Section */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                {/* Map Section */}
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-godway-green1/10">
+                  <div className="aspect-w-16 aspect-h-9">
+                    <iframe
+                      src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.6282294841983!2d-80.31068552447057!3d25.733981108373225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b8a29c5c07e1%3A0x6452ce78cf3ad597!2s2101%20Ludlam%20Rd%2C%20Miami%2C%20FL%2033155%2C%20USA!5e0!3m2!1sen!2sus!4v1718212012736!5m2!1sen!2sus`}
+                      width="100%"
+                      height="300"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`Godway Moving location in ${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state}`}
+                      aria-label={`Google Maps showing Godway Moving's location in ${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state}`}
+                      className="rounded-t-xl"
+                    ></iframe>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-godway-navy mb-2 font-oswald">Our Location</h3>
+                    <p className="text-gray-700 mb-4 font-oswald">{BusinessInfo.contact.address.street}, {BusinessInfo.contact.address.city}, {BusinessInfo.contact.address.state} {BusinessInfo.contact.address.zip}</p>
+                    <a 
+                      href={`https://maps.google.com/?q=${encodeURIComponent(`${BusinessInfo.contact.address.street}, ${BusinessInfo.contact.address.city}, ${BusinessInfo.contact.address.state} ${BusinessInfo.contact.address.zip}`)}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-block bg-godway-navy text-white py-2 px-6 rounded-full hover:bg-godway-navy/90 transition-colors duration-300 font-oswald uppercase text-sm"
+                    >
+                      Get Directions
+                    </a>
+                  </div>
+                </div>
+                
+                {/* Social Media Section */}
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-godway-green1/10">
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-godway-navy mb-4 font-oswald text-center">Connect With Us</h3>
+                    <div className="flex flex-col space-y-4">
+                      {socialLinks.map((social, index) => (
+                        <a 
+                          key={social.name}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`${social.color} ${social.textColor} py-3 px-6 rounded-full flex items-center justify-center font-oswald uppercase text-sm transition-transform hover:scale-105 shadow-md`}
+                        >
+                          <span className="mr-2">{social.icon}</span>
+                          Follow us on {social.name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Hours Section */}
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-godway-green1/10">
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-godway-navy mb-4 font-oswald">Business Hours</h3>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span className="font-oswald text-gray-700">Monday - Saturday:</span>
+                        <span className="font-oswald text-godway-navy font-medium">8:00 AM - 8:00 PM</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="font-oswald text-gray-700">Sunday:</span>
+                        <span className="font-oswald text-godway-navy font-medium">3:00 PM - 7:00 PM</span>
+                      </div>
+                      <div className="flex justify-between mt-4 pt-4 border-t border-gray-100">
+                        <span className="font-oswald text-gray-700 font-bold">24/7 Service Available</span>
+                        <span className="font-oswald text-godway-green1 font-bold">Call Us Anytime!</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>

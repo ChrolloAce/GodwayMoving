@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaFacebook, FaInstagram, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaYelp, FaThumbsUp } from 'react-icons/fa';
 import BusinessInfo from '../data/business-info';
 
 const Footer = () => {
@@ -16,10 +17,14 @@ const Footer = () => {
       { name: 'Contact', href: '/contact' },
       { name: 'FAQ', href: '/faq' },
     ],
-    services: BusinessInfo.services.primary.map(service => ({
-      name: service,
-      href: `/services#${service.toLowerCase().replace(/\s+/g, '-')}`
-    })),
+    services: [
+      { name: 'Local Moving', href: '/services/local' },
+      { name: 'Long Distance Moving', href: '/services/long-distance' },
+      { name: 'Commercial Moving', href: '/services/commercial' },
+      { name: 'Last-Minute Moving', href: '/services/last-minute' },
+      { name: 'Packing Services', href: '/services/packing' },
+      { name: 'Moving Supplies', href: '/services/supplies' },
+    ],
     contact: [
       { icon: <FaPhone />, text: BusinessInfo.contact.phone.display, href: `tel:${BusinessInfo.contact.phone.link}` },
       { icon: <FaEnvelope />, text: BusinessInfo.contact.email, href: `mailto:${BusinessInfo.contact.email}` },
@@ -29,9 +34,9 @@ const Footer = () => {
   };
 
   const socialLinks = [
-    { icon: <FaFacebook size={20} />, href: BusinessInfo.socialMedia.facebook },
     { icon: <FaInstagram size={20} />, href: BusinessInfo.socialMedia.instagram },
-    { icon: <FaTwitter size={20} />, href: BusinessInfo.socialMedia.twitter },
+    { icon: <FaYelp size={20} />, href: BusinessInfo.socialMedia.yelp },
+    { icon: <FaThumbsUp size={20} />, href: BusinessInfo.socialMedia.thumbtack },
   ];
 
   return (
@@ -46,8 +51,19 @@ const Footer = () => {
             viewport={{ once: true }}
             className="col-span-1"
           >
-            <Link href="/" className="inline-block mb-4">
-              <h2 className="text-2xl font-bold text-white">{BusinessInfo.company.name}</h2>
+            <Link href="/" className="inline-flex items-center mb-4">
+              <div className="relative h-12 w-12 mr-3">
+                <Image 
+                  src="https://i.ibb.co/VfFtvdM/love-2.png" 
+                  alt="Godway Moving Logo" 
+                  fill
+                  style={{objectFit: 'contain'}}
+                  sizes="48px"
+                  className="drop-shadow-sm"
+                  unoptimized={true}
+                />
+              </div>
+              <h2 className="text-2xl font-bold text-white font-oswald uppercase">{BusinessInfo.company.name}</h2>
             </Link>
             <p className="text-gray-100 mb-6">{BusinessInfo.company.description}</p>
             <div className="flex items-center gap-4 mb-6">

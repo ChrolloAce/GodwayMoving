@@ -1,171 +1,113 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Link from 'next/link';
+import SectionHeader from '../components/SectionHeader';
 import Head from 'next/head';
+import Accordion from '../components/Accordion';
 
 const FAQPage = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   const faqs = [
     {
-      question: "What areas do you serve?",
-      answer: "We primarily serve Orlando and surrounding areas. Our service area includes Orange County and nearby counties. Contact us to confirm if your location is within our service area."
-        },
-        {
-      question: "How long does a typical remodeling project take?",
-      answer: "Project timelines vary depending on the scope and complexity of the work. A kitchen remodel typically takes 4-8 weeks, while a full home renovation can take 3-6 months. We'll provide a detailed timeline during our initial consultation."
-        },
-        {
-      question: "Do you offer free consultations?",
-      answer: "Yes, we offer free initial consultations to discuss your remodeling needs. During this meeting, we'll assess your space, discuss your vision, and provide a preliminary estimate based on your requirements."
-        },
-        {
-      question: "What types of remodeling services do you provide?",
-      answer: "We offer comprehensive remodeling services including kitchen renovations, bathroom remodels, whole home renovations, custom cabinetry, historic home renovations, and commercial remodeling. Each project is customized to meet your specific needs and preferences."
-        },
-        {
-      question: "Are you licensed and insured?",
-      answer: "Yes, we are fully licensed and insured. We carry comprehensive liability insurance and workers' compensation coverage to protect both our clients and our team members during every project."
+      question: "What areas in Florida do you serve?",
+      answer: "We serve all of South Florida including Miami, Fort Lauderdale, Orlando, Tampa, and surrounding counties. We specialize in both local and long-distance moves within Florida. Contact us to confirm service availability for your specific location."
     },
     {
-      question: "What is your payment structure?",
-      answer: "We typically require a deposit to secure your project date, with progress payments throughout the project. We accept various payment methods including credit cards, checks, and bank transfers. Specific payment terms will be outlined in your contract."
-        },
-        {
-      question: "Do you handle permits and inspections?",
-      answer: "Yes, we handle all necessary permits and coordinate with local building inspectors. We ensure all work meets or exceeds local building codes and regulations."
-        },
-        {
-      question: "What warranties do you offer?",
-      answer: "We offer comprehensive warranties on our workmanship and materials. Specific warranty details vary by project type and will be clearly outlined in your contract. We stand behind our work and are committed to your satisfaction."
+      question: "How much does a local move in Florida cost?",
+      answer: "Local moving costs in Florida typically range from $300-$1,500 depending on the size of your home, distance, and specific services needed. We provide free, detailed quotes after understanding your exact requirements to ensure transparency in pricing."
     },
-        {
-      question: "How do you handle project communication?",
-      answer: "We maintain clear communication throughout your project. You'll have a dedicated project manager who will keep you updated on progress, handle any concerns, and ensure your vision is being realized. We also provide regular progress reports and are always available to answer your questions."
-        },
-        {
-      question: "What makes Luxury Home Remodeling different from other remodeling companies?",
-      answer: "Our commitment to excellence, attention to detail, and personalized service sets us apart. We combine years of experience with innovative design solutions, premium materials, and skilled craftsmanship. Our team is dedicated to delivering exceptional results that exceed expectations."
+    {
+      question: "Can you accommodate last-minute moves?",
+      answer: "Yes! We specialize in last-minute and urgent moving services throughout Florida. Our flexible team can often accommodate moves with as little as 24-48 hours notice, depending on availability and distance."
+    },
+    {
+      question: "Do you provide packing services?",
+      answer: "Absolutely. We offer full-service packing, partial packing, or you can pack yourself. Our professional packers use quality materials and efficient techniques to ensure your belongings are protected throughout the moving process."
+    },
+    {
+      question: "How do you handle Florida's heat and humidity when moving sensitive items?",
+      answer: "We take special precautions for Florida's climate, including climate-controlled vehicles for sensitive items, moisture-resistant packing materials, and strategic moving schedules to avoid the hottest parts of the day when necessary."
+    },
+    {
+      question: "Are you licensed and insured?",
+      answer: "Yes, Godway Moving is fully licensed and insured in the state of Florida. We carry comprehensive liability insurance and provide coverage options for your belongings during the move for your peace of mind."
+    },
+    {
+      question: "What is your cancellation policy?",
+      answer: "We understand plans can change. For local moves, we request at least 48 hours notice for cancellations. Deposits may be refundable with sufficient notice. Please contact us as soon as possible if you need to reschedule or cancel."
+    },
+    {
+      question: "Do you move specialty items like pianos or antiques?",
+      answer: "Yes, we have specialized training and equipment for moving pianos, antiques, artwork, and other high-value or delicate items. We take extra precautions with these items and can provide custom crating when necessary."
+    },
+    {
+      question: "What makes Godway Moving different from other Florida movers?",
+      answer: "Our professional precision, specialized last-minute moving expertise, and deep understanding of Florida's unique moving challenges set us apart. We combine efficiency with careful handling and personalized service for every client, ensuring a stress-free moving experience."
+    },
+    {
+      question: "Do you offer storage solutions?",
+      answer: "Yes, we provide both short-term and long-term storage solutions in climate-controlled facilities throughout Florida. This is particularly helpful for staging between moves or when your new home isn't quite ready."
     }
   ];
 
   return (
     <>
       <Head>
-        <title>Frequently Asked Questions | Luxury Home Remodeling Orlando</title>
-        <meta name="description" content="Find answers to your questions about our Orlando remodeling services. Learn about our process, service areas, timeline, warranties, and what makes our Orlando renovation team unique." />
-        <meta name="keywords" content="remodeling FAQ Orlando, renovation questions, home improvement FAQs, remodeling process, Orlando contractor questions, renovation timeline, remodeling cost Orlando, home renovation warranties, Orlando FL remodeling" />
+        <title>Moving FAQs | Godway Moving - South Florida Moving Experts</title>
+        <meta name="description" content="Find answers to common questions about Godway Moving services in South Florida. Learn about local moves, pricing, packing services, and what makes our Florida moving team unique." />
+        <meta name="keywords" content="Florida moving FAQs, South Florida movers, last-minute moving questions, local moving cost Florida, Miami moving company, Orlando movers FAQs, Tampa moving services, Florida moving tips" />
       </Head>
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-16 bg-black">
-          <div className="absolute inset-0 opacity-20" 
-            style={{
-              backgroundImage: 'url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3")',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundBlendMode: 'overlay'
-            }}>
-          </div>
+        <section className="relative pt-32 pb-16 bg-godway-green1">
           <div className="container-custom relative z-10">
-            <div className="text-center">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="font-display text-4xl md:text-5xl lg:text-6xl text-white mb-4"
-              >
-                Frequently Asked Questions
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-xl text-gray-200 max-w-3xl mx-auto"
-              >
-                Find answers to common questions about our remodeling services
-              </motion.p>
-            </div>
+            <SectionHeader
+              title="Frequently Asked Questions"
+              subtitle="Find answers to common questions about our moving services in Florida"
+              light={true}
+            />
           </div>
         </section>
 
-        {/* FAQ Section */}
+        {/* Main FAQ Section */}
         <section className="py-20 bg-white">
           <div className="container-custom">
-            <div className="max-w-3xl mx-auto">
-              {faqs.map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="mb-6"
-                >
-                  <button
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full text-left p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-colors duration-200"
-                  >
-                    <div className="flex justify-between items-center">
-                      <h3 className="text-xl font-bold text-black">{faq.question}</h3>
-                      <svg
-                        className={`w-6 h-6 text-gold-500 transform transition-transform duration-200 ${
-                          openIndex === index ? 'rotate-180' : ''
-                        }`}
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M19 9l-7 7-7-7"
-                        />
-                      </svg>
-                    </div>
-                        </button>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="p-6 bg-white"
-                    >
-                      <p className="text-gray-600">{faq.answer}</p>
-                      </motion.div>
-                  )}
-                </motion.div>
-              ))}
+            <div className="max-w-4xl mx-auto">
+              <SectionHeader
+                title="Common Moving Questions"
+                subtitle="Everything you need to know about our services and moving process"
+                className="mb-12"
+              />
+              
+              <Accordion items={faqs} />
             </div>
           </div>
         </section>
 
-        {/* Contact CTA Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="container-custom">
+        {/* CTA Section */}
+        <section className="py-20 relative overflow-hidden bg-godway-khaki/20">
+          <div className="absolute top-0 left-0 w-full h-2 bg-godway-green1/40"></div>
+          <div className="absolute bottom-0 left-0 w-full h-2 bg-godway-green1/40"></div>
+          
+          <div className="container-custom relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-                Still Have Questions?
-                </h2>
-                <p className="text-xl text-gray-600 mb-8">
-                  We're here to help. Contact us today for a free consultation and let's discuss your remodeling project.
-                </p>
-                <a href="/contact" className="btn-gold">
-                  Contact Us
+              <SectionHeader
+                title="Still Have Questions?"
+                subtitle="Our team is ready to provide the answers you need"
+                className="mb-10"
+              />
+              
+              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="tel:+18139995321" className="bg-godway-green1 text-white hover:bg-godway-green2 px-8 py-4 rounded-full font-oswald uppercase shadow-lg">
+                  Call Now
                 </a>
-              </motion.div>
+                <Link href="/contact" className="bg-godway-navy text-white hover:bg-godway-navy/90 border-2 border-godway-navy px-8 py-4 rounded-full font-oswald uppercase shadow-lg">
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
         </section>

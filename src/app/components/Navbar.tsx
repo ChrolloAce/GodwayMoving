@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import BusinessInfo from '../data/business-info';
@@ -51,7 +52,8 @@ const Navbar = () => {
     { id: 'packing-services', name: 'Packing Services' },
     { id: 'loading-unloading', name: 'Loading & Unloading' },
     { id: 'furniture-assembly', name: 'Furniture Assembly' },
-    { id: 'storage-solutions', name: 'Storage Solutions' }
+    { id: 'storage-solutions', name: 'Storage Solutions' },
+    { id: 'moving-supplies', name: 'Moving Supplies' }
   ];
 
   const resourceLinks = [
@@ -79,7 +81,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-military-olive/95 backdrop-blur-sm py-2 shadow-lg' : 'bg-military-olive/90 py-4'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-godway-green1/95 backdrop-blur-sm py-4 md:py-6 shadow-lg' : 'bg-transparent py-6 md:py-8'}`}>
       <div className="container-custom">
         <div className="flex justify-between items-center">
           <motion.div
@@ -88,7 +90,18 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-white">Godway Moving</span>
+              <div className="relative h-10 w-10 mr-3">
+                <Image 
+                  src="https://i.ibb.co/VfFtvdM/love-2.png" 
+                  alt="Godway Moving Logo" 
+                  fill
+                  style={{objectFit: 'contain'}}
+                  sizes="40px"
+                  className="drop-shadow-sm"
+                  unoptimized={true}
+                />
+              </div>
+              <span className="text-2xl font-bold text-white font-oswald uppercase drop-shadow-md">Godway Moving</span>
             </Link>
           </motion.div>
 
@@ -113,7 +126,7 @@ const Navbar = () => {
                           setServicesDropdownOpen(false);
                         }
                       }}
-                      className="font-serif text-white hover:text-military-khaki transition-colors relative group flex items-center"
+                      className="font-oswald text-white hover:text-godway-khaki transition-colors relative group flex items-center uppercase drop-shadow-md"
                     >
                       {link.name}
                       <FaChevronDown className="ml-1 text-xs" />
@@ -122,11 +135,11 @@ const Navbar = () => {
                     
                     {/* Services Dropdown */}
                     {link.dropdownType === 'services' && servicesDropdownOpen && (
-                      <div className="services-dropdown absolute left-0 mt-2 w-64 bg-white rounded-md shadow-xl py-2 z-50 border border-military-olive/30">
-                        <div className="absolute -top-2 left-4 w-4 h-4 bg-white transform rotate-45 border-t border-l border-military-olive/30"></div>
+                      <div className="services-dropdown absolute left-0 mt-2 w-64 bg-white rounded-3xl shadow-xl py-2 z-50 border border-godway-green1/30">
+                        <div className="absolute -top-2 left-4 w-4 h-4 bg-white transform rotate-45 border-t border-l border-godway-green1/30"></div>
                         <Link 
                           href="/services" 
-                          className="block px-4 py-2 text-military-olive hover:bg-military-olive/10 hover:text-military-olive font-medium border-b border-gray-100"
+                          className="block px-4 py-2 text-godway-green1 hover:bg-godway-green1/10 hover:text-godway-green1 font-oswald font-medium border-b border-gray-100 uppercase"
                         >
                           All Services
                         </Link>
@@ -134,7 +147,7 @@ const Navbar = () => {
                           <Link 
                             key={service.id}
                             href={`/services/${service.id}`} 
-                            className="block px-4 py-2 text-gray-700 hover:bg-military-olive/10 hover:text-military-olive"
+                            className="block px-4 py-2 text-gray-700 hover:bg-godway-green1/10 hover:text-godway-green1 font-oswald"
                           >
                             {service.name}
                           </Link>
@@ -144,13 +157,13 @@ const Navbar = () => {
 
                     {/* Resources Dropdown */}
                     {link.dropdownType === 'resources' && resourcesDropdownOpen && (
-                      <div className="resources-dropdown absolute left-0 mt-2 w-64 bg-white rounded-md shadow-xl py-2 z-50 border border-military-olive/30">
-                        <div className="absolute -top-2 left-4 w-4 h-4 bg-white transform rotate-45 border-t border-l border-military-olive/30"></div>
+                      <div className="resources-dropdown absolute left-0 mt-2 w-64 bg-white rounded-3xl shadow-xl py-2 z-50 border border-godway-green1/30">
+                        <div className="absolute -top-2 left-4 w-4 h-4 bg-white transform rotate-45 border-t border-l border-godway-green1/30"></div>
                         {resourceLinks.map((resource) => (
                           <Link 
                             key={resource.name}
                             href={resource.href} 
-                            className="block px-4 py-2 text-gray-700 hover:bg-military-olive/10 hover:text-military-olive"
+                            className="block px-4 py-2 text-gray-700 hover:bg-godway-green1/10 hover:text-godway-green1 font-oswald"
                           >
                             {resource.name}
                           </Link>
@@ -161,7 +174,7 @@ const Navbar = () => {
                 ) : (
                   <Link 
                     href={link.href} 
-                    className="font-serif text-white hover:text-military-khaki transition-colors relative group"
+                    className="font-oswald text-white hover:text-godway-khaki transition-colors relative group uppercase drop-shadow-md"
                   >
                     {link.name}
                     <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full"></span>
@@ -179,7 +192,7 @@ const Navbar = () => {
           >
             <Link 
               href="/contact#booking" 
-              className="bg-white text-military-olive hover:bg-cream px-6 py-3 rounded-md font-medium transition-colors shadow-military"
+              className="bg-godway-khaki text-godway-navy hover:bg-godway-khaki/90 px-6 py-3 rounded-full font-oswald font-medium transition-colors shadow-military uppercase"
             >
               Get a Quote
             </Link>
@@ -188,7 +201,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="text-white focus:outline-none"
+              className="text-white focus:outline-none drop-shadow-md"
             >
               {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
@@ -206,13 +219,13 @@ const Navbar = () => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <div className="container-custom py-4 bg-military-olive shadow-lg rounded-b-lg">
+        <div className="container-custom py-4 bg-godway-green1 shadow-lg rounded-b-3xl">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               link.hasDropdown ? (
                 <div key={link.name} className="space-y-2">
                   <button 
-                    className="font-serif text-white hover:text-military-khaki py-2 flex items-center justify-between w-full"
+                    className="font-oswald text-white hover:text-godway-khaki py-2 flex items-center justify-between w-full uppercase"
                     onClick={() => {
                       if (link.dropdownType === 'services') {
                         setMobileServicesOpen(!mobileServicesOpen);
@@ -235,7 +248,7 @@ const Navbar = () => {
                     <div className="pl-4 space-y-2 border-l-2 border-white ml-2">
                       <Link 
                         href="/services" 
-                        className="block py-2 text-white/80 hover:text-white"
+                        className="block py-2 text-white/80 hover:text-white font-oswald"
                         onClick={() => setIsOpen(false)}
                       >
                         All Services
@@ -244,7 +257,7 @@ const Navbar = () => {
                         <Link 
                           key={service.id}
                           href={`/services/${service.id}`} 
-                          className="block py-2 text-white/80 hover:text-white"
+                          className="block py-2 text-white/80 hover:text-white font-oswald"
                           onClick={() => setIsOpen(false)}
                         >
                           {service.name}
@@ -260,7 +273,7 @@ const Navbar = () => {
                         <Link 
                           key={resource.name}
                           href={resource.href} 
-                          className="block py-2 text-white/80 hover:text-white"
+                          className="block py-2 text-white/80 hover:text-white font-oswald"
                           onClick={() => setIsOpen(false)}
                         >
                           {resource.name}
@@ -273,7 +286,7 @@ const Navbar = () => {
                 <Link 
                   key={link.name}
                   href={link.href} 
-                  className="font-serif text-white hover:text-white py-2"
+                  className="font-oswald text-white hover:text-white py-2 uppercase"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
@@ -282,7 +295,7 @@ const Navbar = () => {
             ))}
             <Link 
               href="/contact#booking" 
-              className="bg-white text-military-olive hover:bg-cream py-3 px-6 rounded-md text-center font-medium transition-colors shadow-military"
+              className="bg-godway-khaki text-godway-navy hover:bg-godway-khaki/90 py-3 px-6 rounded-full text-center font-oswald font-medium transition-colors shadow-military uppercase"
               onClick={() => setIsOpen(false)}
             >
               Get a Quote
