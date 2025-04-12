@@ -41,8 +41,8 @@ export default function ServicePageClient({ params }: ServicePageClientProps) {
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 bg-godway-navy">
-          <div className="absolute inset-0 opacity-30" 
+        <section className="relative pt-32 pb-20 bg-godway-green1">
+          <div className="absolute inset-0 opacity-20" 
             style={{
               backgroundImage: `url(${service.image})`,
               backgroundSize: 'cover',
@@ -226,54 +226,38 @@ export default function ServicePageClient({ params }: ServicePageClientProps) {
         </section>
         
         {/* CTA Section */}
-        <section className="py-16 bg-godway-navy relative">
-          <div className="absolute inset-0 opacity-20" 
-            style={{
-              backgroundImage: `url(${service.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundBlendMode: 'overlay'
-            }}>
-          </div>
+        <section className="py-20 relative overflow-hidden bg-godway-khaki/20">
+          <div className="absolute top-0 left-0 w-full h-2 bg-godway-green1/40"></div>
+          <div className="absolute bottom-0 left-0 w-full h-2 bg-godway-green1/40"></div>
+          <div className="absolute left-10 top-10 w-24 h-24 border-4 border-dashed border-godway-green1/20 rounded-md transform rotate-45"></div>
+          <div className="absolute right-10 bottom-10 w-32 h-32 border-4 border-dashed border-godway-green1/20 rounded-md transform -rotate-12"></div>
+          
           <div className="container-custom relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <motion.h2
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="font-oswald text-3xl md:text-4xl text-white mb-6 uppercase font-bold"
-              >
-                Ready To Get Moving?
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-gray-200 mb-8 text-lg"
-              >
-                Contact us today for a free, no-obligation quote for your {service.title.toLowerCase()} needs
-              </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="flex flex-col sm:flex-row justify-center gap-4"
               >
-                <Link 
-                  href="/contact" 
-                  className="px-8 py-4 bg-godway-green1 text-white rounded-full hover:bg-godway-green2 transition-colors duration-300 font-medium font-oswald uppercase"
-                >
-                  Get A Free Quote
-                </Link>
-                <Link 
-                  href="/services" 
-                  className="px-8 py-4 bg-white/10 text-white rounded-full hover:bg-white/20 backdrop-blur-sm border border-white/30 transition-colors duration-300 font-oswald uppercase"
-                >
-                  Explore Other Services
-                </Link>
+                <div className="text-center mb-12">
+                  <div className="h-1 w-20 bg-godway-gradient mx-auto mb-6 rounded-full"></div>
+                  <h2 className="text-3xl font-oswald text-godway-green1 uppercase font-bold mb-4">
+                    Ready To Get Moving?
+                  </h2>
+                  <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Contact us today for a free, no-obligation quote for your {service.title.toLowerCase()} needs
+                  </p>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                  <a href="tel:+18139995321" className="bg-godway-green1 text-white hover:bg-godway-green2 px-8 py-4 rounded-full font-oswald uppercase shadow-lg">
+                    Call Now
+                  </a>
+                  <Link href="/contact" className="bg-godway-navy text-white hover:bg-godway-navy/90 border-2 border-godway-navy px-8 py-4 rounded-full font-oswald uppercase shadow-lg">
+                    Contact Us
+                  </Link>
+                </div>
               </motion.div>
             </div>
           </div>

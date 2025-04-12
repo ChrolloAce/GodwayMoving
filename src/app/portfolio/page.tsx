@@ -213,7 +213,7 @@ const PortfolioPage = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
-              </div>
+          </div>
 
               <AnimatePresence mode="wait">
                 <motion.div
@@ -225,33 +225,33 @@ const PortfolioPage = () => {
                   className="grid grid-cols-1 md:grid-cols-3 gap-8"
                 >
                   {visibleProjects.map((project, index) => (
-                    <motion.div
+                  <motion.div
                       key={project.title}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="relative bg-white rounded-xl shadow-lg overflow-hidden group cursor-pointer transform hover:-translate-y-1 transition-all duration-300 border border-godway-green1/10 h-[450px]"
-                      onClick={() => openModal(project)}
-                    >
+                    onClick={() => openModal(project)}
+                  >
                       <div className="relative h-[280px] w-full overflow-hidden">
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
                           quality={90}
                           priority={index === 0}
-                          unoptimized={true}
-                        />
+                        unoptimized={true}
+                      />
                         <div className="absolute inset-0 bg-gradient-to-t from-godway-navy/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      </div>
-                      <div className="p-6">
+                    </div>
+                    <div className="p-6">
                         <div className="flex items-center space-x-2 mb-3">
                           <span className="px-3 py-1 bg-godway-green1/10 text-godway-green1 rounded-full text-xs font-semibold tracking-wide font-oswald">
-                            {project.category}
-                          </span>
+                          {project.category}
+                        </span>
                         </div>
                         <h3 className="text-xl font-bold mb-2 tracking-tight text-godway-navy font-oswald">
                           {project.title}
@@ -264,13 +264,13 @@ const PortfolioPage = () => {
                         </p>
                         <button className="mt-3 text-godway-green1 font-oswald flex items-center text-sm uppercase font-bold">
                           View Details
-                          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </button>
-                      </div>
-                    </motion.div>
-                  ))}
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                  </motion.div>
+                ))}
                 </motion.div>
               </AnimatePresence>
 
@@ -284,15 +284,15 @@ const PortfolioPage = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                 </svg>
               </button>
-              <button
+                <button 
                 onClick={goToNext}
                 className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-14 h-14 bg-godway-green1 rounded-full hidden md:flex items-center justify-center text-white hover:bg-godway-green2 transition-all duration-300 shadow-xl hover:shadow-2xl hover:translate-x-20"
                 aria-label="Next projects"
-              >
+                >
                 <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </button>
+                </button>
 
               {/* Navigation Dots */}
               <div className="flex justify-center space-x-3 mt-12">
