@@ -130,26 +130,15 @@ const Hero = () => {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60 z-10"></div>
         
-        {/* Video background wrapper - using absolute positioning for fullscreen */}
-        <div className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 w-full h-full" style={{padding: 0}}>
-            <iframe 
-              src="https://player.vimeo.com/video/1074940729?h=d7c4cee439&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
-              frameBorder="0" 
-              allow="autoplay; fullscreen; picture-in-picture"
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                width: '177.77777778vh', /* 16:9 aspect ratio */
-                height: '56.25vw', /* 16:9 aspect ratio */
-                minWidth: '100%',
-                minHeight: '100%',
-                transform: 'translate(-50%, -50%)',
-                objectFit: 'cover'
-              }}
-            ></iframe>
-          </div>
+        {/* Video background wrapper - using custom CSS class for better mobile coverage */}
+        <div className="video-background">
+          <iframe 
+            src="https://player.vimeo.com/video/1074940729?h=d7c4cee439&background=1&autoplay=1&loop=1&byline=0&title=0&muted=1"
+            frameBorder="0" 
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="Background video"
+            aria-hidden="true"
+          ></iframe>
         </div>
       </div>
 
