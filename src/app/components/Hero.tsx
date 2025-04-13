@@ -17,6 +17,9 @@ const Hero = () => {
     service: 'Local Residential Moving',
   });
   
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  
   // Use effect to make video responsive
   useEffect(() => {
     // Add script for Vimeo Player API
@@ -36,12 +39,45 @@ const Hero = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Save form data to localStorage
-    localStorage.setItem('contactFormData', JSON.stringify(formData));
-    // Redirect to contact page
-    router.push('/contact');
+    setIsSubmitting(true);
+    setErrorMessage('');
+    
+    try {
+      // Format the form data for the API
+      const apiFormData = {
+        ...formData,
+        moveDate: '', // Add empty fields required by the API
+        moveFrom: `ZIP: ${formData.zipcode}`,
+        moveTo: '',
+        message: `Quote request from homepage form. Service: ${formData.service}`
+      };
+      
+      // Send the form data to the API
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(apiFormData),
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to submit form');
+      }
+      
+      // Redirect to thank you page on success
+      router.push('/thank-you');
+      
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setErrorMessage('There was an error submitting your request. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Service options that match exactly the services listed in the Services component
@@ -118,7 +154,7 @@ const Hero = () => {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 w-full">
               <Link 
-                href="/contact" 
+                href="#hero-form" 
                 className="bg-godway-green1 text-white px-6 md:px-8 py-3 rounded-full font-oswald font-semibold hover:bg-godway-green2 transition-colors text-center uppercase"
               >
                 Get Free Quote
@@ -134,12 +170,20 @@ const Hero = () => {
           
           {/* Right Column - Contact Form */}
           <motion.div
+            id="hero-form"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="bg-black/40 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-3xl border-2 border-godway-green1/30 mt-8 lg:mt-0"
           >
             <h2 className="text-xl sm:text-2xl font-oswald font-bold text-godway-khaki mb-4 md:mb-6 uppercase">Get Your Free Quote</h2>
+            
+            {errorMessage && (
+              <div className="mb-4 p-3 bg-red-500/20 border border-red-500 text-white rounded-lg">
+                {errorMessage}
+              </div>
+            )}
+            
             <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4">
               <div>
                 <input
@@ -201,9 +245,20 @@ const Hero = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-godway-green1 text-white py-3 rounded-full font-oswald font-semibold hover:bg-godway-green2 transition-colors text-base uppercase"
+                disabled={isSubmitting}
+                className="w-full bg-godway-green1 text-white py-3 rounded-full font-oswald font-semibold hover:bg-godway-green2 transition-colors text-base uppercase flex items-center justify-center"
               >
-                Get Free Quote
+                {isSubmitting ? (
+                  <>
+                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Processing...
+                  </>
+                ) : (
+                  "Get Free Quote"
+                )}
               </button>
             </form>
           </motion.div>

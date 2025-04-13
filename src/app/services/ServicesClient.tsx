@@ -21,7 +21,7 @@ const ServicesClient = () => {
     {
       title: "Local Residential Moving",
       description: "We specialize in local residential moves across Florida. We can move you between any Florida cities with care and efficiency, whether planned or last-minute.",
-      image: "https://i.ibb.co/rKQBkT9B/IMG-0726.jpg",
+      image: "https://i.ibb.co/cXYdSC0j/IMG-0713.jpg",
       category: "Core Services",
       id: "residential-moving"
     },
@@ -42,14 +42,14 @@ const ServicesClient = () => {
     {
       title: "Small Moves",
       description: "Need to move a few small items or moving out of a studio in Florida? Our small move service is perfect for apartments, dorms, and partial relocations throughout Florida.",
-      image: "https://i.ibb.co/SwmcM7pK/IMG-0740.jpg",
+      image: "https://i.ibb.co/XrX5kdM7/IMG-1736.jpg",
       category: "Specialized Services",
       id: "small-moves"
     },
     {
       title: "Last Minute Moves",
       description: "Need to move urgently in Florida? Our last minute moving service will save the day. We'll get you into your new address ASAP with same-day service available throughout South Florida.",
-      image: "https://i.ibb.co/27MmF7jq/IMG-1924.jpg",
+      image: "https://i.ibb.co/kRD39Rv/IMG-0719.jpg",
       category: "Specialized Services",
       id: "last-minute"
     }
