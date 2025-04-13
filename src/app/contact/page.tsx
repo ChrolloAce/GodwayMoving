@@ -64,10 +64,25 @@ const ContactPage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
-          formType: 'contact_page',
-          timestamp: new Date().toISOString(),
-          source: 'website_contact_form'
+          contact: {
+            firstName: formData.name.split(' ')[0] || '',
+            lastName: formData.name.split(' ').slice(1).join(' ') || '',
+            email: formData.email,
+            phone: formData.phone,
+            locationId: "primary", // Optional: If you have multiple locations in GHL
+            customField: {
+              "service_requested": formData.service,
+              "message": formData.message,
+              "form_source": "website_contact_page",
+              "timestamp": new Date().toISOString()
+            }
+          },
+          opportunity: {
+            title: `New Contact Form Submission - ${formData.service}`,
+            description: `${formData.message}\n\nService requested: ${formData.service}`,
+            pipelineId: "", // Optional: Add your pipeline ID if known
+            pipelineStageId: "", // Optional: Add your pipeline stage ID if known
+          }
         }),
       });
       

@@ -75,12 +75,25 @@ const Hero = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...formData,
-          formType: 'homepage_quote',
-          timestamp: new Date().toISOString(),
-          service: formData.service,
-          location: `ZIP: ${formData.zipcode}`,
-          source: 'website_hero_form'
+          contact: {
+            firstName: formData.name.split(' ')[0] || '',
+            lastName: formData.name.split(' ').slice(1).join(' ') || '',
+            email: formData.email,
+            phone: formData.phone,
+            locationId: "primary", // Optional: If you have multiple locations in GHL
+            customField: {
+              "service_requested": formData.service,
+              "zipcode": formData.zipcode,
+              "form_source": "website_hero_form",
+              "timestamp": new Date().toISOString()
+            }
+          },
+          opportunity: {
+            title: `New Moving Quote Request - ${formData.service}`,
+            description: `Quote request from homepage form. Service: ${formData.service}. ZIP: ${formData.zipcode}`,
+            pipelineId: "", // Optional: Add your pipeline ID if known
+            pipelineStageId: "", // Optional: Add your pipeline stage ID if known
+          }
         }),
       });
       

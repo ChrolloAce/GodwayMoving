@@ -5,13 +5,12 @@
 
 const WebhookUrls = {
   // Go High Level main webhook URL
-  // Replace with your actual Go High Level webhook URL
-  goHighLevel: 'https://your-gohighlevel-webhook-url.com/endpoint',
+  goHighLevel: 'https://services.leadconnectorhq.com/hooks/bTWKBN9ahcLBndefPsYj/webhook-trigger/e256413b-eec7-4e1a-b0e1-7494b5c4fecb',
   
   // Optional: Alternative endpoints for different form types
   goHighLevelForms: {
-    contactForm: 'https://your-gohighlevel-webhook-url.com/contact',
-    quoteForm: 'https://your-gohighlevel-webhook-url.com/quote',
+    contactForm: 'https://services.leadconnectorhq.com/hooks/bTWKBN9ahcLBndefPsYj/webhook-trigger/e256413b-eec7-4e1a-b0e1-7494b5c4fecb',
+    quoteForm: 'https://services.leadconnectorhq.com/hooks/bTWKBN9ahcLBndefPsYj/webhook-trigger/e256413b-eec7-4e1a-b0e1-7494b5c4fecb',
   },
   
   // Other external service webhooks can be added here
