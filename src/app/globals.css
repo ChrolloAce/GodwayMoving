@@ -45,40 +45,32 @@ body {
   pointer-events: none;
 }
 
-/* Add custom class for video background */
-.video-background {
+/* Add custom CSS for the video background iframe */
+.video-background-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
+  object-position: center center;
 }
 
-.video-background iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
-  transform: translate(-50%, -50%) scale(1.02);
-  pointer-events: none;
-}
-
-@media (max-aspect-ratio: 16/9) {
-  .video-background iframe {
-    /* For portrait orientation/mobile */
-    height: 120vh;
-    width: 120vw;
-  }
-}
-
-@media (min-aspect-ratio: 16/9) {
-  .video-background iframe {
-    /* For landscape orientation */
-    width: 120vw;
-    height: 120vh;
+/* On mobile, ensure video covers the entire viewport */
+@media (max-width: 768px) {
+  .video-background-wrapper iframe {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
   }
 }
 
