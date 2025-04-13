@@ -3,7 +3,7 @@ import { Montserrat, Cormorant_Garamond, Playfair_Display } from 'next/font/goog
 import { Anton } from 'next/font/google';
 import { Oswald } from 'next/font/google';
 import ChatWidget from './components/ChatWidget';
-import { COMPANY_NAME, SiteMetadata } from './data/site-metadata';
+import { COMPANY_NAME, DOMAIN, SiteMetadata } from './data/site-metadata';
 import React from 'react';
 
 const montserrat = Montserrat({ 
@@ -42,15 +42,16 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://www.godwaymoving.com'),
+  metadataBase: new URL(`https://${DOMAIN}`),
   title: {
     default: SiteMetadata.home.title,
-    template: `%s | ${COMPANY_NAME}`
+    template: `%s | ${COMPANY_NAME} | ${DOMAIN}`
   },
   description: SiteMetadata.home.description,
   keywords: SiteMetadata.home.keywords,
-  authors: [{ name: COMPANY_NAME }],
+  authors: [{ name: COMPANY_NAME, url: `https://${DOMAIN}` }],
   creator: COMPANY_NAME,
+  publisher: COMPANY_NAME,
   icons: {
     icon: [
       { url: 'https://i.ibb.co/VfFtvdM/love-2.png', sizes: 'any' },
@@ -63,7 +64,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.godwaymoving.com',
+    url: `https://${DOMAIN}`,
     title: SiteMetadata.home.title,
     description: SiteMetadata.home.description,
     siteName: COMPANY_NAME,
@@ -72,7 +73,7 @@ export const metadata = {
         url: 'https://i.ibb.co/VfFtvdM/love-2.png',
         width: 1200,
         height: 630,
-        alt: `${COMPANY_NAME} - Professional moving services in Miami, FL`
+        alt: `${COMPANY_NAME} - Professional moving services in Florida`
       }
     ],
   },
@@ -81,6 +82,7 @@ export const metadata = {
     title: SiteMetadata.home.title,
     description: SiteMetadata.home.description,
     images: ['https://i.ibb.co/VfFtvdM/love-2.png'],
+    creator: `@${COMPANY_NAME.replace(/\s+/g, '').toLowerCase()}`,
   },
   robots: {
     index: true,
@@ -94,11 +96,16 @@ export const metadata = {
     },
   },
   alternates: {
-    canonical: 'https://www.godwaymoving.com',
+    canonical: `https://${DOMAIN}`,
   },
   verification: {
     google: 'verification_token', // Replace with your verification token when available
   },
+  applicationName: COMPANY_NAME,
+  referrer: 'origin-when-cross-origin',
+  generator: 'Next.js',
+  category: 'Moving Services',
+  classification: 'Florida Moving Company',
 };
 
 export default function RootLayout({
@@ -118,6 +125,11 @@ export default function RootLayout({
         <meta name="theme-color" content="#4B5320" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="canonical" href={`https://${DOMAIN}`} />
+        <meta name="geo.region" content="US-FL" />
+        <meta name="geo.placename" content="Florida" />
+        <meta name="geo.position" content="25.7617;-80.1918" />
+        <meta name="ICBM" content="25.7617, -80.1918" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: structuredDataJSON }}

@@ -9,51 +9,39 @@ const MovingSpecialties = () => {
   const services = [
     {
       title: 'Residential Moving',
-      description: 'We specialize in local residential moves across Florida. We can move you between any Florida cities with care and efficiency, whether planned or last-minute.',
+      description: 'Experience stress-free home relocations with our professional residential moving services across South Florida. We handle every aspect of your move with care, from careful packing to strategic transport and organized unpacking.',
       features: [
         'Comprehensive packing and unpacking',
         'Furniture disassembly and reassembly',
         'Special handling for fragile items',
-        'Flexible scheduling options'
+        'Climate-controlled transport'
       ],
-      link: '/services/residential-moving',
-      image: 'https://i.ibb.co/cXYdSC0j/IMG-0713.jpg'
+      link: '/contact',
+      image: 'https://i.ibb.co/rKNpRR16/IMG-2584.jpg'
     },
     {
-      title: 'Last Minute Moves',
-      description: 'Need to move urgently in Florida? Our last minute moving service will save the day. We'll get you into your new address ASAP with same-day service available throughout South Florida.',
+      title: 'Commercial Moving',
+      description: 'Minimize downtime and maximize efficiency with our specialized commercial moving services throughout Florida. We work with precision to relocate your business quickly while ensuring everything arrives safely and on schedule.',
       features: [
-        'Same-day service in most areas',
-        'Rapid response team',
-        'Expedited packing services',
-        'No excessive emergency fees'
+        'Office equipment handling and setup',
+        'IT infrastructure moving assistance',
+        'Asset inventory and tracking',
+        'After-hours and weekend service options'
       ],
-      link: '/services/last-minute',
-      image: 'https://i.ibb.co/kRD39Rv/IMG-0719.jpg'
-    },
-    {
-      title: 'Small Moves',
-      description: 'Need to move a few small items or moving out of a studio in Florida? Our small move service is perfect for apartments, dorms, and partial relocations throughout Florida.',
-      features: [
-        'Cost-effective for smaller loads',
-        'No minimum hour requirements',
-        'Professional moving personnel',
-        'Same-day service often available'
-      ],
-      link: '/services/small-moves',
-      image: 'https://i.ibb.co/XrX5kdM7/IMG-1736.jpg'
+      link: '/contact',
+      image: 'https://i.ibb.co/rR2M5hxC/IMG-6795.jpg'
     },
     {
       title: 'Long-Distance Moving',
-      description: 'From coast to coast, we can move you to any state in the USA. With on time long distance delivery dates and safe packing we will get you settled into your new home quickly.',
+      description: 'Trust our long-distance moving expertise to transport your belongings safely across Florida and beyond. Our strategic planning and professional logistics ensure your items arrive intact, on time, and within budget.',
       features: [
-        'Dedicated move coordinator',
-        'Guaranteed delivery dates',
-        'Real-time shipment tracking',
-        'Comprehensive valuation coverage'
+        'Detailed moving plans and scheduling',
+        'GPS-tracked transport fleet',
+        'Climate-controlled vehicles',
+        'Regular status updates throughout the move'
       ],
-      link: '/services/long-distance',
-      image: 'https://i.ibb.co/XfDrGtZN/IMG-0718.jpg'
+      link: '/contact',
+      image: 'https://i.ibb.co/BVhN5FL0/IMG-3769.jpg'
     }
   ];
 
@@ -66,7 +54,7 @@ const MovingSpecialties = () => {
           centered={true}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -77,7 +65,7 @@ const MovingSpecialties = () => {
               className="bg-white rounded-md overflow-hidden shadow-lg border border-godway-green1/20 group hover:border-godway-green1/40 transition-all duration-500"
             >
               {/* Image Section */}
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-60 overflow-hidden">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5 }}
@@ -87,7 +75,7 @@ const MovingSpecialties = () => {
                     src={service.image}
                     alt={service.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 25vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     style={{ objectFit: 'cover' }}
                     className="transition-transform duration-700 filter brightness-[0.9] group-hover:brightness-100"
                     unoptimized={true}
@@ -99,18 +87,18 @@ const MovingSpecialties = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
                   viewport={{ once: true }}
-                  className="absolute bottom-4 left-0 w-full px-4"
+                  className="absolute bottom-4 left-0 w-full px-6"
                 >
-                  <h3 className="font-oswald text-xl sm:text-2xl text-white font-semibold text-center drop-shadow-md uppercase">
+                  <h3 className="font-oswald text-2xl text-white font-semibold text-center drop-shadow-md uppercase">
                     {service.title}
                   </h3>
                 </motion.div>
               </div>
               
-              <div className="p-4 sm:p-5">
-                <p className="text-gray-700 mb-4 text-sm font-oswald">{service.description}</p>
+              <div className="p-6">
+                <p className="text-gray-700 mb-6 text-base font-oswald">{service.description}</p>
                 
-                <div className="space-y-2 mb-6">
+                <div className="space-y-3 mb-8">
                   {service.features.map((feature, i) => (
                     <motion.div 
                       key={i}
@@ -125,7 +113,7 @@ const MovingSpecialties = () => {
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <p className="ml-3 text-gray-700 text-xs sm:text-sm font-oswald">{feature}</p>
+                      <p className="ml-3 text-gray-700 text-sm font-oswald">{feature}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -133,9 +121,9 @@ const MovingSpecialties = () => {
                 <div className="text-center">
                   <Link 
                     href={service.link}
-                    className="inline-block px-4 py-2 bg-godway-green1 text-white font-oswald uppercase font-medium rounded-md hover:bg-godway-green2 transition-colors duration-300 shadow-md text-sm"
+                    className="inline-block px-6 py-3 bg-godway-green1 text-white font-oswald uppercase font-medium rounded-md hover:bg-godway-green2 transition-colors duration-300 shadow-lg"
                   >
-                    Learn More
+                    Get a Quote
                   </Link>
                 </div>
               </div>
@@ -147,4 +135,4 @@ const MovingSpecialties = () => {
   );
 };
 
-export default MovingSpecialties;
+export default MovingSpecialties; 

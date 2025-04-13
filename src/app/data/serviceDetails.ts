@@ -83,6 +83,76 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       }
     ]
   },
+  "all-hours-moving": {
+    title: "All Hours Moving Service",
+    description: "Round-the-clock moving services available any time you need to relocate in Florida.",
+    longDescription: [
+      "Godway Moving's All Hours service ensures you can move whenever it fits your schedule - early morning, late night, or any time in between.",
+      "Our specially trained crews are available to help with your move at any hour, providing the same exceptional quality service regardless of the time.",
+      "Whether you're facing work constraints, building requirements, or just prefer moving during off-peak hours, our All Hours Moving service accommodates your specific timing needs."
+    ],
+    benefits: [
+      "Flexible scheduling at any hour of the day or night",
+      "Trained crews for off-hours relocations",
+      "Reduces stress by working around your schedule",
+      "Avoid daytime traffic and building restrictions",
+      "Same quality service regardless of time"
+    ],
+    image: "https://i.ibb.co/kgGFqq7n/IMG-1682.jpg",
+    features: [
+      "Early morning and late night availability",
+      "Proper lighting equipment for night moves",
+      "Noise-minimizing techniques for nighttime moves",
+      "24-hour customer service support",
+      "Specialized planning for off-hours logistics",
+      "Coordination with building management for off-hour access"
+    ],
+    pricing: [
+      "Standard rates with minimal off-hours surcharges",
+      "Transparent pricing with no hidden fees",
+      "Free quotes for all-hours moves",
+      "Flexible payment options",
+      "Discounts available for certain off-peak times"
+    ],
+    availability: [
+      "24-hour service, 7 days a week",
+      "Early morning (midnight to 6 AM) with advance notice",
+      "Late night (8 PM to midnight) available daily",
+      "Weekend and holiday service",
+      "Booking available online or by phone anytime"
+    ],
+    locations: [
+      "All Florida service areas",
+      "Miami-Dade County",
+      "Broward County",
+      "Palm Beach County",
+      "Orange County (Orlando area)",
+      "Hillsborough County (Tampa area)",
+      "All major Florida cities and suburbs"
+    ],
+    FAQs: [
+      {
+        question: "Do you really move at 3 AM if needed?",
+        answer: "Yes, we can schedule moves at any hour, including 3 AM. Some customers prefer very early morning moves to avoid traffic, heat, or to accommodate unusual work schedules. We have dedicated crews trained for overnight operations."
+      },
+      {
+        question: "Is there an extra charge for middle-of-the-night moves?",
+        answer: "We apply a modest surcharge for moves between 10 PM and 6 AM to cover the additional staffing costs, but we keep these fees reasonable. The exact amount depends on your specific move details, and we'll provide this information in your quote."
+      },
+      {
+        question: "How do you handle noise restrictions for night moves?",
+        answer: "Our night crews are specially trained in noise-minimizing techniques. We use soft-close equipment, communication headsets instead of verbal calls, specialized moving blankets that dampen sound, and carefully plan the logistics to respect quiet hours in residential areas."
+      },
+      {
+        question: "Can you coordinate with my building for after-hours access?",
+        answer: "Yes, we regularly work with building management to arrange after-hours access, service elevator reservations, and loading dock use during off-peak hours. We can help coordinate these arrangements as part of our service."
+      },
+      {
+        question: "How do you ensure safety during night moves?",
+        answer: "Safety is our priority regardless of the hour. For night moves, we bring additional lighting equipment, reflective gear for our movers, and carefully plan the logistics to ensure safe operations. Our night crews receive additional training specific to working in low-light conditions."
+      }
+    ]
+  },
   "residential-moving": {
     title: "Local Residential Moving",
     description: "We specialize in local residential moves across Florida. We can move you between any Florida cities with care and efficiency, whether planned or last-minute.",

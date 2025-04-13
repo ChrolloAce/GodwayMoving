@@ -19,13 +19,13 @@ export default function Services() {
     {
       title: "Local Residential Moving",
       description: "We specialize in local residential moves across Florida. We can move you between any Florida cities with care and efficiency, whether planned or last-minute.",
-      image: "https://i.ibb.co/cXYdSC0j/IMG-0713.jpg",
+      image: "https://i.ibb.co/rKQBkT9B/IMG-0726.jpg",
       id: "residential-moving"
     },
     {
       title: "Long Distance Moving",
       description: "From coast to coast, we can move you to any state in the USA. With on time long distance delivery dates and safe packing we will get you settled into your new home quickly.",
-      image: "https://i.ibb.co/XfDrGtZN/IMG-0718.jpg",
+      image: "https://i.ibb.co/SwmcM7pK/IMG-0740.jpg",
       id: "long-distance"
     },
     {
@@ -37,7 +37,7 @@ export default function Services() {
     {
       title: "Small Moves",
       description: "Need to move a few small items or moving out of a studio in Florida? Our small move service is perfect for apartments, dorms, and partial relocations throughout Florida.",
-      image: "https://i.ibb.co/XrX5kdM7/IMG-1736.jpg",
+      image: "https://i.ibb.co/27MmF7jq/IMG-1924.jpg",
       id: "small-moves"
     },
     {

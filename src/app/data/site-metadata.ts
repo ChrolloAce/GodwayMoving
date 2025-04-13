@@ -7,126 +7,162 @@
 
 // Company name (can be changed in one place)
 export const COMPANY_NAME = "Godway Moving";
+export const DOMAIN = "godwayusa.com";
 
 // Site metadata for all pages
 export const SiteMetadata = {
   // Home page
   home: {
-    title: `${COMPANY_NAME} | Professional Moving Services in Miami, FL`,
-    description: `${COMPANY_NAME} delivers exceptional moving services throughout Florida. Specializing in residential and commercial relocations with military precision, careful handling, and efficient service across Miami, Orlando, Tampa, and South Florida.`,
+    title: `${COMPANY_NAME} | Top-Rated Florida Moving Company | ${DOMAIN}`,
+    description: `${COMPANY_NAME} offers exceptional moving services throughout Florida with military precision. Professional residential & commercial movers in Miami, Orlando, Tampa specializing in last-minute, small moves and same-day service.`,
     url: "/",
     priority: 1.0,
-    keywords: "Miami moving, Florida relocation, professional movers Miami, residential moving Florida, commercial moving Tampa, moving services Orlando, South Florida relocation",
+    keywords: "Florida moving company, Miami movers, Orlando moving services, Tampa professional movers, last-minute moving Florida, small local moves Miami, same-day moving service Tampa",
   },
 
   // Service pages
   services: {
     main: {
-      title: `${COMPANY_NAME} | Top-Rated Moving Services in Miami, Florida`,
-      description: `${COMPANY_NAME} offers comprehensive moving solutions across Florida. From residential and commercial relocations to packing, loading, and furniture assembly, our expert team delivers exceptional quality for Florida residents and businesses.`,
+      title: `Moving Services in Florida | Residential & Commercial | ${COMPANY_NAME}`,
+      description: `${COMPANY_NAME} provides comprehensive moving solutions across Florida. Local residential, commercial, last-minute & long-distance moving services with free quotes. Serving Miami, Orlando, Tampa and all Florida communities.`,
       url: "/services",
       priority: 0.9,
-      keywords: "Miami moving services, Florida relocation company, professional South Florida movers, residential moving services, commercial moving Florida, moving company Orlando, professional relocation Miami",
+      keywords: "Florida moving services, Miami professional movers, Orlando relocation company, Tampa commercial moving, last-minute moving Florida, small moves Miami, long-distance moving services",
     },
-    residential: {
-      title: `${COMPANY_NAME} | Expert Residential Moving in South Florida`,
-      description: `Move your home with ${COMPANY_NAME}'s professional moving services throughout Florida. Our expert team handles your belongings with military-grade precision, careful packing, and efficient transport across Miami, Orlando, and Tampa.`,
-      url: "/services#residential",
+    "residential-moving": {
+      title: `Residential Moving in Florida | Local Home Movers | ${COMPANY_NAME}`,
+      description: `Professional residential moving services across Florida from ${COMPANY_NAME}. Our expert team handles your home relocation with care, efficiency and precision. Serving Miami, Orlando, Tampa and all Florida communities.`,
+      url: "/services/residential-moving",
       priority: 0.8,
-      keywords: "South Florida residential moving, Florida home relocation, professional home movers Miami, residential moving service Orlando, home moving company Tampa, moving contractor Florida",
+      keywords: "Florida residential moving, Miami home movers, Orlando house relocation, Tampa residential moving service, local movers Florida, apartment moving Miami, condo moving service",
     },
-    commercial: {
-      title: `${COMPANY_NAME} | Professional Commercial Moving in Miami, Florida`,
-      description: `${COMPANY_NAME} handles business relocations throughout Florida. Our professional team relocates your office or business with minimal downtime, careful handling, and superior organization across Miami, Tampa, and Orlando.`,
-      url: "/services#commercial",
+    "commercial-moving": {
+      title: `Commercial Moving Services | Office Relocation Florida | ${COMPANY_NAME}`,
+      description: `${COMPANY_NAME} specializes in commercial moving throughout Florida. Minimize downtime with our after-hours and weekend office relocations. Expert handling of furniture, technology & sensitive documents in Miami, Orlando, Tampa.`,
+      url: "/services/commercial-moving",
       priority: 0.8,
-      keywords: "Miami commercial moving, Florida business relocation, office moving Orlando, commercial moving service Tampa, business moving company South Florida, office relocation Miami",
+      keywords: "Florida commercial moving, Miami office relocation, Orlando business movers, Tampa commercial moving service, weekend office moves, after-hours moving service, IT equipment moving",
     },
-    packing: {
-      title: `${COMPANY_NAME} | Professional Packing Services in Florida`,
-      description: `${COMPANY_NAME} provides expert packing services throughout Florida. From fragile items to furniture, our skilled team delivers careful packaging with proper materials for safe transportation across Miami, Orlando, and Tampa.`,
-      url: "/services#packing",
+    "long-distance": {
+      title: `Long Distance Moving | Florida to Anywhere in the USA | ${COMPANY_NAME}`,
+      description: `Reliable long-distance moving from Florida to anywhere in the USA with ${COMPANY_NAME}. Guaranteed delivery dates, real-time tracking and comprehensive move coordination. Professional interstate movers based in Florida.`,
+      url: "/services/long-distance",
       priority: 0.8,
-      keywords: "Florida packing services, Miami moving preparation, professional packers Orlando, packing service Tampa, moving supplies South Florida, packing assistance Miami",
+      keywords: "Florida long distance moving, interstate movers Miami, Orlando to out-of-state moving, Tampa long-distance relocation, cross-country moving Florida, state-to-state movers, guaranteed delivery moving",
     },
-    furniture: {
-      title: `${COMPANY_NAME} | Furniture Assembly and Disassembly in South Florida`,
-      description: `${COMPANY_NAME} specializes in furniture assembly and disassembly for moves across Florida. Our skilled team carefully handles your furniture to ensure safe transport and proper setup in your new space in Miami, Orlando, and Tampa.`,
-      url: "/services#furniture",
+    "small-moves": {
+      title: `Small Moving Services | Studio & Apartment Moves | ${COMPANY_NAME}`,
+      description: `Expert small moving services throughout Florida from ${COMPANY_NAME}. Perfect for studios, apartments, dorms and partial relocations. Same professional quality without minimum hour requirements. Serving all Florida communities.`,
+      url: "/services/small-moves",
       priority: 0.8,
-      keywords: "furniture assembly Miami, Florida furniture disassembly, furniture moving service Orlando, furniture setup Tampa, moving furniture South Florida, furniture transport Miami",
+      keywords: "Florida small moves, studio moving Miami, apartment movers Orlando, partial relocation Tampa, dorm room moving service, small load movers Florida, single item moving",
+    },
+    "last-minute": {
+      title: `Last-Minute Moving Services | Same-Day Moves Florida | ${COMPANY_NAME}`,
+      description: `Emergency and last-minute moving services across Florida from ${COMPANY_NAME}. Same-day availability, rapid response teams and full-service options despite short notice. Serving Miami, Orlando, Tampa and all Florida communities.`,
+      url: "/services/last-minute",
+      priority: 0.8,
+      keywords: "Florida last-minute moving, same-day movers Miami, emergency moving service Orlando, urgent relocation Tampa, quick-response moving company, rush moving service Florida, unplanned moving help",
+    },
+    "last-minute-moves": {
+      title: `Urgent Moving Solutions | Last-Minute Relocations Florida | ${COMPANY_NAME}`,
+      description: `${COMPANY_NAME} specializes in last-minute and urgent moving services throughout Florida. Same-day availability, expedited packing, and professional teams ready to respond quickly to your moving emergency in Miami, Orlando, and Tampa.`,
+      url: "/services/last-minute-moves",
+      priority: 0.8,
+      keywords: "urgent moving service Florida, same-day movers Miami, emergency relocation Orlando, last-minute moving company Tampa, quick-response moving, short-notice relocation Florida, rush moving services",
+    },
+    "moving-supplies": {
+      title: `Professional Moving Supplies | Delivered in Florida | ${COMPANY_NAME}`,
+      description: `${COMPANY_NAME} delivers professional-grade moving supplies throughout Florida. High-quality boxes, packing materials, protective wraps and moving blankets with same-day delivery options. Serving all Florida communities.`,
+      url: "/services/moving-supplies",
+      priority: 0.7,
+      keywords: "Florida moving supplies, Miami packing materials, Orlando moving boxes, Tampa moving equipment, professional packing supplies, moving blankets delivery, bubble wrap and packing tape",
+    },
+    "24-7-365-moving-services": {
+      title: `24/7/365 Moving Services | Round-the-Clock Movers Florida | ${COMPANY_NAME}`,
+      description: `${COMPANY_NAME} provides 24/7/365 moving services for emergencies and tight schedules across Florida. Available any time, day or night, including holidays with the same exceptional quality. Serving all Florida communities.`,
+      url: "/services/24-7-365-moving-services",
+      priority: 0.8,
+      keywords: "24 hour moving service Florida, overnight movers Miami, holiday moving Orlando, after-hours relocation Tampa, emergency moving company, round-the-clock movers, anytime moving service Florida",
+    },
+    "all-hours-moving": {
+      title: `All Hours Moving Service | Morning to Night Relocations | ${COMPANY_NAME}`,
+      description: `${COMPANY_NAME} offers flexible all-hours moving services across Florida. Early morning, late night, and any time in between to fit your schedule. Expert teams available 24/7 in Miami, Orlando, Tampa and all Florida communities.`,
+      url: "/services/all-hours-moving",
+      priority: 0.8,
+      keywords: "all-hours moving Florida, early morning movers Miami, late night moving service Orlando, flexible schedule moving Tampa, off-peak relocation, overnight moving service, dawn or dusk moving Florida",
     }
   },
 
   // About page
   about: {
-    title: `${COMPANY_NAME} | About Our South Florida Moving Experts`,
-    description: `${COMPANY_NAME} is Florida's trusted moving company with years of experience relocating homes and businesses throughout Miami, Orlando, and Tampa. Learn about our dedicated team, military-grade precision, and exceptional customer service.`,
+    title: `About Godway Moving | Florida's Trusted Moving Company | ${DOMAIN}`,
+    description: `${COMPANY_NAME} is Florida's premier moving company with a commitment to excellence. Learn about our experienced team, service philosophy, and dedication to stress-free relocations across Miami, Orlando, Tampa and all Florida communities.`,
     url: "/about",
     priority: 0.7,
-    keywords: "Miami moving company, Florida relocation experts, about Godway Moving, professional movers South Florida, licensed movers Florida, trusted moving company Miami",
+    keywords: "about Godway Moving, Florida moving company history, professional movers background, trusted relocation service Florida, licensed Florida movers, experienced moving team Miami, moving company values",
   },
 
   // Contact page
   contact: {
-    title: `${COMPANY_NAME} | Contact Our Florida Moving Team`,
-    description: `Ready to plan your move? Contact ${COMPANY_NAME} for professional moving services throughout Florida. Request a free consultation and discover how our experts can make your move stress-free in Miami, Orlando, and Tampa.`,
+    title: `Contact Godway Moving | Free Moving Quotes Florida | ${DOMAIN}`,
+    description: `Get in touch with ${COMPANY_NAME} for all your Florida moving needs. Request your free quote, schedule a consultation, or ask questions about our professional moving services in Miami, Orlando, Tampa and throughout Florida. Available 24/7.`,
     url: "/contact",
     priority: 0.9,
-    keywords: "contact Miami movers, Florida moving consultation, free moving quote, South Florida moving company contact, relocation estimate, moving services Orlando",
+    keywords: "contact Florida movers, Godway Moving phone number, free moving quote Florida, schedule moving service Miami, moving consultation Orlando, Tampa movers contact, moving estimate request",
   },
 
   // FAQ page
   faq: {
-    title: `${COMPANY_NAME} | Frequently Asked Moving Questions | Miami, FL`,
-    description: `Get answers to common questions about ${COMPANY_NAME}'s professional moving services throughout Florida. Find information about our process, pricing, timeline, and what to expect during your move in Miami, Orlando, and Tampa.`,
+    title: `Moving FAQs | Common Questions Answered | ${COMPANY_NAME} | ${DOMAIN}`,
+    description: `Find answers to frequently asked questions about ${COMPANY_NAME}'s professional moving services throughout Florida. Learn about our process, pricing, preparation tips, and what to expect on moving day in Miami, Orlando, Tampa and beyond.`,
     url: "/faq",
     priority: 0.6,
-    keywords: "Miami moving FAQ, Florida relocation questions, moving information, moving process South Florida, relocation timeline Orlando, moving costs Tampa",
+    keywords: "Florida moving FAQ, common moving questions, relocation process information, moving cost questions, moving day preparation, Florida movers questions, what to expect when moving",
   },
 
   // Portfolio page
   portfolio: {
-    title: `${COMPANY_NAME} | Moving Service Gallery | South Florida`,
-    description: `Explore ${COMPANY_NAME}'s showcase of successful moving projects throughout Florida. See our professional team in action handling residential and commercial relocations with military precision across Miami, Orlando, and Tampa.`,
+    title: `Our Moving Projects | Florida Relocation Gallery | ${COMPANY_NAME} | ${DOMAIN}`,
+    description: `Browse ${COMPANY_NAME}'s portfolio of successful moves throughout Florida. See our professional team in action handling residential, commercial, last-minute and specialty relocations in Miami, Orlando, Tampa and all Florida communities.`,
     url: "/portfolio",
     priority: 0.7,
-    keywords: "Miami moving gallery, Florida relocation projects, moving service examples, relocation showcase, moving company photos, South Florida moving process, Tampa moving gallery",
+    keywords: "Florida moving gallery, Miami relocation projects, Orlando moving examples, Tampa moving photos, professional movers in action, moving service showcase, Florida movers portfolio",
   },
 
   // Careers page
   careers: {
-    title: `${COMPANY_NAME} | Join Our Elite Florida Moving Team`,
-    description: `${COMPANY_NAME} is hiring skilled professionals to join our premier moving team in Miami, Florida. Discover rewarding career opportunities with competitive pay, benefits, and growth potential throughout South Florida.`,
+    title: `Moving Company Jobs | Florida Career Opportunities | ${COMPANY_NAME} | ${DOMAIN}`,
+    description: `Join ${COMPANY_NAME}'s team of professional movers in Florida. Explore rewarding career opportunities with competitive pay, benefits, training, and growth potential. Now hiring in Miami, Orlando, Tampa and throughout Florida.`,
     url: "/careers",
     priority: 0.6,
-    keywords: "Miami moving jobs, Florida relocation careers, mover jobs Orlando, moving company positions, employment Tampa, moving jobs South Florida",
+    keywords: "Florida moving jobs, Miami mover positions, Orlando moving company careers, Tampa moving jobs, professional mover employment, moving consultant jobs, driver and packer positions",
   },
 
   // Thank you page
   thankYou: {
-    title: `${COMPANY_NAME} | Thank You | Florida Moving Experts`,
-    description: `Thank you for contacting ${COMPANY_NAME}. Our Florida moving team will be in touch shortly to discuss your relocation and schedule your free consultation in Miami, Orlando, or Tampa.`,
+    title: `Thank You | Request Received | ${COMPANY_NAME} | ${DOMAIN}`,
+    description: `Thank you for contacting ${COMPANY_NAME}. Our Florida moving experts will be in touch shortly to discuss your relocation needs and provide personalized assistance for your move in Miami, Orlando, Tampa or anywhere in Florida.`,
     url: "/thank-you",
     priority: 0.3,
-    keywords: "Miami moving consultation, Florida relocation inquiry, moving quote, moving request South Florida, relocation estimate Orlando",
+    keywords: "Florida moving request confirmation, moving quote thanks, relocation inquiry received, moving consultation scheduled, Florida movers response, moving service request",
   },
 
   // Legal pages
   legal: {
     privacy: {
-      title: `${COMPANY_NAME} | Privacy Policy | Miami, FL Moving Company`,
-      description: `${COMPANY_NAME}'s privacy policy explains how our Florida moving company collects, uses, and protects your personal information when you use our website or services.`,
+      title: `Privacy Policy | Your Data Protection | ${COMPANY_NAME} | ${DOMAIN}`,
+      description: `${COMPANY_NAME}'s privacy policy explains how we collect, use, and protect your personal information when using our Florida moving services or website. We are committed to safeguarding your privacy and maintaining your trust.`,
       url: "/privacy",
       priority: 0.3,
-      keywords: "Miami moving privacy policy, Florida movers terms, relocation company privacy, moving service agreement, mover policies South Florida",
+      keywords: "Florida moving company privacy policy, mover data protection, moving service privacy practices, personal information protection, Florida movers privacy terms, customer data security",
     },
     terms: {
-      title: `${COMPANY_NAME} | Terms of Service | Florida Moving Company`,
-      description: `${COMPANY_NAME}'s terms of service outline the conditions governing your use of our website and professional moving services throughout Florida.`,
+      title: `Terms of Service | Moving Agreement | ${COMPANY_NAME} | ${DOMAIN}`,
+      description: `Review ${COMPANY_NAME}'s terms of service for our Florida moving operations. This document outlines the conditions, responsibilities, and expectations when using our professional moving services throughout Florida.`,
       url: "/terms",
       priority: 0.3,
-      keywords: "Miami moving terms, Florida movers conditions, relocation service agreement, moving terms and conditions, mover policies South Florida",
+      keywords: "Florida moving terms and conditions, mover service agreement, moving company policies, relocation service terms, customer moving agreement, Florida movers liability, service contract",
     },
   },
 
@@ -136,8 +172,8 @@ export const SiteMetadata = {
       "@context": "https://schema.org",
       "@type": "MovingCompany",
       "name": COMPANY_NAME,
-      "image": "https://www.godwaymoving.com/logo.png",
-      "url": "https://www.godwaymoving.com",
+      "image": `https://${DOMAIN}/logo.png`,
+      "url": `https://${DOMAIN}`,
       "telephone": "(909) 645-3373",
       "email": "Savemoneyremodeling@gmail.com",
       "address": {
@@ -154,49 +190,61 @@ export const SiteMetadata = {
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "08:00",
-          "closes": "18:00"
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
         }
       ],
       "sameAs": [
         "https://www.facebook.com/godwaymoving",
-        "https://www.instagram.com/godwaymoving"
+        "https://www.instagram.com/godwaymoving",
+        "https://www.yelp.com/biz/godway-moving"
       ],
       "priceRange": "$$",
       "paymentAccepted": "Cash, Credit Card, Debit Card, Bank Transfer",
       "areaServed": {
-        "@type": "GeoCircle",
-        "geoMidpoint": {
-          "@type": "GeoCoordinates",
-          "latitude": 25.7617,
-          "longitude": -80.1918
-        },
-        "geoRadius": "200000"
+        "@type": "State",
+        "name": "Florida"
       },
       "makesOffer": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "South Florida Residential Moving",
-            "description": "Complete home moving services including packing, loading, transportation, unloading, and furniture assembly throughout Miami, Orlando, and Tampa."
+            "name": "Residential Moving Services",
+            "description": "Complete home moving services including packing, loading, transportation, unloading, and furniture assembly throughout Florida."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Florida Commercial Relocations",
-            "description": "Full business relocation services including office moves, equipment transport, and minimal downtime solutions across all of South Florida."
+            "name": "Commercial Moving Services",
+            "description": "Full business relocation services including office moves, equipment transport, and minimal downtime solutions across all of Florida."
           }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Professional Packing Services",
-            "description": "Expert packing services using quality materials to ensure safe transport of all your belongings throughout Florida's hot and humid climate."
+            "name": "Last-Minute Moving Services",
+            "description": "Urgent and same-day moving services for unexpected relocations throughout Florida with the same professional quality and care."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Long-Distance Moving",
+            "description": "Interstate moving services from Florida to anywhere in the USA with guaranteed delivery dates and real-time shipment tracking."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "24/7/365 Moving Services",
+            "description": "Round-the-clock moving services available any day, any time, including holidays throughout Florida for emergency relocations."
           }
         }
       ]
