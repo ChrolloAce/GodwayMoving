@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import BusinessInfo from '../data/business-info';
+import WebhookUrls from '../data/webhook-urls';
 
 const Hero = () => {
   const router = useRouter();
@@ -54,8 +55,8 @@ const Hero = () => {
         message: `Quote request from homepage form. Service: ${formData.service}`
       };
       
-      // Send the form data to the API
-      const response = await fetch('/api/contact', {
+      // 1. Send the form data to our email API
+      const emailResponse = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,10 +64,29 @@ const Hero = () => {
         body: JSON.stringify(apiFormData),
       });
       
-      const data = await response.json();
+      if (!emailResponse.ok) {
+        throw new Error('Failed to submit form to email API');
+      }
       
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to submit form');
+      // 2. Also send to Go High Level webhook
+      const ghlResponse = await fetch(WebhookUrls.goHighLevelForms.quoteForm || WebhookUrls.goHighLevel, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: 'homepage_quote',
+          timestamp: new Date().toISOString(),
+          service: formData.service,
+          location: `ZIP: ${formData.zipcode}`,
+          source: 'website_hero_form'
+        }),
+      });
+      
+      if (!ghlResponse.ok) {
+        console.error('Warning: Failed to submit to Go High Level webhook');
+        // Continue with success flow even if GHL fails
       }
       
       // Redirect to thank you page on success

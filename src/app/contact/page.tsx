@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 import BusinessInfo from '../data/business-info';
 import Link from 'next/link';
 import SectionHeader from '../components/SectionHeader';
+import WebhookUrls from '../data/webhook-urls';
 
 const ContactPage = () => {
   const router = useRouter();
@@ -35,22 +36,44 @@ const ContactPage = () => {
     setSubmitError('');
     
     try {
-      // Send data to webhook
-      const response = await fetch('https://hook.us2.make.com/neln229u0by16e8y53nprbdbacgeabol', {
+      // 1. Send data to email API
+      const emailResponse = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           ...formData,
+          moveDate: '',
+          moveFrom: '',
+          moveTo: '',
           source: 'website-contact-form',
           timestamp: new Date().toISOString(),
           formLocation: 'contact-page'
         }),
       });
       
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
+      if (!emailResponse.ok) {
+        throw new Error('Failed to submit form to email API');
+      }
+      
+      // 2. Also send to Go High Level webhook
+      const ghlResponse = await fetch(WebhookUrls.goHighLevelForms.contactForm || WebhookUrls.goHighLevel, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formType: 'contact_page',
+          timestamp: new Date().toISOString(),
+          source: 'website_contact_form'
+        }),
+      });
+      
+      if (!ghlResponse.ok) {
+        console.error('Warning: Failed to submit to Go High Level webhook');
+        // Continue with success flow even if GHL fails
       }
       
       // Also store in localStorage for backup
