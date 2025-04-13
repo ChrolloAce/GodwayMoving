@@ -25,7 +25,7 @@ const SectionHeader = ({
       viewport={{ once: true }}
       className={`${centered ? 'text-center' : ''} mb-16 ${className}`}
     >
-      <div className={`h-1 w-20 bg-godway-gradient ${centered ? 'mx-auto' : ''} mb-6 rounded-full`}></div>
+      <div className={`h-1 w-20 bg-godway-green1 ${centered ? 'mx-auto' : ''} mb-6 rounded-full`}></div>
       <h2 className={`text-3xl md:text-4xl font-bold mb-4 font-oswald uppercase ${light ? 'text-white' : 'text-dark'}`}>
         {title}
       </h2>
