@@ -58,29 +58,34 @@ export async function POST(request: Request) {
 
     // Also send to Make.com webhook
     try {
-      const webhookResponse = await fetch(WebhookUrls.makeIntegrations, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          form_type: 'api_contact_form',
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          service: formData.service,
-          message: formData.message,
-          moveDate: formData.moveDate,
-          moveFrom: formData.moveFrom,
-          moveTo: formData.moveTo,
-          timestamp: new Date().toISOString(),
-          source: 'website_api_endpoint'
-        }),
-      });
+      if (WebhookUrls.makeIntegrations) {
+        const webhookResponse = await fetch(WebhookUrls.makeIntegrations, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            form_type: 'api_contact_form',
+            name: formData.name || '',
+            email: formData.email || '',
+            phone: formData.phone || '',
+            service: formData.service || '',
+            message: formData.message || '',
+            moveDate: formData.moveDate || '',
+            moveFrom: formData.moveFrom || '',
+            moveTo: formData.moveTo || '',
+            timestamp: new Date().toISOString(),
+            source: 'website_api_endpoint'
+          }),
+        });
 
-      if (!webhookResponse.ok) {
-        console.error('Warning: Failed to submit to Make.com webhook');
-        // Continue with success response even if webhook fails
+        if (!webhookResponse.ok) {
+          console.error('Warning: Failed to submit to Make.com webhook:', webhookResponse.status, webhookResponse.statusText);
+        } else {
+          console.log('Successfully sent data to Make.com webhook');
+        }
+      } else {
+        console.log('Make.com webhook URL not configured');
       }
     } catch (webhookError) {
       console.error('Error submitting to Make.com webhook:', webhookError);
@@ -94,13 +99,14 @@ export async function POST(request: Request) {
     });
     
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Error processing form submission:', error);
     
     // Return error response
     return NextResponse.json(
       {
         success: false,
-        message: 'Failed to submit your request. Please try again later.'
+        message: 'Failed to submit your request. Please try again later.',
+        error: process.env.NODE_ENV === 'development' ? String(error) : undefined
       },
       { status: 500 }
     );
