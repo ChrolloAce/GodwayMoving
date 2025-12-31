@@ -88,7 +88,7 @@ const Navbar = () => {
             <Link href="/" className="flex items-center">
               <div className="relative h-10 w-10 mr-3">
                 <Image 
-                  src="https://i.ibb.co/VfFtvdM/love-2.png" 
+                  src="/Godwaylogo.png" 
                   alt="Godway Moving Logo" 
                   fill
                   style={{objectFit: 'contain'}}

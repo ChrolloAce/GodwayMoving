@@ -54,11 +54,11 @@ export const metadata = {
   publisher: COMPANY_NAME,
   icons: {
     icon: [
-      { url: 'https://i.ibb.co/VfFtvdM/love-2.png', sizes: 'any' },
+      { url: '/Godwaylogo.png', sizes: 'any' },
     ],
-    shortcut: 'https://i.ibb.co/VfFtvdM/love-2.png',
+    shortcut: '/Godwaylogo.png',
     apple: [
-      { url: 'https://i.ibb.co/VfFtvdM/love-2.png', sizes: '180x180', type: 'image/png' },
+      { url: '/Godwaylogo.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   openGraph: {
@@ -70,7 +70,7 @@ export const metadata = {
     siteName: COMPANY_NAME,
     images: [
       {
-        url: 'https://i.ibb.co/VfFtvdM/love-2.png',
+        url: '/Godwaylogo.png',
         width: 1200,
         height: 630,
         alt: `${COMPANY_NAME} - Professional moving services in Florida`
@@ -81,7 +81,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: SiteMetadata.home.title,
     description: SiteMetadata.home.description,
-    images: ['https://i.ibb.co/VfFtvdM/love-2.png'],
+    images: ['/Godwaylogo.png'],
     creator: `@${COMPANY_NAME.replace(/\s+/g, '').toLowerCase()}`,
   },
   robots: {
@@ -119,8 +119,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${cormorant.variable} ${playfair.variable} ${anton.variable} ${oswald.variable}`}>
       <head>
-        <link rel="icon" href="https://i.ibb.co/VfFtvdM/love-2.png" sizes="any" />
-        <link rel="apple-touch-icon" href="https://i.ibb.co/VfFtvdM/love-2.png" sizes="180x180" />
+        <link rel="icon" href="/Godwaylogo.png" sizes="any" />
+        <link rel="apple-touch-icon" href="/Godwaylogo.png" sizes="180x180" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
         <meta name="theme-color" content="#4B5320" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

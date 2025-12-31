@@ -130,7 +130,7 @@ export const SiteMetadata = {
       "@context": "https://schema.org",
       "@type": "MovingCompany",
       "name": COMPANY_NAME,
-      "image": `https://${DOMAIN}/logo.png`,
+      "image": `https://${DOMAIN}/Godwaylogo.png`,
       "url": `https://${DOMAIN}`,
       "telephone": "(305) 409-7671",
       "email": "godwayllc@gmail.com",

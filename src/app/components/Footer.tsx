@@ -51,7 +51,7 @@ const Footer = () => {
             <Link href="/" className="inline-flex items-center mb-4">
               <div className="relative h-12 w-12 mr-3">
                 <Image 
-                  src="https://i.ibb.co/VfFtvdM/love-2.png" 
+                  src="/Godwaylogo.png" 
                   alt="Godway Moving Logo" 
                   fill
                   style={{objectFit: 'contain'}}
