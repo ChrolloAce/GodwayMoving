@@ -103,10 +103,10 @@ const Portfolio = () => {
         >
           <div className="h-1 w-24 bg-godway-gradient mx-auto mb-8 rounded-full"></div>
           <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 tracking-tight font-oswald uppercase">
-            Our Portfolio
+            Gallery
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed font-oswald">
-            Experience our quality moving services through these project highlights
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-oswald">
+            Take a look at our team in action. From careful packing to safe delivery, every move is handled with professionalism and care. These moments showcase the dedication and teamwork that make Godway Moving the trusted choice for families and businesses across Florida.
           </p>
         </motion.div>
 
