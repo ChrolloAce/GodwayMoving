@@ -1,0 +1,281 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  
+  /* Custom color values for Godway Moving theme */
+  --color-green1: 77, 120, 78;    /* #4D784E - Forest Green */
+  --color-green2: 110, 161, 113;  /* #6EA171 - Sage Green */
+  --color-khaki: 225, 215, 152;   /* #E1D798 - Khaki */
+  --color-brown: 103, 86, 69;     /* #675645 - Brown */
+  --color-navy: 66, 71, 86;       /* #424756 - Navy */
+  --color-black: 11, 11, 11;      /* #0B0B0B - Black */
+  --color-white: 255, 255, 255;   /* #FFFFFF - White */
+  --color-cream: 242, 235, 220;   /* #F2EBDC - Cream color */
+}
+
+/* Improved responsive base styles */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fix for Vimeo video background */
+.vimeo-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+  min-height: 100%;
+  min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@layer base {
+  h1, h2, h3 {
+    @apply font-oswald leading-tight tracking-wide;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  h4, h5, h6 {
+    @apply font-oswald font-medium tracking-wide;
+  }
+  
+  p, li, input, textarea, select {
+    @apply font-montserrat font-light leading-relaxed;
+  }
+  
+  /* Enhance link styling */
+  a {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Improves touch targets on mobile */
+  button, a, input, select, textarea, [role="button"] {
+    @apply outline-none;
+    touch-action: manipulation;
+  }
+  
+  /* Fix for image overflow on mobile */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-8;
+    max-width: 1600px;
+  }
+  
+  .btn {
+    @apply inline-block px-6 py-3.5 rounded-full font-oswald font-medium tracking-wide transition-all duration-300;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Mobile-optimized buttons */
+  @media (max-width: 640px) {
+    .btn {
+      @apply w-full justify-center text-center py-3 px-4;
+    }
+  }
+  
+  .btn-primary {
+    @apply btn bg-military-olive text-white hover:bg-military-drab;
+    box-shadow: 0 4px 14px rgba(77, 120, 78, 0.3);
+  }
+  
+  .btn-secondary {
+    @apply btn bg-white text-military-olive hover:bg-military-khaki/20;
+    box-shadow: 0 4px 14px rgba(77, 120, 78, 0.15);
+  }
+  
+  .btn-gold {
+    @apply btn bg-military-olive text-white hover:bg-military-drab;
+    box-shadow: 0 4px 14px rgba(77, 120, 78, 0.3);
+  }
+  
+  .section-title {
+    @apply font-oswald text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 text-center font-bold;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Better handling of long titles on mobile */
+  @media (max-width: 640px) {
+    .section-title {
+      @apply text-2xl mb-4;
+      word-wrap: break-word;
+    }
+  }
+  
+  .section-subtitle {
+    @apply font-oswald text-xl md:text-2xl text-center mb-12 max-w-3xl mx-auto font-light;
+    letter-spacing: 0.02em;
+  }
+  
+  @media (max-width: 640px) {
+    .section-subtitle {
+      @apply text-lg mb-8;
+    }
+  }
+  
+  .military-card {
+    @apply bg-white rounded-3xl p-8 transition-all duration-500 border-2 border-military-olive/20;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  @media (max-width: 640px) {
+    .military-card {
+      @apply p-6;
+    }
+  }
+  
+  .military-card:hover {
+    @apply border-military-olive;
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15), 0 10px 15px -5px rgba(0, 0, 0, 0.08);
+  }
+  
+  .animate-fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .animate-fade-in.appear {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .military-gradient-text {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(to right, #4B5320, #606c38);
+  }
+  
+  /* Mobile-optimized responsive grid */
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8;
+  }
+  
+  .responsive-grid-tight {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6;
+  }
+  
+  /* Testimonial slider and gallery styles */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .testimonial-slider {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .testimonial-item {
+    scroll-snap-align: center;
+  }
+  
+  /* Mobile-optimized form elements */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-military-olive focus:border-transparent;
+  }
+  
+  /* Touch-friendly form elements */
+  @media (max-width: 640px) {
+    input, select, textarea, button {
+      @apply text-base py-3;
+      min-height: 44px; /* Apple's recommended minimum tap target size */
+    }
+  }
+}
+
+/* Gallery animations */
+.gallery-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-image img {
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.gallery-image:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-image.animate-slide img {
+  animation: galleryPan 10s ease-in-out;
+}
+
+@keyframes galleryPan {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  25% {
+    transform: scale(1.1) translate(-2%, -2%);
+  }
+  50% {
+    transform: scale(1.1) translate(2%, -1%);
+  }
+  75% {
+    transform: scale(1.05) translate(1%, 2%);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}
+
+/* Custom scrollbar for military feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4B5320;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3A4429;
+}
+
+/* Shadow styles */
+.shadow-military {
+  box-shadow: 0 10px 20px -5px rgba(75, 83, 32, 0.3);
+}
+
+/* Background styles */
+.bg-military-gradient {
+  background-image: linear-gradient(to right, #4B5320, #606c38);
+}
+
+/* Mobile utilities for debugging layout issues */
+.debug-screens {
+  @apply fixed bottom-0 left-0 z-50 p-1 text-xs font-mono text-white bg-black;
+}
+
+@media (min-width: 640px) { .debug-screens::after { content: 'SM'; } }
+@media (min-width: 768px) { .debug-screens::after { content: 'MD'; } }
+@media (min-width: 1024px) { .debug-screens::after { content: 'LG'; } }
+@media (min-width: 1280px) { .debug-screens::after { content: 'XL'; } }
+@media (min-width: 1536px) { .debug-screens::after { content: '2XL'; } } 

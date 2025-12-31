@@ -1,0 +1,11 @@
+# Deco Moderna Robots.txt
+# https://www.decomodernaremodeling.com/
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.decomodernaremodeling.com/sitemap.xml
+
+# Disallow thank you pages
+Disallow: /thank-you 
