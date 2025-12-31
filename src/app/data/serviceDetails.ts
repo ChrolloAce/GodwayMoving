@@ -30,7 +30,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Minimal disruption to your schedule",
       "Fully licensed and insured"
     ],
-    image: "https://i.ibb.co/cXYdSC0j/IMG-0713.jpg",
+    image: "/images/godway/team-full.jpg",
     features: [
       "Full packing and unpacking services",
       "Disassembly and reassembly of furniture",
@@ -93,7 +93,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "After-hours and weekend service",
       "Rapid setup at new location"
     ],
-    image: "https://i.ibb.co/whdn6mFS/IMG-1682.jpg",
+    image: "/images/godway/action-moving-1.jpg",
     features: [
       "Comprehensive move planning",
       "Workstation disassembly and reassembly",
@@ -156,7 +156,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       "Upfront transparent pricing",
       "Fully licensed and insured"
     ],
-    image: "https://i.ibb.co/XrX5kdM7/IMG-1736.jpg",
+    image: "/images/godway/action-moving-4.jpg",
     features: [
       "Furniture removal and disposal",
       "Appliance hauling and recycling",

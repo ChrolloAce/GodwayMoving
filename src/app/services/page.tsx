@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     description: 'Godway provides residential & commercial moving, specialty hauling and junk removal services with careful handling and a fully insured service throughout Florida.',
     images: [
       {
-        url: 'https://i.ibb.co/VfFtvdM/love-2.png',
+        url: '/images/godway/team-full.jpg',
         width: 1200,
         height: 630,
         alt: 'Godway Moving Services in Florida'

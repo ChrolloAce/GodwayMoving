@@ -61,12 +61,11 @@ const AboutPage = () => {
         <section className="relative min-h-[60vh] flex items-center bg-godway-green1">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="https://i.ibb.co/CwgG4tL/team.jpg"
+              src="/images/godway/team-lineup.jpg"
               alt="About Godway Moving"
               fill
               className="object-cover opacity-30"
               priority
-              unoptimized
             />
           </div>
           
@@ -92,13 +91,12 @@ const AboutPage = () => {
               >
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-godway-green1/20">
                   <Image
-                    src="https://i.ibb.co/v65KPtGc/IMG-0739.jpg"
+                    src="/images/godway/truck-back-team.jpg"
                     alt="Godway Moving Team"
                     fill
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
                     sizes="(max-width: 768px) 100vw, 500px"
                     className="rounded-xl"
-                    unoptimized={true}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-godway-navy/40 to-transparent"></div>
                 </div>
@@ -107,12 +105,11 @@ const AboutPage = () => {
                 <div className="absolute -bottom-6 -right-6 w-28 h-28 md:w-32 md:h-32">
                   <div className="relative w-full h-full rounded-xl overflow-hidden shadow-lg border-2 border-white">
                     <Image
-                      src="https://i.ibb.co/WvBWPXWM/IMG-0731.jpg"
+                      src="/images/godway/team-pose.jpg"
                       alt="Godway Moving"
                       fill
                       style={{ objectFit: 'cover', objectPosition: 'center' }}
                       className="rounded-xl"
-                      unoptimized={true}
                     />
                   </div>
                 </div>
@@ -237,13 +234,12 @@ const AboutPage = () => {
               >
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-godway-green1/20">
                   <Image
-                    src="https://i.ibb.co/27xmL2w8/IMG-1632.jpg"
+                    src="/images/godway/couple-photo.jpg"
                     alt="Godway Moving Services"
                     fill
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
                     sizes="(max-width: 768px) 100vw, 500px"
                     className="rounded-xl"
-                    unoptimized={true}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-godway-navy/40 to-transparent"></div>
                 </div>

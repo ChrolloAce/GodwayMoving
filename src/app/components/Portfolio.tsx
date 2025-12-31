@@ -16,48 +16,48 @@ const Portfolio = () => {
 
   const projects: Project[] = [
     {
-      title: "Moving Project 1",
-      image: "https://i.ibb.co/WvBWPXWM/IMG-0731.jpg"
+      title: "Godway Team",
+      image: "/images/godway/hero-team-leader.jpg"
     },
     {
-      title: "Moving Project 2",
-      image: "https://i.ibb.co/cXYdSC0j/IMG-0713.jpg"
+      title: "Full Team",
+      image: "/images/godway/team-full.jpg"
     },
     {
-      title: "Moving Project 3",
-      image: "https://i.ibb.co/3YVdYwCd/IMG-2040.jpg"
+      title: "Team Lineup",
+      image: "/images/godway/team-lineup.jpg"
     },
     {
-      title: "Moving Project 4",
-      image: "https://i.ibb.co/DDZT8qsm/15-C40-AB1-EF46-45-E3-8-AFE-7-BFFD535054-A.jpg"
+      title: "Professional Movers",
+      image: "/images/godway/truck-back-team.jpg"
     },
     {
-      title: "Moving Project 5",
-      image: "https://i.ibb.co/mVLnRJHX/IMG-0715.jpg"
+      title: "Moving in Action",
+      image: "/images/godway/action-moving-1.jpg"
     },
     {
-      title: "Moving Project 6",
-      image: "https://i.ibb.co/XfDrGtZN/IMG-0718.jpg"
+      title: "Expert Handling",
+      image: "/images/godway/action-moving-2.jpg"
     },
     {
-      title: "Moving Project 7",
-      image: "https://i.ibb.co/7T7KvGT/IMG-2041.jpg"
+      title: "Careful Transport",
+      image: "/images/godway/action-moving-3.jpg"
     },
     {
-      title: "Moving Project 8",
-      image: "https://i.ibb.co/JwyyPvSk/IMG-2406.jpg"
+      title: "Loading Service",
+      image: "/images/godway/action-moving-4.jpg"
     },
     {
-      title: "Moving Project 9",
-      image: "https://i.ibb.co/XrX5kdM7/IMG-1736.jpg"
+      title: "Our Fleet",
+      image: "/images/godway/truck-front.jpg"
     },
     {
-      title: "Moving Project 10",
-      image: "https://i.ibb.co/whdn6mFS/IMG-1682.jpg"
+      title: "Team Photo",
+      image: "/images/godway/team-pose.jpg"
     },
     {
-      title: "Moving Project 11",
-      image: "https://i.ibb.co/kRD39Rv/IMG-0719.jpg"
+      title: "Founders",
+      image: "/images/godway/couple-photo.jpg"
     }
   ];
 

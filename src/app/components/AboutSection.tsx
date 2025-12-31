@@ -20,7 +20,7 @@ const AboutSection = () => {
           >
             <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-godway-green1/20">
               <Image
-                src="https://i.ibb.co/v65KPtGc/IMG-0739.jpg"
+                src="/images/godway/truck-back-team.jpg"
                 alt="Local Florida Moving 1"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -35,7 +35,7 @@ const AboutSection = () => {
             <div className="absolute -bottom-6 -right-6 w-28 h-28 md:w-32 md:h-32">
               <div className="relative w-full h-full rounded-xl overflow-hidden shadow-lg border-2 border-white">
                 <Image
-                  src="https://i.ibb.co/WvBWPXWM/IMG-0731.jpg"
+                  src="/images/godway/team-pose.jpg"
                   alt="Local Florida Moving 2"
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'center' }}

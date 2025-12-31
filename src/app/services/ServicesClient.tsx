@@ -12,19 +12,19 @@ const ServicesClient = () => {
     {
       title: "Residential Moving",
       description: "We specialize in local residential moves across Florida. We can move you between any Florida cities with care and efficiency, whether planned or last-minute.",
-      image: "https://i.ibb.co/cXYdSC0j/IMG-0713.jpg",
+      image: "/images/godway/team-full.jpg",
       id: "residential-moving"
     },
     {
       title: "Commercial Moving",
       description: "We can move your office overnight, on the weekend and during holidays to minimize your downtime. With full office packing and unpacking, your staff will be up and running the next morning.",
-      image: "https://i.ibb.co/whdn6mFS/IMG-1682.jpg",
+      image: "/images/godway/action-moving-1.jpg",
       id: "commercial-moving"
     },
     {
       title: "Junk Removal",
       description: "Professional junk removal services to clear out unwanted items from your home or business. We handle everything from furniture to appliances with responsible disposal and recycling.",
-      image: "https://i.ibb.co/XrX5kdM7/IMG-1736.jpg",
+      image: "/images/godway/action-moving-4.jpg",
       id: "junk-removal"
     }
   ];

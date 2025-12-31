@@ -23,88 +23,81 @@ const PortfolioPage = () => {
 
   const projects: Project[] = [
     {
-      title: "Luxury Condo Relocation",
+      title: "Godway Team in Action",
+      location: "Miami, FL",
+      category: "Residential Moving",
+      image: "/images/godway/hero-team-leader.jpg",
+      description: "Our professional team ready to serve you with excellence. Led by experienced movers who bring military-style discipline and care to every job."
+    },
+    {
+      title: "Full Team Ready to Move",
+      location: "Brickell, FL",
+      category: "Commercial Moving",
+      image: "/images/godway/team-full.jpg",
+      description: "The complete Godway Moving crew standing by our branded truck. We bring the manpower and expertise needed for any size move."
+    },
+    {
+      title: "Professional Team Lineup",
       location: "Miami Beach, FL",
       category: "Residential Moving",
-      image: "https://i.ibb.co/5xBSjyB8/IMG-3761.jpg",
-      description: "Complete relocation of a luxury beachfront condo with specialized handling for high-value items and artwork. Our team coordinated with building management for seamless elevator access and protected all flooring surfaces during the move."
+      image: "/images/godway/team-lineup.jpg",
+      description: "Our uniformed professionals ready to handle your belongings with care. Every team member is trained in proper handling techniques."
     },
     {
-      title: "Office Expansion Project",
+      title: "Loading with Care",
+      location: "Coral Gables, FL",
+      category: "Commercial Moving",
+      image: "/images/godway/truck-back-team.jpg",
+      description: "Careful loading of items into our well-maintained truck. We ensure every piece is secured properly for safe transport."
+    },
+    {
+      title: "Expert Furniture Handling",
       location: "Downtown Miami, FL",
-      category: "Commercial Moving",
-      image: "https://i.ibb.co/3YVdYwCd/IMG-2040.jpg",
-      description: "Comprehensive office relocation for a growing financial firm. The project included detailed inventory management, IT equipment handling, and weekend scheduling to minimize business disruption."
-    },
-    {
-      title: "Last-Minute Family Move",
-      location: "Orlando, FL",
       category: "Residential Moving",
-      image: "https://i.ibb.co/cXYdSC0j/IMG-0713.jpg",
-      description: "Urgent residential move completed within 24 hours notice. Our team quickly mobilized to pack, transport, and set up this 4-bedroom home, allowing the family to relocate without stress despite the tight timeline."
+      image: "/images/godway/action-moving-1.jpg",
+      description: "Professional handling of furniture and belongings. Our team specializes in protecting your items throughout the entire moving process."
     },
     {
-      title: "Medical Office Relocation",
-      location: "Tampa, FL",
+      title: "Precision Moving Service",
+      location: "Brickell, FL",
       category: "Commercial Moving",
-      image: "https://i.ibb.co/WvBWPXWM/IMG-0731.jpg",
-      description: "Specialized moving services for a medical practice requiring careful handling of sensitive equipment and patient records. Coordinated after-hours move to ensure zero disruption to patient care."
+      image: "/images/godway/action-moving-2.jpg",
+      description: "Attention to detail in every move. We treat your belongings as if they were our own, ensuring safe delivery every time."
     },
     {
-      title: "Waterfront Property Move",
-      location: "Naples, FL",
+      title: "Careful Transport",
+      location: "Miami Beach, FL",
       category: "Residential Moving",
-      image: "https://i.ibb.co/JwyyPvSk/IMG-2406.jpg",
-      description: "Luxury waterfront home relocation with special handling for antiques and high-value furniture. Our team managed all aspects including crating of fine art and specialized packing for delicate items."
+      image: "/images/godway/action-moving-3.jpg",
+      description: "Every item is handled with precision and care. Our experienced movers know how to navigate tight spaces and protect your belongings."
     },
     {
-      title: "Restaurant Equipment Relocation",
-      location: "Fort Lauderdale, FL",
-      category: "Commercial Moving",
-      image: "https://i.ibb.co/mVLnRJHX/IMG-0715.jpg",
-      description: "Complete restaurant equipment move requiring specialized handling and transportation of industrial kitchen equipment. Completed overnight to allow for minimal disruption to business operations."
+      title: "Efficient Loading Service",
+      location: "Coral Gables, FL",
+      category: "Junk Removal",
+      image: "/images/godway/action-moving-4.jpg",
+      description: "Fast and efficient loading services. Whether it's a full home move or junk removal, our team gets the job done right."
     },
     {
-      title: "Small Apartment Move",
-      location: "Boca Raton, FL",
-      category: "Residential Moving",
-      image: "https://i.ibb.co/DDZT8qsm/15-C40-AB1-EF46-45-E3-8-AFE-7-BFFD535054-A.jpg",
-      description: "Efficient move for a one-bedroom apartment with full packing and unpacking services. Completed within a 4-hour window to accommodate the client's tight schedule."
-    },
-    {
-      title: "Corporate Headquarters Relocation",
+      title: "Our Fleet",
       location: "Miami, FL",
       category: "Commercial Moving",
-      image: "https://i.ibb.co/XfDrGtZN/IMG-0718.jpg",
-      description: "Major corporate relocation involving 150+ employees and complete office furniture systems. Executed over a holiday weekend with precise planning and coordination."
+      image: "/images/godway/truck-front.jpg",
+      description: "Our well-maintained fleet of moving trucks ready to serve all of South Florida. Clean, reliable vehicles for your peace of mind."
     },
     {
-      title: "Senior Downsizing Project",
-      location: "Orlando, FL",
+      title: "Team Excellence",
+      location: "Miami, FL",
       category: "Residential Moving",
-      image: "https://i.ibb.co/7T7KvGT/IMG-2041.jpg",
-      description: "Compassionate and thoughtful moving services for seniors downsizing from a long-time family home to a retirement community. Included sorting, donation coordination, and specialized packing of heirlooms."
+      image: "/images/godway/team-pose.jpg",
+      description: "The Godway Moving team committed to excellence in every move. Our crew brings professionalism and dedication to every job."
     },
     {
-      title: "Retail Store Expansion",
-      location: "Tampa, FL",
-      category: "Commercial Moving",
-      image: "https://i.ibb.co/XrX5kdM7/IMG-1736.jpg",
-      description: "Overnight commercial move for a retail clothing store expanding to a larger location. Included careful handling of display fixtures, inventory, and point-of-sale systems."
-    },
-    {
-      title: "Beachfront Condo Move",
-      location: "Miami Beach, FL",
+      title: "Founded on Service",
+      location: "Miami, FL",
       category: "Residential Moving",
-      image: "https://i.ibb.co/whdn6mFS/IMG-1682.jpg",
-      description: "High-rise condo move requiring specialized logistics for elevator coordination and protection of common areas. Completed with zero disruption to other residents."
-    },
-    {
-      title: "University Laboratory Relocation",
-      location: "Gainesville, FL",
-      category: "Specialty Moving",
-      image: "https://i.ibb.co/kRD39Rv/IMG-0719.jpg",
-      description: "Precision moving of sensitive laboratory equipment for a university research department. Required specialized crating, climate control, and coordination with scientific staff."
+      image: "/images/godway/couple-photo.jpg",
+      description: "Pablo and Pablo José, the founders of Godway Moving. Built on principles of military structure, transparency, and service excellence."
     }
   ];
 
