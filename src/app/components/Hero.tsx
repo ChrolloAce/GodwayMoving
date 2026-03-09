@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { FaPhone } from 'react-icons/fa';
 import BusinessInfo from '../data/business-info';
 import WebhookUrls from '../data/webhook-urls';
 
@@ -212,12 +213,13 @@ const Hero = () => {
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 w-full">
-              <Link 
-                href="#hero-form" 
-                className="bg-godway-green1 text-white px-6 md:px-8 py-3 rounded-full font-oswald font-semibold hover:bg-godway-green2 transition-colors text-center uppercase"
+              <a 
+                href={`tel:${BusinessInfo.contact.phone.link}`}
+                className="bg-godway-green1 text-white px-6 md:px-8 py-3 rounded-full font-oswald font-semibold hover:bg-godway-green2 transition-colors text-center uppercase inline-flex items-center justify-center gap-2"
               >
-                Get Free Quote
-              </Link>
+                <FaPhone className="text-sm" />
+                Call Now
+              </a>
               <Link 
                 href="/portfolio" 
                 className="border-2 border-godway-khaki text-godway-khaki px-6 md:px-8 py-3 rounded-full font-oswald font-semibold hover:bg-godway-khaki/10 transition-colors text-center uppercase"
